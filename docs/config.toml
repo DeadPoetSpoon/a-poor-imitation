@@ -5,24 +5,53 @@ base_url = "https://deadpoetspoon.github.io/a-poor-imitation"
 compile_sass = true
 
 # Whether to build a search index to be used later on by a JavaScript library
-build_search_index = false
+build_search_index = true
 
 theme = "tabi"
 
-title = "API Docs"
-
+title = "~/API Docs"
+description = "A Poor Imitation's Docs"
+author = "Dead Poet Spoon"
 default_language = "zh"
-
+taxonomies = [{name = "tags", feed = true}]
 
 [markdown]
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
 highlight_code = true
+highlight_theme = "css"
 
 [languages.en]
-title = "API Docs"
+title = "~/API Docs"
+author = "Dead Poet Spoon"
 taxonomies = [{name = "tags", feed = true}]
 
 [extra]
 # Put all your custom variables here
-header = {title = "Hello! I'm tabi~", img = "img/main.webp", img_alt = "Your Name" }
+remote_repository_url = "https://github.com/DeadPoetSpoon/a-poor-imitation"
+remote_repository_git_platform = "auto"
+remote_repository_branch = "gh-pages"
+show_remote_changes = true
+show_remote_source = true
+copy_button = true
+show_reading_time = true
+footnote_backlinks = false
+katex = false
+quick_navigation_buttons = false
+toc = false
+long_date_format = "%Y %B %d"
+short_date_format = "%Y %B %-d"
+separator = "•"
+invert_title_order = false
+favicon = "images/logo.webp"
+menu = [
+    { name = "blog", url = "blog", trailing_slash = true },
+    { name = "archive", url = "archive", trailing_slash = true },
+    { name = "tags", url = "tags", trailing_slash = true },
+    { name = "projects", url = "projects", trailing_slash = true },
+]
+footer_menu = [
+    {url = "about", name = "about", trailing_slash = true},
+    {url = "sitemap.xml", name = "sitemap", trailing_slash = false},
+]
+copyright = "~/API Docs © $CURRENT_YEAR Dead Poet Spoon $SEPARATOR Unless otherwise noted, the content in this website is available under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license."
