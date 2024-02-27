@@ -5,7 +5,7 @@ updated = 2023-11-08
 description = "API Docs 的静态网站生成器"
 
 [taxonomies]
-tags = ["学习", "Zola", "工具"]
+tags = ["学习", "工具"]
 +++
 
 ## Zola

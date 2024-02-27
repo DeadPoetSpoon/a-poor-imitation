@@ -5,7 +5,7 @@ updated = 2023-11-08
 description = "整个项目将使用 GitHub 作为仓库管理工具"
 
 [taxonomies]
-tags = ["学习", "GitHub", "工具"]
+tags = ["学习", "工具"]
 +++
 
 ## GitHub Tokens
