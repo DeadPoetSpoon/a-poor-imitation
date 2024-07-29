@@ -1,6 +1,5 @@
 +++
 paginate_by = 5
-path = "/blog"
 title = "博客"
 sort_by = "date"
 template = "section.html"
