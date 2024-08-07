@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="https://deadpoetspoon.github.io/a-poor-imitation/feed_style.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:base="http://purl.org/atompub/base/1.0/" xml:lang="zh" xml:base="https:&#x2F;&#x2F;deadpoetspoon.github.io&#x2F;a-poor-imitation">
+    <str:translations xmlns:str="https://github.com/welpo/tabi">
+        <str:separator>
+            •
+        </str:separator>
+        <str:about_feeds>这是Web Feed，又称为Atom Feed，把现在的网址复制到新闻阅读器即可订阅本站文章。造访「About Feeds」来了解更多资讯。</str:about_feeds>
+        <str:visit_the_site>造访网站</str:visit_the_site>
+        <str:recent_posts>近期文章</str:recent_posts>
+        <str:last_updated_on>最后更新于</str:last_updated_on>
+    </str:translations><title>~/API Docs - 实践</title>
+        <subtitle>A Poor Imitation&#x27;s Docs</subtitle>
+    <link href="https://deadpoetspoon.github.io/a-poor-imitation/tags/shi-jian/atom.xml" rel="self" type="application/atom+xml"/>
+    <post_listing_date>date</post_listing_date>
+    <link href="https://deadpoetspoon.github.io/a-poor-imitation"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-08-07T00:00:00+00:00</updated>
+    <id>https://deadpoetspoon.github.io/a-poor-imitation/tags/shi-jian/atom.xml</id><entry xml:lang="zh">
+        <title>国际象棋 TWO</title>
+        <published>2024-08-07T00:00:00+00:00</published>
+        <updated>2024-08-07T00:00:00+00:00</updated>
+        <author>
+            <name>Dead Poet Spoon</name>
+        </author>
+        <link rel="alternate" href="https://deadpoetspoon.github.io/a-poor-imitation/blog/chess-2/" type="text/html"/>
+        <id>https://deadpoetspoon.github.io/a-poor-imitation/blog/chess-2/</id>
+        <summary type="html">继续优化！</summary>
+        </entry><entry xml:lang="zh">
+        <title>国际象棋 ONE</title>
+        <published>2024-04-20T00:00:00+00:00</published>
+        <updated>2024-08-07T00:00:00+00:00</updated>
+        <author>
+            <name>Dead Poet Spoon</name>
+        </author>
+        <link rel="alternate" href="https://deadpoetspoon.github.io/a-poor-imitation/blog/chess-1/" type="text/html"/>
+        <id>https://deadpoetspoon.github.io/a-poor-imitation/blog/chess-1/</id>
+        <summary type="html">以国际象棋为例学习编写游戏的第一节课吧！</summary>
+        </entry>
+</feed>

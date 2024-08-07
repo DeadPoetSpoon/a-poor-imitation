@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="https://deadpoetspoon.github.io/a-poor-imitation/feed_style.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:base="http://purl.org/atompub/base/1.0/" xml:lang="zh" xml:base="https:&#x2F;&#x2F;deadpoetspoon.github.io&#x2F;a-poor-imitation">
+    <str:translations xmlns:str="https://github.com/welpo/tabi">
+        <str:separator>
+            •
+        </str:separator>
+        <str:about_feeds>这是Web Feed，又称为Atom Feed，把现在的网址复制到新闻阅读器即可订阅本站文章。造访「About Feeds」来了解更多资讯。</str:about_feeds>
+        <str:visit_the_site>造访网站</str:visit_the_site>
+        <str:recent_posts>近期文章</str:recent_posts>
+        <str:last_updated_on>最后更新于</str:last_updated_on>
+    </str:translations><title>~/API Docs - 闲谈</title>
+        <subtitle>A Poor Imitation&#x27;s Docs</subtitle>
+    <link href="https://deadpoetspoon.github.io/a-poor-imitation/tags/xian-tan/atom.xml" rel="self" type="application/atom+xml"/>
+    <post_listing_date>date</post_listing_date>
+    <link href="https://deadpoetspoon.github.io/a-poor-imitation"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-08-07T00:00:00+00:00</updated>
+    <id>https://deadpoetspoon.github.io/a-poor-imitation/tags/xian-tan/atom.xml</id><entry xml:lang="zh">
+        <title>电影与游戏</title>
+        <published>2024-03-24T00:00:00+00:00</published>
+        <updated>2024-03-24T00:00:00+00:00</updated>
+        <author>
+            <name>Dead Poet Spoon</name>
+        </author>
+        <link rel="alternate" href="https://deadpoetspoon.github.io/a-poor-imitation/blog/movie-game/" type="text/html"/>
+        <id>https://deadpoetspoon.github.io/a-poor-imitation/blog/movie-game/</id>
+        <summary type="html">如何让游戏更像是电影，或者如何让游戏更有艺术感</summary>
+        </entry><entry xml:lang="zh">
+        <title>“人”</title>
+        <published>2024-02-27T00:00:00+00:00</published>
+        <updated>2024-02-27T00:00:00+00:00</updated>
+        <author>
+            <name>Dead Poet Spoon</name>
+        </author>
+        <link rel="alternate" href="https://deadpoetspoon.github.io/a-poor-imitation/blog/human/" type="text/html"/>
+        <id>https://deadpoetspoon.github.io/a-poor-imitation/blog/human/</id>
+        <summary type="html"> API 的主体 ———— “人”</summary>
+        </entry><entry xml:lang="zh">
+        <title>一切的开始</title>
+        <published>2023-11-06T00:00:00+00:00</published>
+        <updated>2024-08-07T00:00:00+00:00</updated>
+        <author>
+            <name>Dead Poet Spoon</name>
+        </author>
+        <link rel="alternate" href="https://deadpoetspoon.github.io/a-poor-imitation/blog/starting-point/" type="text/html"/>
+        <id>https://deadpoetspoon.github.io/a-poor-imitation/blog/starting-point/</id>
+        <summary type="html">这个项目的起因、目的、原则</summary>
+        </entry>
+</feed>

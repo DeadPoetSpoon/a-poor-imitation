@@ -1,0 +1,417 @@
+
+
+
+<!DOCTYPE html>
+<html lang="zh" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https://deadpoetspoon.github.io/a-poor-imitation">
+
+    
+    <title>~/API Docs • 电影与游戏</title>
+
+    
+    
+        <link rel="icon" type="image/png" href="https://deadpoetspoon.github.io/a-poor-imitation/images/logo.webp"/>
+    
+    
+
+    
+    <link rel="alternate" type="application/atom+xml" title="~/API Docs" href="https://deadpoetspoon.github.io/a-poor-imitation/atom.xml">
+
+    
+    
+    
+
+    
+        <link rel="stylesheet" href="https://deadpoetspoon.github.io/a-poor-imitation/main.css?h=5e152d56b06b2cb54aee" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="description" content="如何让游戏更像是电影，或者如何让游戏更有艺术感" />
+        <meta property="og:description" content="如何让游戏更像是电影，或者如何让游戏更有艺术感" />
+
+    
+        <meta name="robots" content="index, nofollow" />
+    
+
+    <meta property="og:title" content="电影与游戏" />
+    <meta property="og:type" content="article" />
+
+    
+
+    <meta property="og:locale:alternate" content="zh_CN" />
+
+        <link rel="alternate" hreflang="zh" href="https://deadpoetspoon.github.io/a-poor-imitation/blog/movie-game/" />
+
+    <meta property="og:url" content="https:&#x2F;&#x2F;deadpoetspoon.github.io&#x2F;a-poor-imitation&#x2F;blog&#x2F;movie-game&#x2F;" /><meta property="og:site_name" content="~&#x2F;API Docs"><meta http-equiv="Content-Security-Policy"
+content="default-src 'self';font-src &#x27;self&#x27; data:;img-src &#x27;self&#x27; https:&#x2F;&#x2F;* data:;media-src &#x27;self&#x27;;style-src &#x27;self&#x27;;frame-src player.vimeo.com https:&#x2F;&#x2F;www.youtube-nocookie.com;connect-src 'self';script-src 'self' 'self'">
+
+        <noscript><link rel="stylesheet" href="https://deadpoetspoon.github.io/a-poor-imitation/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://deadpoetspoon.github.io/a-poor-imitation/js/initializeTheme.min.js"></script>
+        <script defer src="https://deadpoetspoon.github.io/a-poor-imitation/js/themeSwitcher.min.js"></script><script defer src="https://deadpoetspoon.github.io/a-poor-imitation/search_index.zh.js?h=4861ea9418b7ecf41e66"></script>
+        <script defer src="https://deadpoetspoon.github.io/a-poor-imitation/js/searchElasticlunr.min.js?h=9b8cf8d81ad8868d3e54"></script>
+
+        <script defer src="https://deadpoetspoon.github.io/a-poor-imitation/js/lunr/lunrStemmerSupport.min.js"></script>
+            <script defer src="https://deadpoetspoon.github.io/a-poor-imitation/js/lunr/lunr.zh.min.js"></script></head>
+
+
+<body>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a class="home-title" href=https://deadpoetspoon.github.io/a-poor-imitation>~&#x2F;API Docs</a>
+        </div>
+            <div class="nav-navs">
+                <ul>
+                        
+                            <li>
+                                
+                                <a class="nav-links no-hover-padding" href="https://deadpoetspoon.github.io/a-poor-imitation/blog/">
+                                博客
+                                </a>
+                            </li>
+                        
+                            <li>
+                                
+                                <a class="nav-links no-hover-padding" href="https://deadpoetspoon.github.io/a-poor-imitation/archive/">
+                                归档
+                                </a>
+                            </li>
+                        
+                            <li>
+                                
+                                <a class="nav-links no-hover-padding" href="https://deadpoetspoon.github.io/a-poor-imitation/tags/">
+                                标签
+                                </a>
+                            </li>
+                        
+                            <li>
+                                
+                                <a class="nav-links no-hover-padding" href="https://deadpoetspoon.github.io/a-poor-imitation/projects/">
+                                项目
+                                </a>
+                            </li>
+                        <li class="js">
+                        <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon" title="Press $SHORTCUT to open search" aria-label="Press $SHORTCUT to open search">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                            </svg>
+                        </div>
+                    </li>
+
+                    
+                    
+                    <li class="language-switcher">
+    <details class="dropdown">
+        <summary role="button" aria-haspopup="true" title="语言选择" aria-label="语言选择">
+            <div class="language-switcher-icon"></div>
+        </summary>
+        <div class="dropdown-content" role="menu">简体中文<a role="menuitem" lang="en" aria-label="English" href="https:&#x2F;&#x2F;deadpoetspoon.github.io&#x2F;a-poor-imitation/en/blog/movie-game/">English</a></div>
+    </details>
+</li>
+
+
+                    <li class="theme-switcher-wrapper js"><div
+        title="切换到暗&#x2F;亮模式"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="切换到暗模式"
+        aria-pressed="false">
+    </div><div
+        title="重置为操作系统默认模式"
+        class="theme-resetter"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="重置为操作系统默认模式">
+    </div>
+
+</li>
+</ul>
+            </div>
+        
+    </nav>
+</header>
+
+    <div class="content">
+
+        
+        
+
+
+
+
+<main>
+    <article>
+        <h1 class="article-title">
+            电影与游戏
+        </h1>
+
+        <ul class="meta"><li>2024 三月 24</li>&nbsp;•&nbsp;<li title="760 words">4 min read</li>&nbsp;•&nbsp;<li>标签:&nbsp;</li><li><a href=https://deadpoetspoon.github.io/a-poor-imitation/tags/xian-tan/>闲谈</a></li></ul><ul class="meta last-updated"><li>最后更新于</li>
+                
+                •&nbsp;<li><a href="https://github.com/DeadPoetSpoon/a-poor-imitation/commits/gh-pages/content/blog&#x2F;movie-game&#x2F;index.md"  rel="">修改纪录<small>&nbsp;<span class="arrow-corner">↗</span></small></a></li>
+                
+            
+        </ul>
+
+        
+
+        
+        
+
+        <section class="body">
+            
+            
+            <h1 id="dian-ying-de-yi-shu-gan"><a class="header-anchor no-hover-padding" href="#dian-ying-de-yi-shu-gan" aria-label="Anchor link for: dian-ying-de-yi-shu-gan"><span class="link-icon" aria-hidden="true"></span></a>
+电影的艺术感</h1>
+<p>电影可被称为第七艺术，但具体是什么使得电影具有其独特的“艺术感”呢？他与其他艺术门类的区别又是什么呢？</p>
+<p>剧本？音乐? 表演动作？摄影？场面调度？剪辑？视听语言？</p>
+<h1 id="you-xi-de-dian-ying-gan"><a class="header-anchor no-hover-padding" href="#you-xi-de-dian-ying-gan" aria-label="Anchor link for: you-xi-de-dian-ying-gan"><span class="link-icon" aria-hidden="true"></span></a>
+游戏的电影感</h1>
+<p>游戏的组成与电影的组成太过相近，最不一样的可能就是游戏的”操纵感“。</p>
+<h2 id="you-xiu-de-you-xi-lu-ping"><a class="header-anchor no-hover-padding" href="#you-xiu-de-you-xi-lu-ping" aria-label="Anchor link for: you-xiu-de-you-xi-lu-ping"><span class="link-icon" aria-hidden="true"></span></a>
+优秀的游戏录屏</h2>
+<p>可以从优秀的游戏录屏出发，当观看一段游戏录屏时，观众其实失去了对游戏的”操纵“，这使得游戏无线接近与电影，其带给观众或者说玩家直观的类电影艺术感，让人发出”至此，已成艺术“的弹幕感叹。</p>
+<h2 id="ju-qing-lei-you-xi"><a class="header-anchor no-hover-padding" href="#ju-qing-lei-you-xi" aria-label="Anchor link for: ju-qing-lei-you-xi"><span class="link-icon" aria-hidden="true"></span></a>
+剧情类游戏</h2>
+<p>如果添加一点点“操纵感”，“游戏录屏”将变为游戏小说、单线剧情游戏、多剧情游戏等等游戏门类，如《隐形守护者》、《泰坦陨落》、《底特律：变人》等等，这样游戏的艺术感来源或许依旧与电影的艺术感相差不远，可将其看作为无数“游戏录屏”的枚举。</p>
+<h2 id="mo-ni-lei-you-xi"><a class="header-anchor no-hover-padding" href="#mo-ni-lei-you-xi" aria-label="Anchor link for: mo-ni-lei-you-xi"><span class="link-icon" aria-hidden="true"></span></a>
+模拟类游戏</h2>
+<p>如果将“操纵感”加到最大，便是模拟类游戏的地界，他构建出一个规则或是随机的世界提供给玩家自由探索或行动，如《矮人要塞》、《荒野大镖客》、《我的世界》、《欧洲卡车模拟》等等，这样的游戏在优秀的玩家手中能够变成一份具有“艺术感”的游戏录屏，而在普通玩家的手中或许其艺术感并没有剧情类游戏来得直接。</p>
+<h1 id="chuang-zao-zhong-de-yi-shu-gan"><a class="header-anchor no-hover-padding" href="#chuang-zao-zhong-de-yi-shu-gan" aria-label="Anchor link for: chuang-zao-zhong-de-yi-shu-gan"><span class="link-icon" aria-hidden="true"></span></a>
+创造中的艺术感</h1>
+<p>我想游戏的艺术感应当是“创造艺术”的艺术感，一本成书、一首音乐、一部电影，作为读者、听众、观众的我们都是被动地接受，而游戏却能够让玩家参与到艺术的创作中去，其他的能够再创作，但一手的烟还是比二手的好抽。如此“创造艺术”的感觉或许才是游戏区别与传统艺术的“艺术感”。</p>
+<h1 id="yi-shu-gan-xu-yao-zhu-ti"><a class="header-anchor no-hover-padding" href="#yi-shu-gan-xu-yao-zhu-ti" aria-label="Anchor link for: yi-shu-gan-xu-yao-zhu-ti"><span class="link-icon" aria-hidden="true"></span></a>
+艺术感需要主题</h1>
+<p>艺术感是需要主题的，《矮人要塞》仅仅是完成生存很难创造出艺术感，但是加上那些随机事件、加上玩家对每一位矮人的照顾关怀便有了创造中的艺术感；《荒野大镖客》仅仅是完成任务很难创造出艺术感、但玩家一次次自由探索决策进入到那个牛仔的世界便有了创造中的艺术感；《我的世界》仅仅是挖矿打龙很难创造出艺术感，但加上百人生存实验便有了创造中的艺术感、《欧洲卡车模拟》仅仅是开车很难创造出艺术感，但加上繁忙都市生活与简单重复欣赏沿路美景的交叉便有了创造中的艺术感。</p>
+
+        </section>
+
+        
+        
+        
+        
+
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+
+        
+        
+
+        
+        
+
+    </article>
+</main>
+
+    <div id="button-container">
+        
+        
+            <div id="toc-floating-container">
+                <input type="checkbox" id="toc-toggle" class="toggle"/>
+                <label for="toc-toggle" class="overlay"></label>
+                <label for="toc-toggle" id="toc-button" class="button" title="切换目录">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M414.82-193.094q-18.044 0-30.497-12.32-12.453-12.319-12.453-30.036t12.453-30.086q12.453-12.37 30.497-12.37h392.767q17.237 0 29.927 12.487 12.69 12.486 12.69 30.203 0 17.716-12.69 29.919t-29.927 12.203H414.82Zm0-244.833q-18.044 0-30.497-12.487Q371.87-462.9 371.87-480.45t12.453-29.92q12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.511 12.69 12.512 12.69 29.845 0 17.716-12.69 30.086-12.69 12.37-29.927 12.37H414.82Zm0-245.167q-18.044 0-30.497-12.32t-12.453-30.037q0-17.716 12.453-30.086 12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.486 12.69 12.487 12.69 30.203 0 17.717-12.69 29.92-12.69 12.203-29.927 12.203H414.82ZM189.379-156.681q-32.652 0-55.878-22.829t-23.226-55.731q0-32.549 23.15-55.647 23.151-23.097 55.95-23.097 32.799 0 55.313 23.484 22.515 23.484 22.515 56.246 0 32.212-22.861 54.893-22.861 22.681-54.963 22.681Zm0-245.167q-32.652 0-55.878-23.134-23.226-23.135-23.226-55.623 0-32.487 23.467-55.517t56.12-23.03q32.102 0 54.721 23.288 22.62 23.288 22.62 55.775 0 32.488-22.861 55.364-22.861 22.877-54.963 22.877Zm-.82-244.833q-32.224 0-55.254-23.288-23.03-23.289-23.03-55.623 0-32.333 23.271-55.364 23.272-23.03 55.495-23.03 32.224 0 55.193 23.288 22.969 23.289 22.969 55.622 0 32.334-23.21 55.364-23.21 23.031-55.434 23.031Z"/></svg>
+                </label>
+                <div class="toc-content">
+                    
+
+<div class="toc-container">
+    
+
+    <ul>
+        
+            
+            
+                <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/blog/movie-game/#dian-ying-de-yi-shu-gan">电影的艺术感</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/blog/movie-game/#you-xi-de-dian-ying-gan">游戏的电影感</a>
+                    
+                        <ul>
+                            
+                                
+                                    <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/blog/movie-game/#you-xiu-de-you-xi-lu-ping">优秀的游戏录屏</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/blog/movie-game/#ju-qing-lei-you-xi">剧情类游戏</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/blog/movie-game/#mo-ni-lei-you-xi">模拟类游戏</a>
+                                        
+                                    </li>
+                                
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/blog/movie-game/#chuang-zao-zhong-de-yi-shu-gan">创造中的艺术感</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/blog/movie-game/#yi-shu-gan-xu-yao-zhu-ti">艺术感需要主题</a>
+                    
+                </li>
+            
+        
+    </ul>
+</div>
+
+
+                </div>
+            </div>
+        
+
+        
+        
+
+        
+        <a href="#" id="top-button" class="no-hover-padding" title="返回页面顶部">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z"/></svg>
+        </a>
+    </div>
+
+
+<span id="copy-success" class="hidden">
+        已复制!
+    </span>
+    <span id="copy-init" class="hidden">
+        复制代码到剪贴板
+    </span>
+    <script defer src="https://deadpoetspoon.github.io/a-poor-imitation/js/copyCodeToClipboard.min.js"></script>
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs">
+        </nav>
+
+        
+        <nav class="nav-navs">
+                <small>
+                    <ul>
+                        
+                        <li><a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;deadpoetspoon.github.io&#x2F;a-poor-imitation&#x2F;about&#x2F;">
+                                关于
+                            </a>
+                        </li>
+                    
+                        <li><a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;deadpoetspoon.github.io&#x2F;a-poor-imitation&#x2F;sitemap.xml">
+                                站点地图
+                            </a>
+                        </li>
+                    
+                    </ul>
+                </small>
+        
+        </nav>
+
+        <div class="credits">
+            <small>
+                
+    
+    
+    
+    
+        
+    
+        
+    
+
+    
+
+    
+    
+    
+
+    
+    
+    <p><p>~/API Docs © 2024 Dead Poet Spoon • Unless otherwise noted, the content in this website is available under the <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> license.</p>
+</p>
+
+                
+                网站基于
+                <a rel=""  href="https://www.getzola.org">Zola</a>
+                和
+                <a rel=""  href="https://github.com/welpo/tabi">tabi</a>
+
+                •
+                    <a rel=""  href="https:&#x2F;&#x2F;github.com&#x2F;DeadPoetSpoon&#x2F;a-poor-imitation">
+                        查看原始码
+                    </a></small>
+        </div>
+    </section>
+
+    <div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+    <h1 id="modalTitle" class="visually-hidden">Search</h1>
+    <div id="modal-content">
+        <div id="searchBar">
+            <div class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+            </div>
+            <input id="searchInput" role="combobox" autocomplete="off" spellcheck="false" aria-expanded="false" aria-controls="results-container" placeholder="Search…"/>
+            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="Clear search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="results-container">
+            <div id="results-info"><span id="zero_results"> No results</span>
+                <span id="one_results"> 1 result</span>
+                <span id="many_results"> $NUMBER results</span><span id="two_results"> $NUMBER results</span>
+                <span id="few_results"> $NUMBER results</span>
+            </div>
+            <div id="results" role="listbox"></div>
+        </div>
+    </div>
+</div>
+</footer>
+
+</body>
+
+</html>
