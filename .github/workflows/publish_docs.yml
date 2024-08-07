@@ -13,7 +13,7 @@ jobs:
       - name: Checkout main
         uses: actions/checkout@v4
       - name: Build and deploy
-        uses: DeadPoetSpoon/zola-deploy-action@v0.12
+        uses: DeadPoetSpoon/zola-deploy-action@v0.13
         env:
           ZOLA_BUILD_FEATURES: indexing-zh
           BUILD_DIR: docs
