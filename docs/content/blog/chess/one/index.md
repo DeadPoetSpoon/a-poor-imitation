@@ -1,11 +1,11 @@
 +++
-title = "国际象棋"
+title = "国际象棋 ONE"
 date = 2024-04-20
-updated = 2024-04-20
+updated = 2024-08-07
 description = "以国际象棋为例学习编写游戏的第一节课吧！"
 
 [taxonomies]
-tags = ["学习"]
+tags = ["学习", "实践"]
 +++
 
 # 缘由
@@ -47,9 +47,6 @@ cargo add bevy
 创建chess文件夹及mod.rs文件
 
 ```rust
-use bevy::app::Plugin;
-use bevy::prelude::*;
-
 pub struct ChessPlugin {}
 
 impl Plugin for ChessPlugin {
@@ -62,9 +59,6 @@ impl Plugin for ChessPlugin {
 
 ```rust
 mod chess;
-
-use bevy::prelude::*;
-use chess::ChessPlugin;
 
 fn main() {
     App::new()
@@ -94,11 +88,11 @@ fn main() {
 
 ## 系统（System）
 
+- 鼠标事件监听系统（move_mouse_events_system）：监听鼠标的点击事件
 - 初始化系统（startup_system）：完成游戏状态的初始化、创建棋盘等
 - 棋子位置初始化系统（create_pieces_system）：按照默认位置生成棋子
-- 棋子渲染系统（show_pieces_system）：渲染棋子
 - 棋盘渲染系统（show_board_system）：渲染棋盘
-- 鼠标事件监听系统（move_mouse_events_system）：监听鼠标的点击事件
+- 棋子渲染系统（show_pieces_system）：渲染棋子
 - 棋子选择系统（select_pieces_system）：选择棋子
 - 棋子移动系统（move_pieces_system）：移动棋子
 
@@ -127,10 +121,6 @@ mod entity;
 两者需棋子组件与棋盘组件进行区分
 
 ```rust
-// 添加引用
-use super::component::*;
-use bevy::prelude::*;
-
 // 棋子实体
 // 添加Bundle、Default默认实现
 #[derive(Bundle, Default)]
@@ -188,13 +178,6 @@ pub view_visibility: ViewVisibility,
 因为部分组件结构体需要同时支持从文件中反序列化，因此添加 `serde` 依赖
 ```bash
 cargo add serde --features serde_derive
-```
-
-#### 添加引用
-```rust
-use bevy::prelude::*;
-use serde::{Deserialize, Serialize};
-use std::fmt::Display;
 ```
 
 #### 描述信息
@@ -344,12 +327,6 @@ mod resource;
 首先需要记录当前执棋颜色、选中的棋子、将移动的位置
 
 ```rust
-use super::{
-    component::{ChessColorKind, Position},
-    GameSetting, PiecesInfos,
-};
-use bevy::prelude::*;
-
 #[derive(Resource, Default, Debug)]
 pub struct GameState {
     // 先记录选择的位置
@@ -405,7 +382,7 @@ pub enum AssetLoaderError {
 
 ```rust
 #[derive(Asset, TypePath, Default, Serialize, Deserialize)]
-pub struct GameSetting {}  
+pub struct GameSetting {}
 ```
 
 实现自定义资产加载器，拓展名设置为 `setting.ron`
@@ -501,15 +478,16 @@ impl AssetLoader for PiecesInfosLoader {
 
 ## 系统
 
-终于来到系统部分了，首先需要思考我们要“如何去下棋！”
+终于来到系统部分了，思考我们要“如何去下棋！”
 
-### 事件
-
-创建 `event.rs` 文件，并在 `mod.rs` 文件中添加声明：
+创建 `event.rs` 与 `system.rs` 文件，并在 `mod.rs` 文件中添加声明：
 
 ```rust
 mod event;
+mod system;
 ```
+
+### 事件
 
 下棋的动作可以拆解为两步，选择需要移动的棋子和选择要移过去的位置，我们可以使用鼠标的左右键去实现
 
@@ -576,3 +554,322 @@ pub fn move_mouse_events_system(
 }
 ```
 
+最终的 `event.rs` : <https://github.com/DeadPoetSpoon/chess/blob/v0.2.0/src/chess/event.rs>
+
+### 初始化系统
+
+该系统完成2d相机的初始化、游戏状态的初始化、棋盘的初始化
+
+```rust
+pub fn startup_system(
+    mut commands: Commands,
+    mut game_state: ResMut<GameState>,
+    assets: Res<AssetServer>,
+) {
+    // 创建相机
+    commands.spawn(Camera2dBundle {
+        // 相机基本位置
+        transform: Transform::from_translation(Vec3 {
+            x: 450.0,
+            y: 450.0,
+            z: 0.0,
+        }),
+        // 相机缩放尺寸
+        projection: OrthographicProjection {
+            scaling_mode: ScalingMode::WindowSize(0.8f32),
+            near: -1000.0,
+            far: 1000.0,
+            ..Default::default()
+        },
+        ..Default::default()
+    });
+    // 游戏状态初始化，与资源加载
+    game_state.game_setting_handle = assets.load("default.setting.ron");
+    game_state.game_setting_has_load = true;
+    game_state.pieces_infos_handle = assets.load("default.pieces.ron");
+    game_state.current_turn = ChessColorKind::White;
+    // 创建棋盘
+    commands.spawn_batch(create_board_bundles());
+}
+```
+
+循环行列创建棋盘
+
+```rust
+pub fn create_board_bundles() -> Vec<BoardEntity> {
+    let mut bundles = Vec::new();
+    // 颜色循环标记
+    let mut flag = true;
+    for row in 0..8 {
+        for col in 0..8 {
+            bundles.push(BoardEntity {
+                board: Board {},
+                color: ChessColor {
+                    kind: match flag {
+                        true => ChessColorKind::Black,
+                        false => ChessColorKind::White,
+                    },
+                },
+                des: Description {
+                    name: format!("{}_{}", row, col),
+                    des: "board".to_string(),
+                    help: "board".to_string(),
+                },
+                position: Position { row, col },
+                theme: Theme {
+                    asset_father_path: "default".to_string(),
+                },
+                sprite: Sprite {
+                    anchor: Anchor::BottomLeft,
+                    ..Default::default()
+                },
+                ..Default::default()
+            });
+            flag = !flag;
+        }
+        flag = !flag;
+    }
+    bundles
+}
+```
+
+### 棋子位置初始化系统
+
+将其单独作为一个系统是期望实现游戏过程中重新归位所有棋子
+
+读取棋子的初始位置与基本信息（PiecesInfos）创建所有棋子
+
+```rust
+pub fn create_pieces_system(
+    mut commands: Commands,
+    mut game_state: ResMut<GameState>,
+    infos: Res<Assets<PiecesInfos>>,
+) {
+    // 不重复加载
+    if game_state.pieces_infos_has_load {
+        return;
+    }
+    // 加载棋子信息
+    let pieces_infos_option = infos.get(&game_state.pieces_infos_handle);
+
+    // 确保成功加载
+    if pieces_infos_option.is_none() {
+        return;
+    }
+
+    let pieces_infos = pieces_infos_option.unwrap();
+
+    let mut bundles = Vec::new();
+    // 循环创建棋子
+    for info in &pieces_infos.pieces_info_vec {
+        bundles.push(PiecesEntity {
+            pieces: Pieces {
+                kind: info.kind.clone(),
+                ..Default::default()
+            },
+            color: ChessColor {
+                kind: info.color.clone(),
+            },
+            des: info.des.clone(),
+            position: Position {
+                row: info.row,
+                col: info.col,
+            },
+            theme: Theme {
+                asset_father_path: info.theme.clone(),
+            },
+            sprite: Sprite {
+                anchor: Anchor::BottomLeft,
+                ..Default::default()
+            },
+            ..Default::default()
+        });
+    }
+    // 创建棋子实体
+    commands.spawn_batch(bundles);
+    game_state.pieces_infos_has_load = true;
+}
+```
+
+### 棋盘渲染系统
+
+设定好贴图与位置就可以显示棋盘与棋子
+
+当前规定贴图大小为 `128px` ，并将贴图的锚点设置为左下角，因此行列位置乘以128便为其在世界坐标的位置
+
+按照 `主题/颜色/名称.png` 的结构加载贴图资源
+
+```rust
+pub fn show_board_system(
+    mut query: Query<(
+        &Board,
+        &ChessColor,
+        &Theme,
+        &Position,
+        &mut Transform,
+        &mut Handle<Image>,
+    )>,
+    asset_server: Res<AssetServer>,
+) {
+    for (_board, color, theme, position, mut transform, mut texture) in &mut query {
+        transform.translation.x = position.col as f32 * 128.0;
+        transform.translation.y = position.row as f32 * 128.0;
+        *texture = asset_server.load(format!(
+            "{}/{}/board.png",
+            theme.asset_father_path, color.kind
+        ));
+    }
+}
+```
+
+### 棋子渲染系统
+
+与棋盘一样，但当棋子颜色设定为 `Gray` 时隐藏棋子
+
+按照 `主题/颜色/棋子类别.png` 的结构加载贴图资源
+
+```rust
+pub fn show_pieces_system(
+    mut query: Query<(
+        &Pieces,
+        &ChessColor,
+        &Theme,
+        &Position,
+        &mut Transform,
+        &mut Handle<Image>,
+        &mut Visibility,
+    )>,
+    asset_server: Res<AssetServer>,
+) {
+    for (pieces, color, theme, position, mut transform, mut texture, mut visibility) in &mut query {
+        if color.kind == ChessColorKind::Gray {
+            *visibility = Visibility::Hidden;
+        } else {
+            transform.translation.x = position.col as f32 * 128.0;
+            transform.translation.y = position.row as f32 * 128.0;
+            *texture = asset_server.load(format!(
+                "{}/{}/{}.png",
+                theme.asset_father_path, color.kind, pieces.kind
+            ));
+        }
+    }
+}
+```
+
+### 棋子选择系统
+
+在捕获鼠标点击事件后，只需设定与点击位置坐标相同的棋子为选中状态，其他棋子为非选中状态
+
+```rust
+pub fn select_pieces_system(
+    mut query: Query<(&mut Pieces, &Position)>,
+    game_state: ResMut<GameState>,
+) {
+    if let Some(selected_position) = game_state.selected_position.clone() {
+        for (mut pieces, position) in &mut query {
+            if selected_position == *position {
+                pieces.selected = true;
+            } else {
+                pieces.selected = false;
+            }
+        }
+    }
+}
+```
+
+### 棋子移动系统
+
+棋子移动需要考虑以下情况
+
+1. 在棋子移动前需确认棋子颜色与当前回合是否一致
+1. 在棋子移动前需确认棋子移动至的位置是否有其他棋子，若有相同颜色棋子则无法移动；若有不同颜色棋子则吃掉那颗棋子
+1. 完成移动后需要切换回合
+
+```rust
+pub fn move_pieces_system(
+    mut query: Query<(&mut Pieces, &mut Position, &mut ChessColor)>,
+    mut game_state: ResMut<GameState>,
+) {
+    // 判断是否需要进行移动操作
+    if let Some(move_position) = game_state.move_position.clone() {
+        // 获取选中棋子的颜色
+        let mut select_color = None;
+        for (pieces, _position, color) in &mut query {
+            if pieces.selected {
+                select_color = Some(color.kind.clone());
+            }
+        }
+        if let Some(select_color) = select_color {
+            for (_pieces, position, mut color) in &mut query {
+                if position.row == move_position.row && position.col == move_position.col {
+                    if color.kind == select_color {
+                        // 移动位置有相同颜色棋子，则无法移动
+                        game_state.move_position = None;
+                        return;
+                    } else {
+                        // 移动位置有不同颜色棋子，则被吃掉
+                        color.kind = ChessColorKind::Gray;
+                    }
+                }
+            }
+        }
+        for (mut pieces, mut position, color) in &mut query {
+            // 移动棋子颜色与当前回合一致时移动
+            if pieces.selected && color.kind == game_state.current_turn {
+                position.row = move_position.row;
+                position.col = move_position.col;
+                pieces.selected = false;
+                // 移动完成后切换游戏回合
+                if game_state.current_turn == ChessColorKind::White {
+                    game_state.current_turn = ChessColorKind::Black;
+                } else {
+                    if game_state.current_turn == ChessColorKind::Black {
+                        game_state.current_turn = ChessColorKind::White;
+                    }
+                }
+            }
+        }
+        game_state.move_position = None;
+    }
+}
+```
+
+### 完成
+
+最终的 `system.rs` : <https://github.com/DeadPoetSpoon/chess/blob/v0.2.0/src/chess/system.rs>
+
+## 贴图
+
+### Aseprite
+使用 [Aseprite](https://aseprite.org/) 创建贴图，感谢 [lichess.org](https://lichess.org/)
+
+### 棋盘
+![黑色棋盘](https://github.com/DeadPoetSpoon/chess/blob/v0.2.0/assets/default/black/board.png?raw=true)
+
+### 棋子
+
+![白骑士](https://github.com/DeadPoetSpoon/chess/blob/v0.2.0/assets/default/white/knight.png?raw=true)
+
+### 渲染情况
+
+![one_assets](one_assets.png)
+
+
+## 运行起来把！
+
+```bash
+cargo r
+```
+
+![Game](one_finish.gif)
+
+# 下一步计划
+
+- [   ] 完成简单的 UI
+- [   ] 限制每个棋子的走法
+- [   ] 添加游戏获胜条件
+- [   ] 添加一些音乐和音效
+- [   ] 参加一些开源项目
+- [   ] 学习 GITHUB 项目开发基本规范
+
+[下一篇： 国际象棋 TWO](../two)
