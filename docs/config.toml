@@ -13,7 +13,7 @@ title = "~/API Docs"
 description = "A Poor Imitation's Docs"
 author = "Dead Poet Spoon"
 default_language = "zh"
-taxonomies = [{name = "tags", feed = true}]
+taxonomies = [{ name = "tags", feed = true }]
 
 [markdown]
 # Whether to do syntax highlighting
@@ -24,7 +24,7 @@ highlight_theme = "css"
 [languages.en]
 title = "~/API Docs"
 #author = "Dead Poet Spoon"
-taxonomies = [{name = "tags", feed = true}]
+taxonomies = [{ name = "tags", feed = true }]
 
 [extra]
 # Put all your custom variables here
@@ -51,7 +51,7 @@ menu = [
     { name = "projects", url = "projects", trailing_slash = true },
 ]
 footer_menu = [
-    {url = "about", name = "about", trailing_slash = true},
-    {url = "sitemap.xml", name = "sitemap", trailing_slash = false},
+    { url = "about", name = "about", trailing_slash = true },
+    { url = "sitemap.xml", name = "sitemap", trailing_slash = false },
 ]
 copyright = "~/API Docs © $CURRENT_YEAR Dead Poet Spoon $SEPARATOR Unless otherwise noted, the content in this website is available under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license."
