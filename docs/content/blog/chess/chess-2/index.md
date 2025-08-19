@@ -1,7 +1,7 @@
 +++
 title = "国际象棋 TWO"
 date = 2024-08-07
-updated = 2025-07-28
+updated = 2025-08-19
 description = "继续优化！"
 
 [taxonomies]

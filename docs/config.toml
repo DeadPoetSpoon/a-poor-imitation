@@ -41,6 +41,7 @@ toc = false
 quick_navigation_buttons = true
 long_date_format = "%Y %B %d"
 short_date_format = "%Y %B %-d"
+archive_date_format = "%Y %B %d"
 separator = "•"
 invert_title_order = false
 favicon = "images/logo.webp"
