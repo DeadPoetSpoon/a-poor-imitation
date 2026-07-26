@@ -40,7 +40,7 @@ fn greet_people(time: Res<Time>, mut timer: ResMut<GreetTimer>, query: Query<&Na
     // if that caused the timer to finish, we say hello to everyone
     if timer.0.tick(time.delta()).just_finished() {
         for name in &query {
-            println!("hello {}!", name.0);
+            println!("Hello {}!", name.0);
         }
     }
 }
