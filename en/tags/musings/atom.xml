@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="https://deadpoetspoon.github.io/a-poor-imitation/feed_style.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <tabi:metadata xmlns:tabi="https://github.com/welpo/tabi">
+        <tabi:base_url>https:&#x2F;&#x2F;deadpoetspoon.github.io&#x2F;a-poor-imitation</tabi:base_url>
+        <tabi:separator>
+            •
+        </tabi:separator>
+        <tabi:about_feeds>This is a web feed, also known as an Atom feed. Subscribe by copying the URL from the address bar into your newsreader. Visit About Feeds to learn more and get started. It&#x27;s free.</tabi:about_feeds>
+        <tabi:visit_the_site>Visit website</tabi:visit_the_site>
+        <tabi:recent_posts>Recent posts</tabi:recent_posts>
+        <tabi:last_updated_on>Updated on $DATE</tabi:last_updated_on>
+        <tabi:default_theme></tabi:default_theme>
+        <tabi:post_listing_date>date</tabi:post_listing_date>
+        <tabi:current_section>musings</tabi:current_section>
+    </tabi:metadata><title>~/API Docs - musings</title>
+    <link href="https://deadpoetspoon.github.io/a-poor-imitation/en/tags/musings/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://deadpoetspoon.github.io/a-poor-imitation/en/tags/musings/" rel="alternate" type="text/html"/>
+    <generator uri="https://www.getzola.org/">Zola</generator><updated>2026-07-26T00:00:00+00:00</updated><id>https://deadpoetspoon.github.io/a-poor-imitation/en/tags/musings/atom.xml</id><entry xml:lang="en">
+        <title>Seek, and Falter Not</title>
+        <published>2026-07-26T00:00:00+00:00</published>
+        <updated>2026-07-26T00:00:00+00:00</updated>
+        <author>
+            <name>Dead Poet Spoon</name>
+        </author>
+        <link rel="alternate" href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/seek-and-falter-not/" type="text/html"/>
+        <id>https://deadpoetspoon.github.io/a-poor-imitation/en/blog/seek-and-falter-not/</id>
+        <summary type="html">To strive, to seek, to find, and not to yield.</summary>
+        </entry><entry xml:lang="en">
+        <title>Movies and Games</title>
+        <published>2024-03-24T00:00:00+00:00</published>
+        <updated>2024-03-24T00:00:00+00:00</updated>
+        <author>
+            <name>Dead Poet Spoon</name>
+        </author>
+        <link rel="alternate" href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/movie-game/" type="text/html"/>
+        <id>https://deadpoetspoon.github.io/a-poor-imitation/en/blog/movie-game/</id>
+        <summary type="html">How to make games more like movies, or how to make games more artistic</summary>
+        </entry><entry xml:lang="en">
+        <title>&quot;Human&quot;</title>
+        <published>2024-02-27T00:00:00+00:00</published>
+        <updated>2024-02-27T00:00:00+00:00</updated>
+        <author>
+            <name>Dead Poet Spoon</name>
+        </author>
+        <link rel="alternate" href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/human/" type="text/html"/>
+        <id>https://deadpoetspoon.github.io/a-poor-imitation/en/blog/human/</id>
+        <summary type="html">The core subject of the API — &#x27;Human&#x27;</summary>
+        </entry><entry xml:lang="en">
+        <title>Starting Point</title>
+        <published>2023-11-06T00:00:00+00:00</published>
+        <updated>2024-08-07T00:00:00+00:00</updated>
+        <author>
+            <name>Dead Poet Spoon</name>
+        </author>
+        <link rel="alternate" href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/starting-point/" type="text/html"/>
+        <id>https://deadpoetspoon.github.io/a-poor-imitation/en/blog/starting-point/</id>
+        <summary type="html">The origin, purpose, and principles of this project</summary>
+        </entry>
+</feed>

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8"><meta http-equiv="Content-Security-Policy"
+content="default-src 'self';font-src 'self' data:;img-src 'self' https://* data:;media-src 'self';style-src 'self';frame-src player.vimeo.com https://www.youtube-nocookie.com;connect-src 'self';script-src 'self' 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https://deadpoetspoon.github.io/a-poor-imitation">
+
+    
+    <title>
+~/API Docs • Chess TWO</title>
+
+    
+    
+        <link rel="icon" type="image/png" href="https://deadpoetspoon.github.io/a-poor-imitation/images/logo.webp"/>
+    
+    
+
+    
+    
+
+    
+    
+    
+        
+            <link rel="stylesheet" href="https://deadpoetspoon.github.io/a-poor-imitation/custom_subset.css?h=0b9535a28bc3d5bf2321">
+        
+    
+
+    
+        <link rel="stylesheet" href="https://deadpoetspoon.github.io/a-poor-imitation/main.css?h=28b3fcbb58f2f22a8c44" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="description" content="Continued optimization!" />
+        <meta property="og:description" content="Continued optimization!" />
+
+    
+
+    <meta property="og:title" content="Chess TWO" />
+    <meta property="og:type" content="article" />
+
+    
+<meta property="og:locale:alternate" content="zh_CN" />
+
+        <link rel="alternate" hreflang="zh" href="https://deadpoetspoon.github.io/a-poor-imitation/blog/chess/chess-2/" /><meta property="og:locale:alternate" content="en_GB" />
+
+        <link rel="alternate" hreflang="en" href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-2/" />
+
+    <meta property="og:url" content="https:&#x2F;&#x2F;deadpoetspoon.github.io&#x2F;a-poor-imitation&#x2F;en&#x2F;blog&#x2F;chess&#x2F;chess-2&#x2F;" /><meta property="og:site_name" content="~&#x2F;API Docs">
+        <noscript><link rel="stylesheet" href="https://deadpoetspoon.github.io/a-poor-imitation/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://deadpoetspoon.github.io/a-poor-imitation/js/initializeTheme.min.js"></script>
+        <script defer src="https://deadpoetspoon.github.io/a-poor-imitation/js/themeSwitcher.min.js"></script>
+    
+</head>
+
+
+<body>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a class="home-title" href="https://deadpoetspoon.github.io/a-poor-imitation/en/">~&#x2F;API Docs</a>
+        </div>
+            <div class="nav-navs">
+                <ul>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/">blog
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://deadpoetspoon.github.io/a-poor-imitation/en/archive/">archive
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://deadpoetspoon.github.io/a-poor-imitation/en/tags/">tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://deadpoetspoon.github.io/a-poor-imitation/en/projects/">projects
+                                </a>
+                            </li>
+                        <li class="menu-icons-container">
+                        <ul class="menu-icons-group">
+                            
+
+                            
+                            
+                            <li class="language-switcher">
+    <details class="dropdown">
+        <summary role="button" aria-haspopup="true" title="Language selection" aria-label="Language selection">
+            <div class="language-switcher-icon"></div>
+        </summary>
+        <div class="dropdown-content" role="menu">English<a role="menuitem" lang="zh" aria-label="简体中文" href="https:&#x2F;&#x2F;deadpoetspoon.github.io&#x2F;a-poor-imitation&#x2F;blog&#x2F;chess&#x2F;chess-2&#x2F;">简体中文</a></div>
+    </details>
+</li>
+
+
+                            <li class="theme-switcher-wrapper js"><div
+        title="Toggle dark&#x2F;light mode"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+    </div><div
+        title="Reset mode to default"
+        class="theme-resetter arrow"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="Reset mode to default">
+    </div>
+
+</li>
+</ul>
+                    </li>
+                </ul>
+            </div>
+        
+    </nav>
+</header>
+
+    <div class="content">
+
+        
+        
+
+
+
+
+
+<main>
+    <article class="h-entry">
+        <h1 class="p-name article-title">
+            Chess TWO
+        </h1>
+        <a class="u-url u-uid" href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-2/"></a>
+
+        <ul class="meta"><span class="hidden p-author h-card">
+<a rel="author" href="https:&#x2F;&#x2F;deadpoetspoon.github.io&#x2F;a-poor-imitation" class="u-url " title="Dead Poet Spoon">Dead Poet Spoon</a>
+</span>
+<li><time class="dt-published" datetime="2024-08-07">2024 August 7</time></li><li title="232 words"><span class='separator' aria-hidden='true'>•</span>2 min read</li><li class="tag"><span class='separator' aria-hidden='true'>•</span>Tags:&nbsp;</li><li class="tag"><a class="p-category" href="https://deadpoetspoon.github.io/a-poor-imitation/en/tags/learning/">learning</a>,&nbsp;</li><li class="tag"><a class="p-category" href="https://deadpoetspoon.github.io/a-poor-imitation/en/tags/practice/">practice</a></li></ul><ul class="meta last-updated"><li><time class="dt-updated" datetime="2025-08-19">Updated on 2025 August 19</time></li><li><span class='separator' aria-hidden='true'>•</span><a class="external" href="https://github.com/DeadPoetSpoon/a-poor-imitation/commits/gh-pages/content/blog&#x2F;chess&#x2F;chess-2&#x2F;index.en.md" 
+
+ rel="">See changes</a></li>
+        </ul>
+            <p class="p-summary" hidden>Continued optimization!</p><section class="e-content body">
+    
+<blockquote>
+<p><strong>🤖 AI Translation Notice</strong>: This post has been translated from Chinese to English by an AI.</p>
+</blockquote>
+<h1 id="a-fresh-start">A Fresh Start!</h1>
+<p>Perhaps now is the perfect opportunity for a fresh start.</p>
+<h1 id="updating-bevy">Updating <code>Bevy</code></h1>
+<p>First, let's update Bevy to v0.16.0!</p>
+<p>There are two main changes:</p>
+<ol>
+<li>Update the resource loading approach.</li>
+<li>Update how <code>Camera2D</code> entities are added.</li>
+</ol>
+<h1 id="bug-fixes">Bug Fixes</h1>
+<p>When it's not your turn, left-clicking to select and right-clicking to move would trigger a capture effect if the target position had a piece.</p>
+<p>This can be fixed by modifying just a small portion of the <code>move_pieces_system</code> in <code>system.rs</code>:</p>
+<pre class="giallo z-code"><code data-lang="rust"><span class="giallo-l"><span class="z-keyword z-storage z-type z-rust">if let</span><span class="z-entity z-name z-type"> Some</span><span class="z-punctuation">(</span><span class="z-source">select_color</span><span class="z-punctuation">)</span><span class="z-keyword z-operator"> =</span><span class="z-source"> select_color</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-keyword">    for</span><span class="z-punctuation"> (</span><span class="z-source">_pieces</span><span class="z-punctuation">,</span><span class="z-source"> position</span><span class="z-punctuation">,</span><span class="z-storage z-modifier"> mut</span><span class="z-source"> color</span><span class="z-punctuation">)</span><span class="z-keyword"> in</span><span class="z-keyword z-operator"> &amp;</span><span class="z-storage z-modifier">mut</span><span class="z-source"> query</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-keyword">        if</span><span class="z-source"> position</span><span class="z-keyword z-operator">.</span><span class="z-source">row </span><span class="z-keyword z-operator">==</span><span class="z-source"> move_position</span><span class="z-keyword z-operator">.</span><span class="z-source">row </span><span class="z-keyword z-operator">&amp;&amp;</span><span class="z-source"> position</span><span class="z-keyword z-operator">.</span><span class="z-source">col </span><span class="z-keyword z-operator">==</span><span class="z-source"> move_position</span><span class="z-keyword z-operator">.</span><span class="z-source">col </span><span class="z-punctuation">{</span></span>
+<span class="giallo-l"><span class="z-keyword">            if</span><span class="z-source"> color</span><span class="z-keyword z-operator">.</span><span class="z-source">kind </span><span class="z-keyword z-operator">==</span><span class="z-source"> select_color</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-source">                game_state</span><span class="z-keyword z-operator">.</span><span class="z-source">move_position </span><span class="z-keyword z-operator">=</span><span class="z-entity z-name z-type"> None</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-keyword">                return</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-punctuation">            }</span><span class="z-keyword"> else</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">                // Check current turn before removing the piece.</span></span>
+<span class="giallo-l"><span class="z-keyword">                if</span><span class="z-source"> color</span><span class="z-keyword z-operator">.</span><span class="z-source">kind </span><span class="z-keyword z-operator">!=</span><span class="z-source"> game_state</span><span class="z-keyword z-operator">.</span><span class="z-source">current_turn </span><span class="z-punctuation">{</span></span>
+<span class="giallo-l"><span class="z-source">                    color</span><span class="z-keyword z-operator">.</span><span class="z-source">kind </span><span class="z-keyword z-operator">=</span><span class="z-entity z-name z-type"> ChessColorKind</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">Gray</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-punctuation">                }</span></span>
+<span class="giallo-l"><span class="z-punctuation">            }</span></span>
+<span class="giallo-l"><span class="z-punctuation">        }</span></span>
+<span class="giallo-l"><span class="z-punctuation">    }</span></span>
+<span class="giallo-l"><span class="z-punctuation">}</span></span></code></pre><h1 id="ui">UI</h1>
+<p>As planned, let's add some UI first. Bevy's UI structure consists of a <code>Node</code> plus UI elements.</p>
+<p>Let's start by adding three UI elements: Turn, Steps, and Controls.</p>
+<h2 id="turn">Turn</h2>
+<p>Just a line of text. The UI entity consists of a <code>Name</code> component for identification, a <code>Node</code> component, and a <code>Text</code> component:</p>
+<pre class="giallo z-code"><code data-lang="rust"><span class="giallo-l"><span class="z-source">commands</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">spawn</span><span class="z-punctuation">((</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-namespace">    Name</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">new</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;ui_turn&quot;</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-namespace">    Text</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">new</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;Current Turn: White&quot;</span><span class="z-punctuation">),</span><span class="z-punctuation z-definition z-comment z-comment"> // default White first</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type">    Node</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">        top</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-namespace"> Val</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">Px</span><span class="z-punctuation">(</span><span class="z-constant z-numeric">100</span><span class="z-punctuation">.</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">        left</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-namespace"> Val</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">Px</span><span class="z-punctuation">(</span><span class="z-constant z-numeric">200</span><span class="z-punctuation">.</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        ..</span><span class="z-entity z-name z-namespace">Default</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">default</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-punctuation">    },</span></span>
+<span class="giallo-l"><span class="z-punctuation">));</span></span></code></pre><h2 id="steps">Steps</h2>
+<p>Similar to Turn, but with a <code>BackgroundColor</code> component for a background color, and some scroll controls (not yet usable).</p>
+<p>Each step will be a child node, so all steps are rendered within the black background and arranged in the specified order.</p>
+<p>Same logic as frontend development:</p>
+<pre class="giallo z-code"><code data-lang="rust"><span class="giallo-l"><span class="z-source">commands</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">spawn</span><span class="z-punctuation">((</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-namespace">    Name</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">new</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;ui_steps&quot;</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type">    Node</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">        flex_direction</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-namespace"> FlexDirection</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">Column</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">        justify_content</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-namespace"> JustifyContent</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">Start</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">        align_items</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-namespace"> AlignItems</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">Start</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">        align_self</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-namespace"> AlignSelf</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">Stretch</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">        overflow</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-namespace"> Overflow</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">scroll</span><span class="z-punctuation">(),</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">        width</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-namespace"> Val</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">Px</span><span class="z-punctuation">(</span><span class="z-constant z-numeric">400</span><span class="z-punctuation">.</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">        height</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-namespace"> Val</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">Px</span><span class="z-punctuation">(</span><span class="z-constant z-numeric">550</span><span class="z-punctuation">.</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">        left</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-namespace"> Val</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">Px</span><span class="z-punctuation">(</span><span class="z-constant z-numeric">200</span><span class="z-punctuation">.</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">        top</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-namespace"> Val</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">Px</span><span class="z-punctuation">(</span><span class="z-constant z-numeric">200</span><span class="z-punctuation">.</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        ..</span><span class="z-entity z-name z-namespace">Default</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">default</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-punctuation">    },</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-function">    BackgroundColor</span><span class="z-punctuation">(</span><span class="z-entity z-name z-namespace">Color</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">srgb</span><span class="z-punctuation">(</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">.</span><span class="z-constant z-numeric">1</span><span class="z-punctuation">,</span><span class="z-constant z-numeric"> 0</span><span class="z-punctuation">.</span><span class="z-constant z-numeric">1</span><span class="z-punctuation">,</span><span class="z-constant z-numeric"> 0</span><span class="z-punctuation">.</span><span class="z-constant z-numeric">1</span><span class="z-punctuation">)),</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-function z-macro z-rust">    children!</span><span class="z-punctuation">[(</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type">        Node</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">            min_height</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-namespace"> Val</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">Px</span><span class="z-punctuation">(</span><span class="z-constant z-numeric">22</span><span class="z-punctuation">.</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">            max_height</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-namespace"> Val</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">Px</span><span class="z-punctuation">(</span><span class="z-constant z-numeric">22</span><span class="z-punctuation">.</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">            ..</span><span class="z-entity z-name z-function">default</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-punctuation">        },</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-function z-macro z-rust">        children!</span><span class="z-punctuation">[(</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-function">            Text</span><span class="z-punctuation">(</span><span class="z-entity z-name z-function z-macro z-rust">format!</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;Not Start&quot;</span><span class="z-punctuation">)),</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type">            Label</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-function">            AccessibilityNode</span><span class="z-punctuation">(</span><span class="z-entity z-name z-namespace">Accessible</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">new</span><span class="z-punctuation">(</span><span class="z-entity z-name z-namespace">Role</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">ListItem</span><span class="z-punctuation">)),</span></span>
+<span class="giallo-l"><span class="z-punctuation">        ),],</span></span>
+<span class="giallo-l"><span class="z-punctuation">    ),],</span></span>
+<span class="giallo-l"><span class="z-punctuation">));</span></span></code></pre><h2 id="controls">Controls</h2>
+<p>Add a close button. The button has borders, rounded corners, and text — again using child node logic to place the text inside the button:</p>
+<pre class="giallo z-code"><code data-lang="rust"><span class="giallo-l"><span class="z-source">commands</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">spawn</span><span class="z-punctuation">((</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-namespace">    Name</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">new</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;close_button&quot;</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type">    Button</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type">    Node</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">        width</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-namespace"> Val</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">Px</span><span class="z-punctuation">(</span><span class="z-constant z-numeric">150</span><span class="z-punctuation">.</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">        height</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-namespace"> Val</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">Px</span><span class="z-punctuation">(</span><span class="z-constant z-numeric">65</span><span class="z-punctuation">.</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">        left</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-namespace"> Val</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">Px</span><span class="z-punctuation">(</span><span class="z-constant z-numeric">200</span><span class="z-punctuation">.</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">        top</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-namespace"> Val</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">Px</span><span class="z-punctuation">(</span><span class="z-constant z-numeric">800</span><span class="z-punctuation">.</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">        border</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-namespace"> UiRect</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">all</span><span class="z-punctuation">(</span><span class="z-entity z-name z-namespace">Val</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">Px</span><span class="z-punctuation">(</span><span class="z-constant z-numeric">5</span><span class="z-punctuation">.</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">)),</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">        // horizontally center child text</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">        justify_content</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-namespace"> JustifyContent</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">Center</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">        // vertically center child text</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">        align_items</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-namespace"> AlignItems</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">Center</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        ..</span><span class="z-entity z-name z-function">default</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-punctuation">    },</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-function">    BorderColor</span><span class="z-punctuation">(</span><span class="z-entity z-name z-namespace">Color</span><span class="z-keyword z-operator">::</span><span class="z-constant z-other z-caps z-rust">WHITE</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-namespace">    BorderRadius</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">all</span><span class="z-punctuation">(</span><span class="z-entity z-name z-namespace">Val</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">Px</span><span class="z-punctuation">(</span><span class="z-constant z-numeric">10</span><span class="z-punctuation">.</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">)),</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-function">    BackgroundColor</span><span class="z-punctuation">(</span><span class="z-entity z-name z-namespace">Color</span><span class="z-keyword z-operator">::</span><span class="z-constant z-other z-caps z-rust">BLACK</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-function z-macro z-rust">    children!</span><span class="z-punctuation">[(</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-namespace">        Text</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">new</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;Close&quot;</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-function">        TextColor</span><span class="z-punctuation">(</span><span class="z-entity z-name z-namespace">Color</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">srgb</span><span class="z-punctuation">(</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">.</span><span class="z-constant z-numeric">9</span><span class="z-punctuation">,</span><span class="z-constant z-numeric"> 0</span><span class="z-punctuation">.</span><span class="z-constant z-numeric">9</span><span class="z-punctuation">,</span><span class="z-constant z-numeric"> 0</span><span class="z-punctuation">.</span><span class="z-constant z-numeric">9</span><span class="z-punctuation">)),</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-namespace">        TextShadow</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">default</span><span class="z-punctuation">(),</span></span>
+<span class="giallo-l"><span class="z-punctuation">    )],</span></span>
+<span class="giallo-l"><span class="z-punctuation">));</span></span></code></pre><h2 id="result">Result</h2>
+<p>And there we have it — a simple UI!</p>
+<p><img src="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-2/./ui_startup.png" alt="ui_startup" /></p>
+
+    <section class="series-page-outro">
+                <p>Previous: <a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/" aria_label="Chess ONE">Chess ONE</a></p>
+
+            </section>
+
+        </section>
+        
+        
+
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+        </article>
+</main>
+
+    <div id="button-container">
+        
+        
+            <div id="toc-floating-container">
+                <input type="checkbox" id="toc-toggle" class="toggle"/>
+                <label for="toc-toggle" class="overlay"></label>
+                <label for="toc-toggle" id="toc-button" class="button" title="Toggle Table of Contents">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M414.82-193.094q-18.044 0-30.497-12.32-12.453-12.319-12.453-30.036t12.453-30.086q12.453-12.37 30.497-12.37h392.767q17.237 0 29.927 12.487 12.69 12.486 12.69 30.203 0 17.716-12.69 29.919t-29.927 12.203H414.82Zm0-244.833q-18.044 0-30.497-12.487Q371.87-462.9 371.87-480.45t12.453-29.92q12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.511 12.69 12.512 12.69 29.845 0 17.716-12.69 30.086-12.69 12.37-29.927 12.37H414.82Zm0-245.167q-18.044 0-30.497-12.32t-12.453-30.037q0-17.716 12.453-30.086 12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.486 12.69 12.487 12.69 30.203 0 17.717-12.69 29.92-12.69 12.203-29.927 12.203H414.82ZM189.379-156.681q-32.652 0-55.878-22.829t-23.226-55.731q0-32.549 23.15-55.647 23.151-23.097 55.95-23.097 32.799 0 55.313 23.484 22.515 23.484 22.515 56.246 0 32.212-22.861 54.893-22.861 22.681-54.963 22.681Zm0-245.167q-32.652 0-55.878-23.134-23.226-23.135-23.226-55.623 0-32.487 23.467-55.517t56.12-23.03q32.102 0 54.721 23.288 22.62 23.288 22.62 55.775 0 32.488-22.861 55.364-22.861 22.877-54.963 22.877Zm-.82-244.833q-32.224 0-55.254-23.288-23.03-23.289-23.03-55.623 0-32.333 23.271-55.364 23.272-23.03 55.495-23.03 32.224 0 55.193 23.288 22.969 23.289 22.969 55.622 0 32.334-23.21 55.364-23.21 23.031-55.434 23.031Z"/></svg>
+                </label>
+                <div class="toc-content">
+                    
+
+<div class="toc-container">
+    
+
+    <ul>
+        
+            
+            
+                <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-2/#a-fresh-start">A Fresh Start!</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-2/#updating-bevy">Updating Bevy</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-2/#bug-fixes">Bug Fixes</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-2/#ui">UI</a>
+                    
+                        <ul>
+                            
+                                
+                                    <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-2/#turn">Turn</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-2/#steps">Steps</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-2/#controls">Controls</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-2/#result">Result</a>
+                                        
+                                    </li>
+                                
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    </ul>
+</div>
+
+
+                </div>
+            </div>
+        
+
+        
+        
+
+        
+        <a href="#" id="top-button" class="no-hover-padding" title="Go to the top of the page">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z"/></svg>
+        </a>
+    </div>
+
+
+<span id="copy-success" class="hidden">
+        Copied!
+    </span>
+    <span id="copy-init" class="hidden">
+        Copy code to clipboard
+    </span>
+    <script defer src="https://deadpoetspoon.github.io/a-poor-imitation/js/copyCodeToClipboard.min.js"></script>
+
+
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs">
+        </nav>
+
+        
+        <nav class="nav-navs">
+                <small>
+                    <ul>
+                        
+                        <li><a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;deadpoetspoon.github.io&#x2F;a-poor-imitation&#x2F;en&#x2F;about&#x2F;">
+                                about
+                            </a>
+                        </li>
+                    
+                        <li><a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;deadpoetspoon.github.io&#x2F;a-poor-imitation&#x2F;sitemap.xml">
+                                sitemap
+                            </a>
+                        </li>
+                    
+                    </ul>
+                </small>
+        
+        </nav>
+
+        <div class="credits">
+            <small>
+                
+    
+    
+    
+    
+        
+    
+        
+    
+
+    
+
+    
+    
+    
+
+    
+    
+    <p><p>~/API Docs © 2026 Dead Poet Spoon • Unless otherwise noted, the content in this website is available under the <a rel="external" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> license.</p>
+</p>
+
+                
+                Powered by
+                <a rel="" 
+
+ href="https://www.getzola.org">Zola</a>
+                &amp;
+                <a rel="" 
+
+ href="https://github.com/welpo/tabi">tabi</a>
+
+                •
+                    <a rel="" 
+
+ href="https:&#x2F;&#x2F;github.com&#x2F;DeadPoetSpoon&#x2F;a-poor-imitation">
+                        Site source
+                    </a></small>
+        </div>
+    </section>
+
+    </footer>
+
+
+    
+    
+</body>
+
+</html>

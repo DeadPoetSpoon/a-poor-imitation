@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8"><meta http-equiv="Content-Security-Policy"
+content="default-src 'self';font-src 'self' data:;img-src 'self' https://* data:;media-src 'self';style-src 'self';frame-src player.vimeo.com https://www.youtube-nocookie.com;connect-src 'self';script-src 'self' 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https://deadpoetspoon.github.io/a-poor-imitation">
+
+    
+    <title>
+~/API Docs • Chess ONE</title>
+
+    
+    
+        <link rel="icon" type="image/png" href="https://deadpoetspoon.github.io/a-poor-imitation/images/logo.webp"/>
+    
+    
+
+    
+    
+
+    
+    
+    
+        
+            <link rel="stylesheet" href="https://deadpoetspoon.github.io/a-poor-imitation/custom_subset.css?h=0b9535a28bc3d5bf2321">
+        
+    
+
+    
+        <link rel="stylesheet" href="https://deadpoetspoon.github.io/a-poor-imitation/main.css?h=28b3fcbb58f2f22a8c44" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="description" content="Let&#x27;s learn game development with Chess as our first lesson!" />
+        <meta property="og:description" content="Let&#x27;s learn game development with Chess as our first lesson!" />
+
+    
+
+    <meta property="og:title" content="Chess ONE" />
+    <meta property="og:type" content="article" />
+
+    
+<meta property="og:locale:alternate" content="zh_CN" />
+
+        <link rel="alternate" hreflang="zh" href="https://deadpoetspoon.github.io/a-poor-imitation/blog/chess/chess-1/" /><meta property="og:locale:alternate" content="en_GB" />
+
+        <link rel="alternate" hreflang="en" href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/" />
+
+    <meta property="og:url" content="https:&#x2F;&#x2F;deadpoetspoon.github.io&#x2F;a-poor-imitation&#x2F;en&#x2F;blog&#x2F;chess&#x2F;chess-1&#x2F;" /><meta property="og:site_name" content="~&#x2F;API Docs">
+        <noscript><link rel="stylesheet" href="https://deadpoetspoon.github.io/a-poor-imitation/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://deadpoetspoon.github.io/a-poor-imitation/js/initializeTheme.min.js"></script>
+        <script defer src="https://deadpoetspoon.github.io/a-poor-imitation/js/themeSwitcher.min.js"></script>
+    
+</head>
+
+
+<body>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a class="home-title" href="https://deadpoetspoon.github.io/a-poor-imitation/en/">~&#x2F;API Docs</a>
+        </div>
+            <div class="nav-navs">
+                <ul>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/">blog
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://deadpoetspoon.github.io/a-poor-imitation/en/archive/">archive
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://deadpoetspoon.github.io/a-poor-imitation/en/tags/">tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://deadpoetspoon.github.io/a-poor-imitation/en/projects/">projects
+                                </a>
+                            </li>
+                        <li class="menu-icons-container">
+                        <ul class="menu-icons-group">
+                            
+
+                            
+                            
+                            <li class="language-switcher">
+    <details class="dropdown">
+        <summary role="button" aria-haspopup="true" title="Language selection" aria-label="Language selection">
+            <div class="language-switcher-icon"></div>
+        </summary>
+        <div class="dropdown-content" role="menu">English<a role="menuitem" lang="zh" aria-label="简体中文" href="https:&#x2F;&#x2F;deadpoetspoon.github.io&#x2F;a-poor-imitation&#x2F;blog&#x2F;chess&#x2F;chess-1&#x2F;">简体中文</a></div>
+    </details>
+</li>
+
+
+                            <li class="theme-switcher-wrapper js"><div
+        title="Toggle dark&#x2F;light mode"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+    </div><div
+        title="Reset mode to default"
+        class="theme-resetter arrow"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="Reset mode to default">
+    </div>
+
+</li>
+</ul>
+                    </li>
+                </ul>
+            </div>
+        
+    </nav>
+</header>
+
+    <div class="content">
+
+        
+        
+
+
+
+
+
+<main>
+    <article class="h-entry">
+        <h1 class="p-name article-title">
+            Chess ONE
+        </h1>
+        <a class="u-url u-uid" href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/"></a>
+
+        <ul class="meta"><span class="hidden p-author h-card">
+<a rel="author" href="https:&#x2F;&#x2F;deadpoetspoon.github.io&#x2F;a-poor-imitation" class="u-url " title="Dead Poet Spoon">Dead Poet Spoon</a>
+</span>
+<li><time class="dt-published" datetime="2024-04-20">2024 April 20</time></li><li title="1272 words"><span class='separator' aria-hidden='true'>•</span>7 min read</li><li class="tag"><span class='separator' aria-hidden='true'>•</span>Tags:&nbsp;</li><li class="tag"><a class="p-category" href="https://deadpoetspoon.github.io/a-poor-imitation/en/tags/learning/">learning</a>,&nbsp;</li><li class="tag"><a class="p-category" href="https://deadpoetspoon.github.io/a-poor-imitation/en/tags/practice/">practice</a></li></ul><ul class="meta last-updated"><li><time class="dt-updated" datetime="2024-08-07">Updated on 2024 August 7</time></li><li><span class='separator' aria-hidden='true'>•</span><a class="external" href="https://github.com/DeadPoetSpoon/a-poor-imitation/commits/gh-pages/content/blog&#x2F;chess&#x2F;chess-1&#x2F;index.en.md" 
+
+ rel="">See changes</a></li>
+        </ul>
+            <p class="p-summary" hidden>Let&#x27;s learn game development with Chess as our first lesson!</p><section class="e-content body">
+    
+<blockquote>
+<p><strong>🤖 AI Translation Notice</strong>: This post has been translated from Chinese to English by an AI.</p>
+</blockquote>
+<h1 id="why-chess">Why Chess?</h1>
+<p>Everything is hard at the beginning. As a complete beginner, I was at a loss facing Bevy and ECS. I needed a practice project to get my feet wet. Compared to jumping straight into a big project, starting small is much more realistic — perhaps this is exactly why my efficiency has been so low (as of April 2024). Chess is a good choice. Let's start by creating a GitHub repository: <a rel="external" href="https://github.com/DeadPoetSpoon/chess.git">chess</a>.</p>
+<h1 id="this-article-is-based-on">This Article Is Based On</h1>
+<p><a rel="external" href="https://github.com/DeadPoetSpoon/chess/tree/v0.2.0">chess v0.2.0</a></p>
+<h1 id="creating-the-project">Creating the Project</h1>
+<p>Following the <a rel="external" href="https://bevyengine.org/learn/quick-start/getting-started/setup/">official tutorial</a></p>
+<p>Create a Rust project:</p>
+<pre class="giallo z-code"><code data-lang="shellscript"><span class="giallo-l"><span class="z-entity z-name z-function">cargo</span><span class="z-string"> new chess</span></span>
+<span class="giallo-l"><span class="z-support z-function z-builtin">cd</span><span class="z-string"> chess</span></span></code></pre>
+<p>Add the Bevy dependency:</p>
+<pre class="giallo z-code"><code data-lang="shellscript"><span class="giallo-l"><span class="z-entity z-name z-function">cargo</span><span class="z-string"> add bevy</span></span></code></pre>
+<p>Complete the necessary configurations from the tutorial:</p>
+<ul>
+<li><a rel="external" href="https://bevyengine.org/learn/quick-start/getting-started/setup/#compile-with-performance-optimizations">Compile with Performance Optimizations</a></li>
+<li><a rel="external" href="https://bevyengine.org/learn/quick-start/getting-started/setup/#enable-fast-compiles-optional">Enable Fast Compiles (Optional)</a></li>
+<li><a rel="external" href="https://bevyengine.org/learn/quick-start/getting-started/setup/#improve-runtime-performance-optional">Improve Runtime Performance (Optional)</a></li>
+</ul>
+<p>Now let's get to the real work!</p>
+<h1 id="turning-the-game-into-a-plugin">Turning the Game into a Plugin</h1>
+<blockquote>
+<p>One of Bevy's core principles is modularity. All Bevy engine features are implemented as plugins—collections of code that modify an App. This includes internal features like the renderer, but games themselves are also implemented as plugins! This empowers developers to pick and choose which features they want. Don't need a UI? Don't register the UiPlugin. Want to build a headless server? Don't register the RenderPlugin. -- <a rel="external" href="https://bevyengine.org/learn/quick-start/getting-started/plugins/">Bevy</a></p>
+</blockquote>
+<p>Following the official recommendation, Bevy treats everything as a plugin. Let's organize our game as a plugin too!</p>
+<p>Create the <code>chess</code> folder and <code>mod.rs</code> file:</p>
+<pre class="giallo z-code"><code data-lang="rust"><span class="giallo-l"><span class="z-keyword z-storage z-type z-rust">pub struct</span><span class="z-entity z-name z-type"> ChessPlugin</span><span class="z-punctuation"> {}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword">impl</span><span class="z-entity z-name z-type"> Plugin</span><span class="z-keyword"> for</span><span class="z-entity z-name z-type"> ChessPlugin</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-keyword">    fn</span><span class="z-entity z-name z-function"> build</span><span class="z-punctuation">(</span><span class="z-keyword z-operator">&amp;</span><span class="z-variable z-language z-self z-rust">self</span><span class="z-punctuation">,</span><span class="z-variable z-other z-rust"> app</span><span class="z-keyword z-operator">: &amp;</span><span class="z-storage z-modifier">mut</span><span class="z-entity z-name z-namespace"> bevy</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-namespace">prelude</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">App</span><span class="z-punctuation">) {</span></span>
+<span class="giallo-l"><span class="z-punctuation">    }</span></span>
+<span class="giallo-l"><span class="z-punctuation">}</span></span></code></pre>
+<p>Modify <code>main.rs</code> to import our chess module and add it to the App's plugins:</p>
+<pre class="giallo z-code"><code data-lang="rust"><span class="giallo-l"><span class="z-storage z-type z-rust">mod</span><span class="z-entity z-name z-module z-rust"> chess</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword">fn</span><span class="z-entity z-name z-function"> main</span><span class="z-punctuation">() {</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type">    App</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">new</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        .</span><span class="z-entity z-name z-function">add_plugins</span><span class="z-punctuation">(</span><span class="z-entity z-name z-type">DefaultPlugins</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">set</span><span class="z-punctuation">(</span><span class="z-entity z-name z-namespace">bevy</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-namespace">log</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-namespace">LogPlugin</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">default</span><span class="z-punctuation">()))</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        .</span><span class="z-entity z-name z-function">add_plugins</span><span class="z-punctuation">(</span><span class="z-entity z-name z-type">ChessPlugin</span><span class="z-punctuation"> {})</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        .</span><span class="z-entity z-name z-function">run</span><span class="z-punctuation">();</span></span>
+<span class="giallo-l"><span class="z-punctuation">}</span></span></code></pre><h1 id="thinking-about-the-most-basic-ecs-for-chess">Thinking About the Most Basic ECS for Chess</h1>
+<blockquote>
+<p>All app logic in Bevy uses the Entity Component System paradigm, which is often shortened to ECS. ECS is a software pattern that involves breaking your program up into Entities, Components, and Systems. Entities are unique "things" that are assigned groups of Components, which are then processed using Systems. -- <a rel="external" href="https://bevyengine.org/learn/quick-start/getting-started/ecs/">Bevy</a></p>
+</blockquote>
+<h2 id="entities">Entities</h2>
+<ul>
+<li>Pieces (PiecesEntity): What we play with</li>
+<li>Board (BoardEntity): Where we play</li>
+</ul>
+<h2 id="components">Components</h2>
+<ul>
+<li>Pieces: The component for piece entities</li>
+<li>Board: The component for board entities</li>
+<li>ChessColor: A chess world with only black and white</li>
+<li>Position: The position of pieces and the board</li>
+<li>Theme: Dressing up the pieces and board</li>
+<li>Description: Leave some notes and help text</li>
+</ul>
+<h2 id="systems">Systems</h2>
+<ul>
+<li>Mouse event listener system (move_mouse_events_system): Listens for mouse click events</li>
+<li>Startup system (startup_system): Initializes the game state, creates the board, etc.</li>
+<li>Piece position initialization system (create_pieces_system): Generates pieces at default positions</li>
+<li>Board rendering system (show_board_system): Renders the board</li>
+<li>Piece rendering system (show_pieces_system): Renders the pieces</li>
+<li>Piece selection system (select_pieces_system): Selects pieces</li>
+<li>Piece movement system (move_pieces_system): Moves pieces</li>
+</ul>
+<h2 id="resources">Resources</h2>
+<ul>
+<li>Current game state (GameState)</li>
+</ul>
+<h2 id="assets">Assets</h2>
+<ul>
+<li>Piece initial positions and basic information (PiecesInfos)</li>
+<li>Game settings (GameSetting)</li>
+</ul>
+<h1 id="let-s-implement-them">Let's Implement Them</h1>
+<h2 id="creating-entities-and-components">Creating Entities and Components</h2>
+<p>Create <code>component.rs</code> and <code>entity.rs</code> files, and add declarations in <code>mod.rs</code>:</p>
+<pre class="giallo z-code"><code data-lang="rust"><span class="giallo-l"><span class="z-storage z-type z-rust">mod</span><span class="z-entity z-name z-module z-rust"> component</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-rust">mod</span><span class="z-entity z-name z-module z-rust"> entity</span><span class="z-punctuation">;</span></span></code></pre><h3 id="pieces-and-board">Pieces and Board</h3>
+<p>Both need to be distinguished by their respective components:</p>
+<pre class="giallo z-code"><code data-lang="rust"><span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">// Piece entity</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">// Add Bundle and Default derive macros</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-attribute z-rust">#</span><span class="z-punctuation">[</span><span class="z-meta z-attribute z-rust">derive</span><span class="z-punctuation">(</span><span class="z-entity z-name z-type">Bundle</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> Default</span><span class="z-punctuation">)]</span></span>
+<span class="giallo-l"><span class="z-keyword z-storage z-type z-rust">pub struct</span><span class="z-entity z-name z-type"> PiecesEntity</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-keyword">    pub</span><span class="z-source"> pieces</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> Pieces</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation">}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">// Board entity</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">// Add Bundle and Default derive macros</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-attribute z-rust">#</span><span class="z-punctuation">[</span><span class="z-meta z-attribute z-rust">derive</span><span class="z-punctuation">(</span><span class="z-entity z-name z-type">Bundle</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> Default</span><span class="z-punctuation">)]</span></span>
+<span class="giallo-l"><span class="z-keyword z-storage z-type z-rust">pub struct</span><span class="z-entity z-name z-type"> BoardEntity</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-keyword">    pub</span><span class="z-source"> board</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> Board</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation">}</span></span></code></pre>
+<p>Both need common components necessary for gameplay, which we need to implement ourselves:</p>
+<pre class="giallo z-code"><code data-lang="rust"><span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">// Represents the color of a piece or board</span></span>
+<span class="giallo-l"><span class="z-keyword">pub</span><span class="z-source"> color</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> ChessColor</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">// Represents description info of a piece or board</span></span>
+<span class="giallo-l"><span class="z-keyword">pub</span><span class="z-source"> des</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> Description</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">// Represents the position of a piece or board</span></span>
+<span class="giallo-l"><span class="z-keyword">pub</span><span class="z-source"> position</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> Position</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">// Represents the skin of a piece or board</span></span>
+<span class="giallo-l"><span class="z-keyword">pub</span><span class="z-source"> theme</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> Theme</span><span class="z-punctuation">,</span></span></code></pre>
+<p>They also need basic rendering components, which are existing Bevy components — essentially <a rel="external" href="https://docs.rs/bevy/latest/bevy/sprite/struct.SpriteBundle.html">SpriteBundle</a>:</p>
+<pre class="giallo z-code"><code data-lang="rust"><span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">// Set sprite rendering properties</span></span>
+<span class="giallo-l"><span class="z-keyword">pub</span><span class="z-source"> sprite</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> Sprite</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">// Transform relative to parent</span></span>
+<span class="giallo-l"><span class="z-keyword">pub</span><span class="z-source"> transform</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> Transform</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">// Absolute transform</span></span>
+<span class="giallo-l"><span class="z-keyword">pub</span><span class="z-source"> global_transform</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> GlobalTransform</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">// A reference-counted &quot;pointer&quot; to the image asset to render</span></span>
+<span class="giallo-l"><span class="z-keyword">pub</span><span class="z-source"> texture</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> Handle</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-entity z-name z-type">Image</span><span class="z-punctuation z-brackets z-angle z-rust">&gt;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">// Controls whether to render</span></span>
+<span class="giallo-l"><span class="z-keyword">pub</span><span class="z-source"> visibility</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> Visibility</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">// Inherited visibility</span></span>
+<span class="giallo-l"><span class="z-keyword">pub</span><span class="z-source"> inherited_visibility</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> InheritedVisibility</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">// View visibility</span></span>
+<span class="giallo-l"><span class="z-keyword">pub</span><span class="z-source"> view_visibility</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> ViewVisibility</span><span class="z-punctuation">,</span></span></code></pre>
+<p>Final <code>entity.rs</code>: <a rel="external" href="https://github.com/DeadPoetSpoon/chess/blob/v0.2.0/src/chess/entity.rs">https://github.com/DeadPoetSpoon/chess/blob/v0.2.0/src/chess/entity.rs</a></p>
+<h3 id="components-1">Components</h3>
+<h4 id="adding-serde">Adding <code>serde</code></h4>
+<p>Since some component structs need to support deserialization from files, add the <code>serde</code> dependency:</p>
+<pre class="giallo z-code"><code data-lang="shellscript"><span class="giallo-l"><span class="z-entity z-name z-function">cargo</span><span class="z-string"> add serde --features serde_derive</span></span></code></pre><h4 id="description">Description</h4>
+<pre class="giallo z-code"><code data-lang="rust"><span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">// Add default implementation</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-attribute z-rust">#</span><span class="z-punctuation">[</span><span class="z-meta z-attribute z-rust">derive</span><span class="z-punctuation">(</span><span class="z-entity z-name z-type">Component</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> Default</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> Clone</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> Serialize</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> Deserialize</span><span class="z-punctuation">)]</span></span>
+<span class="giallo-l"><span class="z-keyword z-storage z-type z-rust">pub struct</span><span class="z-entity z-name z-type"> Description</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    // Name</span></span>
+<span class="giallo-l"><span class="z-keyword">    pub</span><span class="z-source"> name</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> String</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    // Description</span></span>
+<span class="giallo-l"><span class="z-keyword">    pub</span><span class="z-source"> des</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> String</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    // Help</span></span>
+<span class="giallo-l"><span class="z-keyword">    pub</span><span class="z-source"> help</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> String</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation">}</span></span></code></pre><h4 id="color">Color</h4>
+<p>We need a <code>struct</code> as a component and an <code>enum</code> to represent colors:</p>
+<pre class="giallo z-code"><code data-lang="rust"><span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">// Add default implementation</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-attribute z-rust">#</span><span class="z-punctuation">[</span><span class="z-meta z-attribute z-rust">derive</span><span class="z-punctuation">(</span><span class="z-entity z-name z-type">Default</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> Debug</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> Clone</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> Serialize</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> Deserialize</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> PartialEq</span><span class="z-punctuation">)]</span></span>
+<span class="giallo-l"><span class="z-keyword z-storage z-type z-rust">pub enum</span><span class="z-entity z-name z-type"> ChessColorKind</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    // White</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-attribute z-rust">    #</span><span class="z-punctuation">[</span><span class="z-meta z-attribute z-rust">default</span><span class="z-punctuation">]</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type">    White</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    // Black</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type">    Black</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    // Gray: pieces that have been &quot;captured&quot;</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type">    Gray</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation">}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">// Implement `Display`</span></span>
+<span class="giallo-l"><span class="z-keyword">impl</span><span class="z-entity z-name z-type"> Display</span><span class="z-keyword"> for</span><span class="z-entity z-name z-type"> ChessColorKind</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-keyword">    fn</span><span class="z-entity z-name z-function"> fmt</span><span class="z-punctuation">(</span><span class="z-keyword z-operator">&amp;</span><span class="z-variable z-language z-self z-rust">self</span><span class="z-punctuation">,</span><span class="z-variable z-other z-rust"> f</span><span class="z-keyword z-operator">: &amp;</span><span class="z-storage z-modifier">mut</span><span class="z-entity z-name z-namespace"> std</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-namespace">fmt</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">Formatter</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-punctuation">&#39;</span><span class="z-entity z-name z-type z-lifetime">_</span><span class="z-punctuation z-brackets z-angle z-rust">&gt;</span><span class="z-punctuation">)</span><span class="z-keyword z-operator"> -&gt;</span><span class="z-entity z-name z-namespace"> std</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-namespace">fmt</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">Result</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-keyword">        match</span><span class="z-variable z-language z-self z-rust"> self</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type">            ChessColorKind</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">White</span><span class="z-keyword z-operator"> =&gt;</span><span class="z-source"> f</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">write_str</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;white&quot;</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type">            ChessColorKind</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">Black</span><span class="z-keyword z-operator"> =&gt;</span><span class="z-source"> f</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">write_str</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;black&quot;</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type">            ChessColorKind</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">Gray</span><span class="z-keyword z-operator"> =&gt;</span><span class="z-source"> f</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">write_str</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;gray&quot;</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-punctuation">        }</span></span>
+<span class="giallo-l"><span class="z-punctuation">    }</span></span>
+<span class="giallo-l"><span class="z-punctuation">}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">// Add default implementation</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-attribute z-rust">#</span><span class="z-punctuation">[</span><span class="z-meta z-attribute z-rust">derive</span><span class="z-punctuation">(</span><span class="z-entity z-name z-type">Component</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> Default</span><span class="z-punctuation">)]</span></span>
+<span class="giallo-l"><span class="z-keyword z-storage z-type z-rust">pub struct</span><span class="z-entity z-name z-type"> ChessColor</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    // Color</span></span>
+<span class="giallo-l"><span class="z-keyword">    pub</span><span class="z-source"> kind</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> ChessColorKind</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation">}</span></span></code></pre><h4 id="position">Position</h4>
+<p>The positions of pieces and the board can only be within an 8×8 grid, so we use <code>u8</code> to store them:</p>
+<pre class="giallo z-code"><code data-lang="rust"><span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">// Add default implementation</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-attribute z-rust">#</span><span class="z-punctuation">[</span><span class="z-meta z-attribute z-rust">derive</span><span class="z-punctuation">(</span><span class="z-entity z-name z-type">Component</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> Default</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> Debug</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> PartialEq</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> Clone</span><span class="z-punctuation">)]</span></span>
+<span class="giallo-l"><span class="z-keyword z-storage z-type z-rust">pub struct</span><span class="z-entity z-name z-type"> Position</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    // Row [0,7]</span></span>
+<span class="giallo-l"><span class="z-keyword">    pub</span><span class="z-source"> row</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type z-numeric z-rust"> u8</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    // Column [0,7]</span></span>
+<span class="giallo-l"><span class="z-keyword">    pub</span><span class="z-source"> col</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type z-numeric z-rust"> u8</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation">}</span></span></code></pre><h4 id="theme">Theme</h4>
+<p>Essentially using images from different folders:</p>
+<pre class="giallo z-code"><code data-lang="rust"><span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">// Add default implementation</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-attribute z-rust">#</span><span class="z-punctuation">[</span><span class="z-meta z-attribute z-rust">derive</span><span class="z-punctuation">(</span><span class="z-entity z-name z-type">Component</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> Default</span><span class="z-punctuation">)]</span></span>
+<span class="giallo-l"><span class="z-keyword z-storage z-type z-rust">pub struct</span><span class="z-entity z-name z-type"> Theme</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    // Image path</span></span>
+<span class="giallo-l"><span class="z-keyword">    pub</span><span class="z-source"> asset_father_path</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> String</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation">}</span></span></code></pre><h4 id="pieces">Pieces</h4>
+<p>Contains the piece type enum and its selected state:</p>
+<pre class="giallo z-code"><code data-lang="rust"><span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">// Add default implementation</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-attribute z-rust">#</span><span class="z-punctuation">[</span><span class="z-meta z-attribute z-rust">derive</span><span class="z-punctuation">(</span><span class="z-entity z-name z-type">Default</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> Debug</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> Clone</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> Serialize</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> Deserialize</span><span class="z-punctuation">)]</span></span>
+<span class="giallo-l"><span class="z-keyword z-storage z-type z-rust">pub enum</span><span class="z-entity z-name z-type"> PiecesKind</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-attribute z-rust">    #</span><span class="z-punctuation">[</span><span class="z-meta z-attribute z-rust">default</span><span class="z-punctuation">]</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type">    King</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type">    Queen</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type">    Rook</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type">    Knight</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type">    Bishop</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type">    Pawn</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation">}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">// Implement Display</span></span>
+<span class="giallo-l"><span class="z-keyword">impl</span><span class="z-entity z-name z-type"> Display</span><span class="z-keyword"> for</span><span class="z-entity z-name z-type"> PiecesKind</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-keyword">    fn</span><span class="z-entity z-name z-function"> fmt</span><span class="z-punctuation">(</span><span class="z-keyword z-operator">&amp;</span><span class="z-variable z-language z-self z-rust">self</span><span class="z-punctuation">,</span><span class="z-variable z-other z-rust"> f</span><span class="z-keyword z-operator">: &amp;</span><span class="z-storage z-modifier">mut</span><span class="z-entity z-name z-namespace"> std</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-namespace">fmt</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">Formatter</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-punctuation">&#39;</span><span class="z-entity z-name z-type z-lifetime">_</span><span class="z-punctuation z-brackets z-angle z-rust">&gt;</span><span class="z-punctuation">)</span><span class="z-keyword z-operator"> -&gt;</span><span class="z-entity z-name z-namespace"> std</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-namespace">fmt</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">Result</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-keyword">        match</span><span class="z-variable z-language z-self z-rust"> self</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type">            PiecesKind</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">King</span><span class="z-keyword z-operator"> =&gt;</span><span class="z-source"> f</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">write_str</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;king&quot;</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type">            PiecesKind</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">Queen</span><span class="z-keyword z-operator"> =&gt;</span><span class="z-source"> f</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">write_str</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;queen&quot;</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type">            PiecesKind</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">Rook</span><span class="z-keyword z-operator"> =&gt;</span><span class="z-source"> f</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">write_str</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;rook&quot;</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type">            PiecesKind</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">Knight</span><span class="z-keyword z-operator"> =&gt;</span><span class="z-source"> f</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">write_str</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;knight&quot;</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type">            PiecesKind</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">Bishop</span><span class="z-keyword z-operator"> =&gt;</span><span class="z-source"> f</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">write_str</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;bishop&quot;</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type">            PiecesKind</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">Pawn</span><span class="z-keyword z-operator"> =&gt;</span><span class="z-source"> f</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">write_str</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;pawn&quot;</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-punctuation">        }</span></span>
+<span class="giallo-l"><span class="z-punctuation">    }</span></span>
+<span class="giallo-l"><span class="z-punctuation">}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">// Add default implementation</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-attribute z-rust">#</span><span class="z-punctuation">[</span><span class="z-meta z-attribute z-rust">derive</span><span class="z-punctuation">(</span><span class="z-entity z-name z-type">Component</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> Default</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> Debug</span><span class="z-punctuation">)]</span></span>
+<span class="giallo-l"><span class="z-keyword z-storage z-type z-rust">pub struct</span><span class="z-entity z-name z-type"> Pieces</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    // Piece type</span></span>
+<span class="giallo-l"><span class="z-keyword">    pub</span><span class="z-source"> kind</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> PiecesKind</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    // Whether it is selected</span></span>
+<span class="giallo-l"><span class="z-keyword">    pub</span><span class="z-source"> selected</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> bool</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation">}</span></span></code></pre><h4 id="board">Board</h4>
+<p>The board currently has nothing:</p>
+<pre class="giallo z-code"><code data-lang="rust"><span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">// Add default implementation</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-attribute z-rust">#</span><span class="z-punctuation">[</span><span class="z-meta z-attribute z-rust">derive</span><span class="z-punctuation">(</span><span class="z-entity z-name z-type">Component</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> Default</span><span class="z-punctuation">)]</span></span>
+<span class="giallo-l"><span class="z-keyword z-storage z-type z-rust">pub struct</span><span class="z-entity z-name z-type"> Board</span><span class="z-punctuation"> {}</span></span></code></pre><h4 id="complete">Complete</h4>
+<p>Final <code>component.rs</code>: <a rel="external" href="https://github.com/DeadPoetSpoon/chess/blob/v0.2.0/src/chess/component.rs">https://github.com/DeadPoetSpoon/chess/blob/v0.2.0/src/chess/component.rs</a></p>
+<h2 id="creating-resources">Creating Resources</h2>
+<p>Create <code>resource.rs</code> and add the declaration in <code>mod.rs</code>:</p>
+<pre class="giallo z-code"><code data-lang="rust"><span class="giallo-l"><span class="z-storage z-type z-rust">mod</span><span class="z-entity z-name z-module z-rust"> resource</span><span class="z-punctuation">;</span></span></code></pre>
+<p>The only resource currently is the game state.</p>
+<p>First, we need to record the current turn color, selected piece, and target position:</p>
+<pre class="giallo z-code"><code data-lang="rust"><span class="giallo-l"><span class="z-punctuation z-definition z-attribute z-rust">#</span><span class="z-punctuation">[</span><span class="z-meta z-attribute z-rust">derive</span><span class="z-punctuation">(</span><span class="z-entity z-name z-type">Resource</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> Default</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> Debug</span><span class="z-punctuation">)]</span></span>
+<span class="giallo-l"><span class="z-keyword z-storage z-type z-rust">pub struct</span><span class="z-entity z-name z-type"> GameState</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    // Record the selected position</span></span>
+<span class="giallo-l"><span class="z-keyword">    pub</span><span class="z-source"> selected_position</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> Option</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-entity z-name z-type">Position</span><span class="z-punctuation z-brackets z-angle z-rust">&gt;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    // Record the target position to move to</span></span>
+<span class="giallo-l"><span class="z-keyword">    pub</span><span class="z-source"> move_position</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> Option</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-entity z-name z-type">Position</span><span class="z-punctuation z-brackets z-angle z-rust">&gt;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    // Current turn color</span></span>
+<span class="giallo-l"><span class="z-keyword">    pub</span><span class="z-source"> current_turn</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> ChessColorKind</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation">}</span></span></code></pre>
+<p>Also need to add control for game settings and piece initial position assets:</p>
+<pre class="giallo z-code"><code data-lang="rust"><span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">// Game settings</span></span>
+<span class="giallo-l"><span class="z-keyword">pub</span><span class="z-source"> game_setting_handle</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> Handle</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-entity z-name z-type">GameSetting</span><span class="z-punctuation z-brackets z-angle z-rust">&gt;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-keyword">pub</span><span class="z-source"> game_setting_has_load</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> bool</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">// Piece initial positions and basic info</span></span>
+<span class="giallo-l"><span class="z-keyword">pub</span><span class="z-source"> pieces_infos_handle</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> Handle</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-entity z-name z-type">PiecesInfos</span><span class="z-punctuation z-brackets z-angle z-rust">&gt;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-keyword">pub</span><span class="z-source"> pieces_infos_has_load</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> bool</span><span class="z-punctuation">,</span></span></code></pre>
+<p>Final <code>resource.rs</code>: <a rel="external" href="https://github.com/DeadPoetSpoon/chess/blob/v0.2.0/src/chess/resource.rs">https://github.com/DeadPoetSpoon/chess/blob/v0.2.0/src/chess/resource.rs</a></p>
+<h2 id="creating-assets">Creating Assets</h2>
+<p>Create <code>asset.rs</code> and add the declaration in <code>mod.rs</code>:</p>
+<pre class="giallo z-code"><code data-lang="rust"><span class="giallo-l"><span class="z-storage z-type z-rust">mod</span><span class="z-entity z-name z-module z-rust"> asset</span><span class="z-punctuation">;</span></span></code></pre><h3 id="handling-asset-loading-errors">Handling Asset Loading Errors</h3>
+<p>Following the <a rel="external" href="https://github.com/bevyengine/bevy/blob/main/examples/asset/custom_asset.rs">official tutorial</a> for loading custom assets, first handle the errors:</p>
+<pre class="giallo z-code"><code data-lang="rust"><span class="giallo-l"><span class="z-punctuation z-definition z-attribute z-rust">#</span><span class="z-punctuation">[</span><span class="z-meta z-attribute z-rust">derive</span><span class="z-punctuation">(</span><span class="z-entity z-name z-type">Debug</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> Error</span><span class="z-punctuation">)]</span></span>
+<span class="giallo-l"><span class="z-keyword z-storage z-type z-rust">pub enum</span><span class="z-entity z-name z-type"> AssetLoaderError</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-attribute z-rust">    #</span><span class="z-punctuation">[</span><span class="z-meta z-attribute z-rust">error</span><span class="z-punctuation">(</span><span class="z-meta z-attribute z-rust">transparent</span><span class="z-punctuation">)]</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-function">    Io</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-attribute z-rust">#</span><span class="z-punctuation">[</span><span class="z-meta z-attribute z-rust">from</span><span class="z-punctuation">]</span><span class="z-entity z-name z-namespace"> std</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-namespace">io</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">Error</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-attribute z-rust">    #</span><span class="z-punctuation">[</span><span class="z-meta z-attribute z-rust">error</span><span class="z-punctuation">(</span><span class="z-meta z-attribute z-rust">transparent</span><span class="z-punctuation">)]</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-function">    RonError</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-attribute z-rust">#</span><span class="z-punctuation">[</span><span class="z-meta z-attribute z-rust">from</span><span class="z-punctuation">]</span><span class="z-entity z-name z-namespace"> ron</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-namespace">error</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">Error</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-attribute z-rust">    #</span><span class="z-punctuation">[</span><span class="z-meta z-attribute z-rust">error</span><span class="z-punctuation">(</span><span class="z-meta z-attribute z-rust">transparent</span><span class="z-punctuation">)]</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-function">    RonSpannedError</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-attribute z-rust">#</span><span class="z-punctuation">[</span><span class="z-meta z-attribute z-rust">from</span><span class="z-punctuation">]</span><span class="z-entity z-name z-namespace"> ron</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-namespace">error</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">SpannedError</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-attribute z-rust">    #</span><span class="z-punctuation">[</span><span class="z-meta z-attribute z-rust">error</span><span class="z-punctuation">(</span><span class="z-meta z-attribute z-rust">transparent</span><span class="z-punctuation">)]</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-function">    LoadDirectError</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-attribute z-rust">#</span><span class="z-punctuation">[</span><span class="z-meta z-attribute z-rust">from</span><span class="z-punctuation">]</span><span class="z-entity z-name z-namespace"> bevy</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-namespace">asset</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">LoadDirectError</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-punctuation">}</span></span></code></pre><h3 id="game-settings">Game Settings</h3>
+<p>Currently empty:</p>
+<pre class="giallo z-code"><code data-lang="rust"><span class="giallo-l"><span class="z-punctuation z-definition z-attribute z-rust">#</span><span class="z-punctuation">[</span><span class="z-meta z-attribute z-rust">derive</span><span class="z-punctuation">(</span><span class="z-entity z-name z-type">Asset</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> TypePath</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> Default</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> Serialize</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> Deserialize</span><span class="z-punctuation">)]</span></span>
+<span class="giallo-l"><span class="z-keyword z-storage z-type z-rust">pub struct</span><span class="z-entity z-name z-type"> GameSetting</span><span class="z-punctuation"> {}</span></span></code></pre>
+<p>Implement a custom asset loader with the extension set to <code>setting.ron</code>:</p>
+<pre class="giallo z-code"><code data-lang="rust"><span class="giallo-l"><span class="z-punctuation z-definition z-attribute z-rust">#</span><span class="z-punctuation">[</span><span class="z-meta z-attribute z-rust">derive</span><span class="z-punctuation">(</span><span class="z-entity z-name z-type">Default</span><span class="z-punctuation">)]</span></span>
+<span class="giallo-l"><span class="z-keyword z-storage z-type z-rust">pub struct</span><span class="z-entity z-name z-type"> GameSettingLoader</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword">impl</span><span class="z-entity z-name z-type"> AssetLoader</span><span class="z-keyword"> for</span><span class="z-entity z-name z-type"> GameSettingLoader</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-rust">    type</span><span class="z-entity z-name z-type"> Asset</span><span class="z-keyword z-operator"> =</span><span class="z-entity z-name z-type"> GameSetting</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-rust">    type</span><span class="z-entity z-name z-type"> Settings</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation"> ();</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-rust">    type</span><span class="z-entity z-name z-type"> Error</span><span class="z-keyword z-operator"> =</span><span class="z-entity z-name z-type"> AssetLoaderError</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword">    fn</span><span class="z-entity z-name z-function"> load</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-punctuation">&#39;</span><span class="z-entity z-name z-type z-lifetime">a</span><span class="z-punctuation z-brackets z-angle z-rust">&gt;</span><span class="z-punctuation">(</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        &amp;</span><span class="z-punctuation">&#39;</span><span class="z-entity z-name z-type z-lifetime">a</span><span class="z-variable z-language z-self z-rust"> self</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">        reader</span><span class="z-keyword z-operator">: &amp;</span><span class="z-punctuation">&#39;</span><span class="z-entity z-name z-type z-lifetime">a</span><span class="z-storage z-modifier"> mut</span><span class="z-entity z-name z-type"> Reader</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">        _settings</span><span class="z-keyword z-operator">: &amp;</span><span class="z-punctuation">&#39;</span><span class="z-entity z-name z-type z-lifetime">a</span><span class="z-variable z-language z-self z-rust"> Self</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">Settings</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">        _load_context</span><span class="z-keyword z-operator">: &amp;</span><span class="z-punctuation">&#39;</span><span class="z-entity z-name z-type z-lifetime">a</span><span class="z-storage z-modifier"> mut</span><span class="z-entity z-name z-type"> LoadContext</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation">    )</span><span class="z-keyword z-operator"> -&gt;</span><span class="z-entity z-name z-type"> BoxedFuture</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-punctuation">&#39;</span><span class="z-entity z-name z-type z-lifetime">a</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> Result</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-variable z-language z-self z-rust">Self</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">Asset</span><span class="z-punctuation">,</span><span class="z-variable z-language z-self z-rust"> Self</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">Error</span><span class="z-punctuation z-brackets z-angle z-rust">&gt;&gt;</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type">        Box</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">pin</span><span class="z-punctuation">(</span><span class="z-keyword">async move</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-rust z-storage z-modifier">            let mut</span><span class="z-variable z-other z-rust"> bytes</span><span class="z-keyword z-operator"> =</span><span class="z-entity z-name z-namespace"> Vec</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">new</span><span class="z-punctuation">();</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">            reader</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">read_to_end</span><span class="z-punctuation">(</span><span class="z-keyword z-operator">&amp;</span><span class="z-storage z-modifier">mut</span><span class="z-variable z-other z-rust"> bytes</span><span class="z-punctuation">)</span><span class="z-keyword z-operator">.</span><span class="z-keyword">await</span><span class="z-keyword z-operator">?</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-rust">            let</span><span class="z-variable z-other z-rust"> ron</span><span class="z-keyword z-operator"> =</span><span class="z-entity z-name z-namespace"> ron</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-namespace">de</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">from_bytes</span><span class="z-punctuation">(</span><span class="z-keyword z-operator">&amp;</span><span class="z-variable z-other z-rust">bytes</span><span class="z-punctuation">)</span><span class="z-keyword z-operator">?</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type">            Ok</span><span class="z-punctuation">(</span><span class="z-variable z-other z-rust">ron</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-punctuation">        })</span></span>
+<span class="giallo-l"><span class="z-punctuation">    }</span></span>
+<span class="giallo-l"><span class="z-keyword">    fn</span><span class="z-entity z-name z-function"> extensions</span><span class="z-punctuation">(</span><span class="z-keyword z-operator">&amp;</span><span class="z-variable z-language z-self z-rust">self</span><span class="z-punctuation">)</span><span class="z-keyword z-operator"> -&gt; &amp;</span><span class="z-punctuation">[</span><span class="z-keyword z-operator">&amp;</span><span class="z-entity z-name z-type">str</span><span class="z-punctuation">] {</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        &amp;</span><span class="z-punctuation">[</span><span class="z-punctuation z-definition z-string z-string">&quot;setting.ron&quot;</span><span class="z-punctuation">]</span></span>
+<span class="giallo-l"><span class="z-punctuation">    }</span></span>
+<span class="giallo-l"><span class="z-punctuation">}</span></span></code></pre><h3 id="piece-initial-positions-and-basic-information">Piece Initial Positions and Basic Information</h3>
+<p>Load each piece's initial position, description info, etc. We need a list to store all piece information:</p>
+<pre class="giallo z-code"><code data-lang="rust"><span class="giallo-l"><span class="z-punctuation z-definition z-attribute z-rust">#</span><span class="z-punctuation">[</span><span class="z-meta z-attribute z-rust">derive</span><span class="z-punctuation">(</span><span class="z-entity z-name z-type">Asset</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> TypePath</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> Default</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> Serialize</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> Deserialize</span><span class="z-punctuation">)]</span></span>
+<span class="giallo-l"><span class="z-keyword z-storage z-type z-rust">pub struct</span><span class="z-entity z-name z-type"> PiecesInfos</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-keyword">    pub</span><span class="z-source"> pieces_info_vec</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> Vec</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-entity z-name z-type">PiecesInfo</span><span class="z-punctuation z-brackets z-angle z-rust">&gt;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation">}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-attribute z-rust">#</span><span class="z-punctuation">[</span><span class="z-meta z-attribute z-rust">derive</span><span class="z-punctuation">(</span><span class="z-entity z-name z-type">Default</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> Serialize</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> Deserialize</span><span class="z-punctuation">)]</span></span>
+<span class="giallo-l"><span class="z-keyword z-storage z-type z-rust">pub struct</span><span class="z-entity z-name z-type"> PiecesInfo</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-keyword">    pub</span><span class="z-source"> des</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> Description</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-keyword">    pub</span><span class="z-source"> color</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> ChessColorKind</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-keyword">    pub</span><span class="z-source"> kind</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> PiecesKind</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-keyword">    pub</span><span class="z-source"> row</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type z-numeric z-rust"> u8</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-keyword">    pub</span><span class="z-source"> col</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type z-numeric z-rust"> u8</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-keyword">    pub</span><span class="z-source"> theme</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> String</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation">}</span></span></code></pre>
+<p>Implement a custom asset loader with the extension set to <code>pieces.ron</code>:</p>
+<pre class="giallo z-code"><code data-lang="rust"><span class="giallo-l"><span class="z-punctuation z-definition z-attribute z-rust">#</span><span class="z-punctuation">[</span><span class="z-meta z-attribute z-rust">derive</span><span class="z-punctuation">(</span><span class="z-entity z-name z-type">Default</span><span class="z-punctuation">)]</span></span>
+<span class="giallo-l"><span class="z-keyword z-storage z-type z-rust">pub struct</span><span class="z-entity z-name z-type"> PiecesInfosLoader</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword">impl</span><span class="z-entity z-name z-type"> AssetLoader</span><span class="z-keyword"> for</span><span class="z-entity z-name z-type"> PiecesInfosLoader</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-rust">    type</span><span class="z-entity z-name z-type"> Asset</span><span class="z-keyword z-operator"> =</span><span class="z-entity z-name z-type"> PiecesInfos</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-rust">    type</span><span class="z-entity z-name z-type"> Settings</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation"> ();</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-rust">    type</span><span class="z-entity z-name z-type"> Error</span><span class="z-keyword z-operator"> =</span><span class="z-entity z-name z-type"> AssetLoaderError</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword">    fn</span><span class="z-entity z-name z-function"> load</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-punctuation">&#39;</span><span class="z-entity z-name z-type z-lifetime">a</span><span class="z-punctuation z-brackets z-angle z-rust">&gt;</span><span class="z-punctuation">(</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        &amp;</span><span class="z-punctuation">&#39;</span><span class="z-entity z-name z-type z-lifetime">a</span><span class="z-variable z-language z-self z-rust"> self</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">        reader</span><span class="z-keyword z-operator">: &amp;</span><span class="z-punctuation">&#39;</span><span class="z-entity z-name z-type z-lifetime">a</span><span class="z-storage z-modifier"> mut</span><span class="z-entity z-name z-type"> Reader</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">        _settings</span><span class="z-keyword z-operator">: &amp;</span><span class="z-punctuation">&#39;</span><span class="z-entity z-name z-type z-lifetime">a</span><span class="z-variable z-language z-self z-rust"> Self</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">Settings</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">        _load_context</span><span class="z-keyword z-operator">: &amp;</span><span class="z-punctuation">&#39;</span><span class="z-entity z-name z-type z-lifetime">a</span><span class="z-storage z-modifier"> mut</span><span class="z-entity z-name z-type"> LoadContext</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation">    )</span><span class="z-keyword z-operator"> -&gt;</span><span class="z-entity z-name z-type"> BoxedFuture</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-punctuation">&#39;</span><span class="z-entity z-name z-type z-lifetime">a</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> Result</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-variable z-language z-self z-rust">Self</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">Asset</span><span class="z-punctuation">,</span><span class="z-variable z-language z-self z-rust"> Self</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">Error</span><span class="z-punctuation z-brackets z-angle z-rust">&gt;&gt;</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type">        Box</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">pin</span><span class="z-punctuation">(</span><span class="z-keyword">async move</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-rust z-storage z-modifier">            let mut</span><span class="z-variable z-other z-rust"> bytes</span><span class="z-keyword z-operator"> =</span><span class="z-entity z-name z-namespace"> Vec</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">new</span><span class="z-punctuation">();</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">            reader</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">read_to_end</span><span class="z-punctuation">(</span><span class="z-keyword z-operator">&amp;</span><span class="z-storage z-modifier">mut</span><span class="z-variable z-other z-rust"> bytes</span><span class="z-punctuation">)</span><span class="z-keyword z-operator">.</span><span class="z-keyword">await</span><span class="z-keyword z-operator">?</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-rust">            let</span><span class="z-variable z-other z-rust"> ron</span><span class="z-keyword z-operator"> =</span><span class="z-entity z-name z-namespace"> ron</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-namespace">de</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">from_bytes</span><span class="z-punctuation">(</span><span class="z-keyword z-operator">&amp;</span><span class="z-variable z-other z-rust">bytes</span><span class="z-punctuation">)</span><span class="z-keyword z-operator">?</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type">            Ok</span><span class="z-punctuation">(</span><span class="z-variable z-other z-rust">ron</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-punctuation">        })</span></span>
+<span class="giallo-l"><span class="z-punctuation">    }</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword">    fn</span><span class="z-entity z-name z-function"> extensions</span><span class="z-punctuation">(</span><span class="z-keyword z-operator">&amp;</span><span class="z-variable z-language z-self z-rust">self</span><span class="z-punctuation">)</span><span class="z-keyword z-operator"> -&gt; &amp;</span><span class="z-punctuation">[</span><span class="z-keyword z-operator">&amp;</span><span class="z-entity z-name z-type">str</span><span class="z-punctuation">] {</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        &amp;</span><span class="z-punctuation">[</span><span class="z-punctuation z-definition z-string z-string">&quot;pieces.ron&quot;</span><span class="z-punctuation">]</span></span>
+<span class="giallo-l"><span class="z-punctuation">    }</span></span>
+<span class="giallo-l"><span class="z-punctuation">}</span></span></code></pre><h3 id="complete-1">Complete</h3>
+<p>Final <code>asset.rs</code>: <a rel="external" href="https://github.com/DeadPoetSpoon/chess/blob/v0.2.0/src/chess/asset.rs">https://github.com/DeadPoetSpoon/chess/blob/v0.2.0/src/chess/asset.rs</a></p>
+<p>Default piece info <code>default.pieces.ron</code>: <a rel="external" href="https://github.com/DeadPoetSpoon/chess/blob/v0.2.0/assets/default.pieces.ron">https://github.com/DeadPoetSpoon/chess/blob/v0.2.0/assets/default.pieces.ron</a></p>
+<h2 id="systems-1">Systems</h2>
+<p>Finally we reach the systems part. Let's think about "how to play chess!"</p>
+<p>Create <code>event.rs</code> and <code>system.rs</code>, and add declarations in <code>mod.rs</code>:</p>
+<pre class="giallo z-code"><code data-lang="rust"><span class="giallo-l"><span class="z-storage z-type z-rust">mod</span><span class="z-entity z-name z-module z-rust"> event</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-rust">mod</span><span class="z-entity z-name z-module z-rust"> system</span><span class="z-punctuation">;</span></span></code></pre><h3 id="events">Events</h3>
+<p>The action of playing chess can be broken down into two steps: selecting the piece to move and selecting the position to move to. We can use the left and right mouse buttons to implement this.</p>
+<p>When left-clicking, record the clicked board position and mark it as the selected piece; when right-clicking, record the clicked board position and mark it as the target position.</p>
+<p>Refer to the <a rel="external" href="https://github.com/bevyengine/bevy/blob/main/examples/input/mouse_input.rs">official tutorial</a>:</p>
+<pre class="giallo z-code"><code data-lang="rust"><span class="giallo-l"><span class="z-keyword">pub fn</span><span class="z-entity z-name z-function"> move_mouse_events_system</span><span class="z-punctuation">(</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">    mouse_button_input</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> Res</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-entity z-name z-type">ButtonInput</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-entity z-name z-type">MouseButton</span><span class="z-punctuation z-brackets z-angle z-rust">&gt;&gt;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">    window</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> Query</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-keyword z-operator">&amp;</span><span class="z-entity z-name z-type">Window</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type"> With</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-entity z-name z-type">PrimaryWindow</span><span class="z-punctuation z-brackets z-angle z-rust">&gt;&gt;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">    camera</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> Query</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-punctuation">(</span><span class="z-keyword z-operator">&amp;</span><span class="z-entity z-name z-type">Camera</span><span class="z-punctuation">,</span><span class="z-keyword z-operator"> &amp;</span><span class="z-entity z-name z-type">GlobalTransform</span><span class="z-punctuation">)</span><span class="z-punctuation z-brackets z-angle z-rust">&gt;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-storage z-modifier">    mut</span><span class="z-variable z-other z-rust"> game_state</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> ResMut</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-entity z-name z-type">GameState</span><span class="z-punctuation z-brackets z-angle z-rust">&gt;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation">) {</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    // On left click</span></span>
+<span class="giallo-l"><span class="z-keyword">    if</span><span class="z-source"> mouse_button_input</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">just_released</span><span class="z-punctuation">(</span><span class="z-entity z-name z-namespace">MouseButton</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">Left</span><span class="z-punctuation">) {</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">        // Get current window</span></span>
+<span class="giallo-l"><span class="z-keyword z-storage z-type z-rust">        if let</span><span class="z-entity z-name z-type"> Some</span><span class="z-punctuation">(</span><span class="z-source">window</span><span class="z-punctuation">)</span><span class="z-keyword z-operator"> =</span><span class="z-source"> window</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">iter</span><span class="z-punctuation">()</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">next</span><span class="z-punctuation">() {</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">            // Get mouse position</span></span>
+<span class="giallo-l"><span class="z-keyword z-storage z-type z-rust">            if let</span><span class="z-entity z-name z-type"> Some</span><span class="z-punctuation">(</span><span class="z-source">mouse_position</span><span class="z-punctuation">)</span><span class="z-keyword z-operator"> =</span><span class="z-source"> window</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">cursor_position</span><span class="z-punctuation">() {</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">                // Get camera transform params</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-rust">                let</span><span class="z-punctuation"> (</span><span class="z-source">camera</span><span class="z-punctuation">,</span><span class="z-source"> camera_transform</span><span class="z-punctuation">)</span><span class="z-keyword z-operator"> =</span><span class="z-source"> camera</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">single</span><span class="z-punctuation">();</span></span>
+<span class="giallo-l"><span class="z-keyword z-storage z-type z-rust">                if let</span><span class="z-entity z-name z-type"> Some</span><span class="z-punctuation">(</span><span class="z-source">mouse_position</span><span class="z-punctuation">)</span><span class="z-keyword z-operator"> =</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">                    // Convert mouse click position to world coordinates</span></span>
+<span class="giallo-l"><span class="z-source">                    camera</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">viewport_to_world_2d</span><span class="z-punctuation">(</span><span class="z-variable z-other z-rust">camera_transform</span><span class="z-punctuation">,</span><span class="z-variable z-other z-rust"> mouse_position</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-punctuation">                {</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">                    // Calculate board coordinates</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-rust">                    let</span><span class="z-source"> row</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation"> (</span><span class="z-source">mouse_position</span><span class="z-keyword z-operator">.</span><span class="z-source">y </span><span class="z-keyword z-entity z-name z-type z-numeric z-rust">as i32</span><span class="z-keyword z-operator"> /</span><span class="z-constant z-numeric"> 128</span><span class="z-punctuation">)</span><span class="z-keyword z-entity z-name z-type z-numeric z-rust"> as u8</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-rust">                    let</span><span class="z-source"> col</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation"> (</span><span class="z-source">mouse_position</span><span class="z-keyword z-operator">.</span><span class="z-source">x </span><span class="z-keyword z-entity z-name z-type z-numeric z-rust">as i32</span><span class="z-keyword z-operator"> /</span><span class="z-constant z-numeric"> 128</span><span class="z-punctuation">)</span><span class="z-keyword z-entity z-name z-type z-numeric z-rust"> as u8</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">                    // Save selected position to game state</span></span>
+<span class="giallo-l"><span class="z-keyword">                    if</span><span class="z-source"> game_state</span><span class="z-keyword z-operator">.</span><span class="z-source">selected_position</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">is_none</span><span class="z-punctuation">() {</span></span>
+<span class="giallo-l"><span class="z-source">                        game_state</span><span class="z-keyword z-operator">.</span><span class="z-source">selected_position </span><span class="z-keyword z-operator">=</span><span class="z-entity z-name z-type"> Some</span><span class="z-punctuation">(</span><span class="z-entity z-name z-type">Position</span><span class="z-punctuation"> {</span><span class="z-source"> row</span><span class="z-punctuation">,</span><span class="z-source"> col</span><span class="z-punctuation"> });</span></span>
+<span class="giallo-l"><span class="z-punctuation">                    }</span><span class="z-keyword"> else</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-rust">                        let</span><span class="z-source"> position</span><span class="z-keyword z-operator"> =</span><span class="z-source"> game_state</span><span class="z-keyword z-operator">.</span><span class="z-source">selected_position</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">as_mut</span><span class="z-punctuation">()</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">unwrap</span><span class="z-punctuation">();</span></span>
+<span class="giallo-l"><span class="z-source">                        position</span><span class="z-keyword z-operator">.</span><span class="z-source">col </span><span class="z-keyword z-operator">=</span><span class="z-source"> col</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-source">                        position</span><span class="z-keyword z-operator">.</span><span class="z-source">row </span><span class="z-keyword z-operator">=</span><span class="z-source"> row</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-punctuation">                    }</span></span>
+<span class="giallo-l"><span class="z-punctuation">                }</span></span>
+<span class="giallo-l"><span class="z-punctuation">            }</span></span>
+<span class="giallo-l"><span class="z-punctuation">        }</span></span>
+<span class="giallo-l"><span class="z-punctuation">    }</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword">    if</span><span class="z-source"> mouse_button_input</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">just_released</span><span class="z-punctuation">(</span><span class="z-entity z-name z-namespace">MouseButton</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">Right</span><span class="z-punctuation">) {</span></span>
+<span class="giallo-l"><span class="z-keyword z-storage z-type z-rust">        if let</span><span class="z-entity z-name z-type"> Some</span><span class="z-punctuation">(</span><span class="z-source">window</span><span class="z-punctuation">)</span><span class="z-keyword z-operator"> =</span><span class="z-source"> window</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">iter</span><span class="z-punctuation">()</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">next</span><span class="z-punctuation">() {</span></span>
+<span class="giallo-l"><span class="z-keyword z-storage z-type z-rust">            if let</span><span class="z-entity z-name z-type"> Some</span><span class="z-punctuation">(</span><span class="z-source">mouse_position</span><span class="z-punctuation">)</span><span class="z-keyword z-operator"> =</span><span class="z-source"> window</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">cursor_position</span><span class="z-punctuation">() {</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-rust">                let</span><span class="z-punctuation"> (</span><span class="z-source">camera</span><span class="z-punctuation">,</span><span class="z-source"> camera_transform</span><span class="z-punctuation">)</span><span class="z-keyword z-operator"> =</span><span class="z-source"> camera</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">single</span><span class="z-punctuation">();</span></span>
+<span class="giallo-l"><span class="z-keyword z-storage z-type z-rust">                if let</span><span class="z-entity z-name z-type"> Some</span><span class="z-punctuation">(</span><span class="z-source">mouse_position</span><span class="z-punctuation">)</span><span class="z-keyword z-operator"> =</span></span>
+<span class="giallo-l"><span class="z-source">                    camera</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">viewport_to_world_2d</span><span class="z-punctuation">(</span><span class="z-variable z-other z-rust">camera_transform</span><span class="z-punctuation">,</span><span class="z-variable z-other z-rust"> mouse_position</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-punctuation">                {</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-rust">                    let</span><span class="z-source"> row</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation"> (</span><span class="z-source">mouse_position</span><span class="z-keyword z-operator">.</span><span class="z-source">y </span><span class="z-keyword z-entity z-name z-type z-numeric z-rust">as i32</span><span class="z-keyword z-operator"> /</span><span class="z-constant z-numeric"> 128</span><span class="z-punctuation">)</span><span class="z-keyword z-entity z-name z-type z-numeric z-rust"> as u8</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-rust">                    let</span><span class="z-source"> col</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation"> (</span><span class="z-source">mouse_position</span><span class="z-keyword z-operator">.</span><span class="z-source">x </span><span class="z-keyword z-entity z-name z-type z-numeric z-rust">as i32</span><span class="z-keyword z-operator"> /</span><span class="z-constant z-numeric"> 128</span><span class="z-punctuation">)</span><span class="z-keyword z-entity z-name z-type z-numeric z-rust"> as u8</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">                    // Save selected move position to game state</span></span>
+<span class="giallo-l"><span class="z-keyword">                    if</span><span class="z-source"> game_state</span><span class="z-keyword z-operator">.</span><span class="z-source">move_position</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">is_none</span><span class="z-punctuation">() {</span></span>
+<span class="giallo-l"><span class="z-source">                        game_state</span><span class="z-keyword z-operator">.</span><span class="z-source">move_position </span><span class="z-keyword z-operator">=</span><span class="z-entity z-name z-type"> Some</span><span class="z-punctuation">(</span><span class="z-entity z-name z-type">Position</span><span class="z-punctuation"> {</span><span class="z-source"> row</span><span class="z-punctuation">,</span><span class="z-source"> col</span><span class="z-punctuation"> })</span></span>
+<span class="giallo-l"><span class="z-punctuation">                    }</span><span class="z-keyword"> else</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-rust">                        let</span><span class="z-source"> position</span><span class="z-keyword z-operator"> =</span><span class="z-source"> game_state</span><span class="z-keyword z-operator">.</span><span class="z-source">move_position</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">as_mut</span><span class="z-punctuation">()</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">unwrap</span><span class="z-punctuation">();</span></span>
+<span class="giallo-l"><span class="z-source">                        position</span><span class="z-keyword z-operator">.</span><span class="z-source">col </span><span class="z-keyword z-operator">=</span><span class="z-source"> col</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-source">                        position</span><span class="z-keyword z-operator">.</span><span class="z-source">row </span><span class="z-keyword z-operator">=</span><span class="z-source"> row</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-punctuation">                    }</span></span>
+<span class="giallo-l"><span class="z-punctuation">                }</span></span>
+<span class="giallo-l"><span class="z-punctuation">            }</span></span>
+<span class="giallo-l"><span class="z-punctuation">        }</span></span>
+<span class="giallo-l"><span class="z-punctuation">    }</span></span>
+<span class="giallo-l"><span class="z-punctuation">}</span></span></code></pre>
+<p>Final <code>event.rs</code>: <a rel="external" href="https://github.com/DeadPoetSpoon/chess/blob/v0.2.0/src/chess/event.rs">https://github.com/DeadPoetSpoon/chess/blob/v0.2.0/src/chess/event.rs</a></p>
+<h3 id="startup-system">Startup System</h3>
+<p>This system initializes the 2D camera, game state, and board:</p>
+<pre class="giallo z-code"><code data-lang="rust"><span class="giallo-l"><span class="z-keyword">pub fn</span><span class="z-entity z-name z-function"> startup_system</span><span class="z-punctuation">(</span></span>
+<span class="giallo-l"><span class="z-storage z-modifier">    mut</span><span class="z-variable z-other z-rust"> commands</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> Commands</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-storage z-modifier">    mut</span><span class="z-variable z-other z-rust"> game_state</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> ResMut</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-entity z-name z-type">GameState</span><span class="z-punctuation z-brackets z-angle z-rust">&gt;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">    assets</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> Res</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-entity z-name z-type">AssetServer</span><span class="z-punctuation z-brackets z-angle z-rust">&gt;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation">) {</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    // Create camera</span></span>
+<span class="giallo-l"><span class="z-source">    commands</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">spawn</span><span class="z-punctuation">(</span><span class="z-entity z-name z-type">Camera2dBundle</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">        // Base camera position</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">        transform</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-namespace"> Transform</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">from_translation</span><span class="z-punctuation">(</span><span class="z-entity z-name z-type">Vec3</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">            x</span><span class="z-keyword z-operator">:</span><span class="z-constant z-numeric"> 450</span><span class="z-punctuation">.</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">            y</span><span class="z-keyword z-operator">:</span><span class="z-constant z-numeric"> 450</span><span class="z-punctuation">.</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">            z</span><span class="z-keyword z-operator">:</span><span class="z-constant z-numeric"> 0</span><span class="z-punctuation">.</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation">        }),</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">        // Camera zoom</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">        projection</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> OrthographicProjection</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">            scaling_mode</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-namespace"> ScalingMode</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">WindowSize</span><span class="z-punctuation">(</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">.</span><span class="z-constant z-numeric">8</span><span class="z-entity z-name z-type z-numeric z-rust">f32</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">            near</span><span class="z-keyword z-operator">: -</span><span class="z-constant z-numeric">1000</span><span class="z-punctuation">.</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">            far</span><span class="z-keyword z-operator">:</span><span class="z-constant z-numeric"> 1000</span><span class="z-punctuation">.</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">            ..</span><span class="z-entity z-name z-namespace">Default</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">default</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-punctuation">        },</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        ..</span><span class="z-entity z-name z-namespace">Default</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">default</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-punctuation">    });</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    // Initialize game state and load resources</span></span>
+<span class="giallo-l"><span class="z-source">    game_state</span><span class="z-keyword z-operator">.</span><span class="z-source">game_setting_handle </span><span class="z-keyword z-operator">=</span><span class="z-source"> assets</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">load</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;default.setting.ron&quot;</span><span class="z-punctuation">);</span></span>
+<span class="giallo-l"><span class="z-source">    game_state</span><span class="z-keyword z-operator">.</span><span class="z-source">game_setting_has_load </span><span class="z-keyword z-operator">=</span><span class="z-constant z-language"> true</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-source">    game_state</span><span class="z-keyword z-operator">.</span><span class="z-source">pieces_infos_handle </span><span class="z-keyword z-operator">=</span><span class="z-source"> assets</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">load</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;default.pieces.ron&quot;</span><span class="z-punctuation">);</span></span>
+<span class="giallo-l"><span class="z-source">    game_state</span><span class="z-keyword z-operator">.</span><span class="z-source">current_turn </span><span class="z-keyword z-operator">=</span><span class="z-entity z-name z-type"> ChessColorKind</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">White</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    // Create board</span></span>
+<span class="giallo-l"><span class="z-source">    commands</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">spawn_batch</span><span class="z-punctuation">(</span><span class="z-entity z-name z-function">create_board_bundles</span><span class="z-punctuation">());</span></span>
+<span class="giallo-l"><span class="z-punctuation">}</span></span></code></pre>
+<p>Create the board by iterating through rows and columns:</p>
+<pre class="giallo z-code"><code data-lang="rust"><span class="giallo-l"><span class="z-keyword">pub fn</span><span class="z-entity z-name z-function"> create_board_bundles</span><span class="z-punctuation">()</span><span class="z-keyword z-operator"> -&gt;</span><span class="z-entity z-name z-type"> Vec</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-entity z-name z-type">BoardEntity</span><span class="z-punctuation z-brackets z-angle z-rust">&gt;</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-rust z-storage z-modifier">    let mut</span><span class="z-source"> bundles</span><span class="z-keyword z-operator"> =</span><span class="z-entity z-name z-type"> Vec</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">new</span><span class="z-punctuation">();</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    // Color toggle flag</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-rust z-storage z-modifier">    let mut</span><span class="z-source"> flag</span><span class="z-keyword z-operator"> =</span><span class="z-constant z-language"> true</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-keyword">    for</span><span class="z-source"> row</span><span class="z-keyword"> in</span><span class="z-constant z-numeric"> 0</span><span class="z-keyword z-operator">..</span><span class="z-constant z-numeric">8</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-keyword">        for</span><span class="z-source"> col</span><span class="z-keyword"> in</span><span class="z-constant z-numeric"> 0</span><span class="z-keyword z-operator">..</span><span class="z-constant z-numeric">8</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-source">            bundles</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">push</span><span class="z-punctuation">(</span><span class="z-entity z-name z-type">BoardEntity</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">                board</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> Board</span><span class="z-punctuation"> {},</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">                color</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> ChessColor</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">                    kind</span><span class="z-keyword z-operator">:</span><span class="z-keyword"> match</span><span class="z-variable z-other z-rust"> flag</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-constant z-language">                        true</span><span class="z-keyword z-operator"> =&gt;</span><span class="z-entity z-name z-namespace"> ChessColorKind</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">Black</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-constant z-language">                        false</span><span class="z-keyword z-operator"> =&gt;</span><span class="z-entity z-name z-namespace"> ChessColorKind</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">White</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation">                    },</span></span>
+<span class="giallo-l"><span class="z-punctuation">                },</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">                des</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> Description</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">                    name</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-function z-macro z-rust"> format!</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-punctuation">{}</span><span class="z-string">_</span><span class="z-punctuation">{}</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-punctuation">,</span><span class="z-variable z-other z-rust"> row</span><span class="z-punctuation">,</span><span class="z-variable z-other z-rust"> col</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-source">                    des</span><span class="z-keyword z-operator">:</span><span class="z-punctuation z-definition z-string z-string"> &quot;board&quot;</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">to_string</span><span class="z-punctuation">(),</span></span>
+<span class="giallo-l"><span class="z-source">                    help</span><span class="z-keyword z-operator">:</span><span class="z-punctuation z-definition z-string z-string"> &quot;board&quot;</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">to_string</span><span class="z-punctuation">(),</span></span>
+<span class="giallo-l"><span class="z-punctuation">                },</span></span>
+<span class="giallo-l"><span class="z-source">                position</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> Position</span><span class="z-punctuation"> {</span><span class="z-source"> row</span><span class="z-punctuation">,</span><span class="z-source"> col</span><span class="z-punctuation"> },</span></span>
+<span class="giallo-l"><span class="z-source">                theme</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> Theme</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-source">                    asset_father_path</span><span class="z-keyword z-operator">:</span><span class="z-punctuation z-definition z-string z-string"> &quot;default&quot;</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">to_string</span><span class="z-punctuation">(),</span></span>
+<span class="giallo-l"><span class="z-punctuation">                },</span></span>
+<span class="giallo-l"><span class="z-source">                sprite</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> Sprite</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-source">                    anchor</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> Anchor</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">BottomLeft</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">                    ..</span><span class="z-entity z-name z-type">Default</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">default</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-punctuation">                },</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">                ..</span><span class="z-entity z-name z-type">Default</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">default</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-punctuation">            });</span></span>
+<span class="giallo-l"><span class="z-source">            flag</span><span class="z-keyword z-operator"> = !</span><span class="z-source">flag</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-punctuation">        }</span></span>
+<span class="giallo-l"><span class="z-source">        flag</span><span class="z-keyword z-operator"> = !</span><span class="z-source">flag</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-punctuation">    }</span></span>
+<span class="giallo-l"><span class="z-source">    bundles</span></span>
+<span class="giallo-l"><span class="z-punctuation">}</span></span></code></pre><h3 id="piece-position-initialization-system">Piece Position Initialization System</h3>
+<p>This is separated into its own system to enable resetting all pieces to their initial positions during gameplay.</p>
+<p>Read the piece initial positions and basic information (PiecesInfos) to create all pieces:</p>
+<pre class="giallo z-code"><code data-lang="rust"><span class="giallo-l"><span class="z-keyword">pub fn</span><span class="z-entity z-name z-function"> create_pieces_system</span><span class="z-punctuation">(</span></span>
+<span class="giallo-l"><span class="z-storage z-modifier">    mut</span><span class="z-variable z-other z-rust"> commands</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> Commands</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-storage z-modifier">    mut</span><span class="z-variable z-other z-rust"> game_state</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> ResMut</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-entity z-name z-type">GameState</span><span class="z-punctuation z-brackets z-angle z-rust">&gt;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">    infos</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> Res</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-entity z-name z-type">Assets</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-entity z-name z-type">PiecesInfos</span><span class="z-punctuation z-brackets z-angle z-rust">&gt;&gt;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation">) {</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    // Don&#39;t load repeatedly</span></span>
+<span class="giallo-l"><span class="z-keyword">    if</span><span class="z-source"> game_state</span><span class="z-keyword z-operator">.</span><span class="z-source">pieces_infos_has_load </span><span class="z-punctuation">{</span></span>
+<span class="giallo-l"><span class="z-keyword">        return</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-punctuation">    }</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    // Load piece info</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-rust">    let</span><span class="z-source"> pieces_infos_option</span><span class="z-keyword z-operator"> =</span><span class="z-source"> infos</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">get</span><span class="z-punctuation">(</span><span class="z-keyword z-operator">&amp;</span><span class="z-variable z-other z-rust">game_state</span><span class="z-keyword z-operator">.</span><span class="z-meta z-function z-call z-rust">pieces_infos_handle</span><span class="z-punctuation">);</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    // Ensure successful loading</span></span>
+<span class="giallo-l"><span class="z-keyword">    if</span><span class="z-source"> pieces_infos_option</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">is_none</span><span class="z-punctuation">() {</span></span>
+<span class="giallo-l"><span class="z-keyword">        return</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-punctuation">    }</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-storage z-type z-rust">    let</span><span class="z-source"> pieces_infos</span><span class="z-keyword z-operator"> =</span><span class="z-source"> pieces_infos_option</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">unwrap</span><span class="z-punctuation">();</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-storage z-type z-rust z-storage z-modifier">    let mut</span><span class="z-source"> bundles</span><span class="z-keyword z-operator"> =</span><span class="z-entity z-name z-type"> Vec</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">new</span><span class="z-punctuation">();</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    // Create pieces in a loop</span></span>
+<span class="giallo-l"><span class="z-keyword">    for</span><span class="z-source"> info</span><span class="z-keyword"> in</span><span class="z-keyword z-operator"> &amp;</span><span class="z-source">pieces_infos</span><span class="z-keyword z-operator">.</span><span class="z-source">pieces_info_vec </span><span class="z-punctuation">{</span></span>
+<span class="giallo-l"><span class="z-source">        bundles</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">push</span><span class="z-punctuation">(</span><span class="z-entity z-name z-type">PiecesEntity</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">            pieces</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> Pieces</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">                kind</span><span class="z-keyword z-operator">:</span><span class="z-variable z-other z-rust"> info</span><span class="z-keyword z-operator">.</span><span class="z-meta z-function z-call z-rust">kind</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">clone</span><span class="z-punctuation">(),</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">                ..</span><span class="z-entity z-name z-namespace">Default</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">default</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-punctuation">            },</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">            color</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> ChessColor</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">                kind</span><span class="z-keyword z-operator">:</span><span class="z-variable z-other z-rust"> info</span><span class="z-keyword z-operator">.</span><span class="z-meta z-function z-call z-rust">color</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">clone</span><span class="z-punctuation">(),</span></span>
+<span class="giallo-l"><span class="z-punctuation">            },</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">            des</span><span class="z-keyword z-operator">:</span><span class="z-variable z-other z-rust"> info</span><span class="z-keyword z-operator">.</span><span class="z-meta z-function z-call z-rust">des</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">clone</span><span class="z-punctuation">(),</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">            position</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> Position</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">                row</span><span class="z-keyword z-operator">:</span><span class="z-variable z-other z-rust"> info</span><span class="z-keyword z-operator">.</span><span class="z-meta z-function z-call z-rust">row</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">                col</span><span class="z-keyword z-operator">:</span><span class="z-variable z-other z-rust"> info</span><span class="z-keyword z-operator">.</span><span class="z-meta z-function z-call z-rust">col</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation">            },</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">            theme</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> Theme</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">                asset_father_path</span><span class="z-keyword z-operator">:</span><span class="z-variable z-other z-rust"> info</span><span class="z-keyword z-operator">.</span><span class="z-meta z-function z-call z-rust">theme</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">clone</span><span class="z-punctuation">(),</span></span>
+<span class="giallo-l"><span class="z-punctuation">            },</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">            sprite</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> Sprite</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">                anchor</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-namespace"> Anchor</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">BottomLeft</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">                ..</span><span class="z-entity z-name z-namespace">Default</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">default</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-punctuation">            },</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">            ..</span><span class="z-entity z-name z-namespace">Default</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">default</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-punctuation">        });</span></span>
+<span class="giallo-l"><span class="z-punctuation">    }</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    // Spawn piece entities</span></span>
+<span class="giallo-l"><span class="z-source">    commands</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">spawn_batch</span><span class="z-punctuation">(</span><span class="z-variable z-other z-rust">bundles</span><span class="z-punctuation">);</span></span>
+<span class="giallo-l"><span class="z-source">    game_state</span><span class="z-keyword z-operator">.</span><span class="z-source">pieces_infos_has_load </span><span class="z-keyword z-operator">=</span><span class="z-constant z-language"> true</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-punctuation">}</span></span></code></pre><h3 id="board-rendering-system">Board Rendering System</h3>
+<p>Set up the textures and positions to display the board and pieces.</p>
+<p>Currently the texture size is set to <code>128px</code>, and the anchor point is set to bottom-left, so multiplying the row and column position by 128 gives the world coordinate position.</p>
+<p>Load textures following the structure <code>theme/color/name.png</code>:</p>
+<pre class="giallo z-code"><code data-lang="rust"><span class="giallo-l"><span class="z-keyword">pub fn</span><span class="z-entity z-name z-function"> show_board_system</span><span class="z-punctuation">(</span></span>
+<span class="giallo-l"><span class="z-storage z-modifier">    mut</span><span class="z-variable z-other z-rust"> query</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> Query</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-punctuation">(</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        &amp;</span><span class="z-entity z-name z-type">Board</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        &amp;</span><span class="z-entity z-name z-type">ChessColor</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        &amp;</span><span class="z-entity z-name z-type">Theme</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        &amp;</span><span class="z-entity z-name z-type">Position</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        &amp;</span><span class="z-storage z-modifier">mut</span><span class="z-entity z-name z-type"> Transform</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        &amp;</span><span class="z-storage z-modifier">mut</span><span class="z-entity z-name z-type"> Handle</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-entity z-name z-type">Image</span><span class="z-punctuation z-brackets z-angle z-rust">&gt;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation">    )</span><span class="z-punctuation z-brackets z-angle z-rust">&gt;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">    asset_server</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> Res</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-entity z-name z-type">AssetServer</span><span class="z-punctuation z-brackets z-angle z-rust">&gt;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation">) {</span></span>
+<span class="giallo-l"><span class="z-keyword">    for</span><span class="z-punctuation"> (</span><span class="z-source">_board</span><span class="z-punctuation">,</span><span class="z-source"> color</span><span class="z-punctuation">,</span><span class="z-source"> theme</span><span class="z-punctuation">,</span><span class="z-source"> position</span><span class="z-punctuation">,</span><span class="z-storage z-modifier"> mut</span><span class="z-source"> transform</span><span class="z-punctuation">,</span><span class="z-storage z-modifier"> mut</span><span class="z-source"> texture</span><span class="z-punctuation">)</span><span class="z-keyword"> in</span><span class="z-keyword z-operator"> &amp;</span><span class="z-storage z-modifier">mut</span><span class="z-source"> query</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-source">        transform</span><span class="z-keyword z-operator">.</span><span class="z-source">translation</span><span class="z-keyword z-operator">.</span><span class="z-source">x </span><span class="z-keyword z-operator">=</span><span class="z-source"> position</span><span class="z-keyword z-operator">.</span><span class="z-source">col </span><span class="z-keyword z-entity z-name z-type z-numeric z-rust">as f32</span><span class="z-keyword z-operator"> *</span><span class="z-constant z-numeric"> 128</span><span class="z-punctuation">.</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-source">        transform</span><span class="z-keyword z-operator">.</span><span class="z-source">translation</span><span class="z-keyword z-operator">.</span><span class="z-source">y </span><span class="z-keyword z-operator">=</span><span class="z-source"> position</span><span class="z-keyword z-operator">.</span><span class="z-source">row </span><span class="z-keyword z-entity z-name z-type z-numeric z-rust">as f32</span><span class="z-keyword z-operator"> *</span><span class="z-constant z-numeric"> 128</span><span class="z-punctuation">.</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        *</span><span class="z-source">texture</span><span class="z-keyword z-operator"> =</span><span class="z-source"> asset_server</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">load</span><span class="z-punctuation">(</span><span class="z-entity z-name z-function z-macro z-rust">format!</span><span class="z-punctuation">(</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string">            &quot;</span><span class="z-punctuation">{}</span><span class="z-string">/</span><span class="z-punctuation">{}</span><span class="z-string z-punctuation z-definition z-string">/board.png&quot;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">            theme</span><span class="z-keyword z-operator">.</span><span class="z-meta z-function z-call z-rust">asset_father_path</span><span class="z-punctuation">,</span><span class="z-variable z-other z-rust"> color</span><span class="z-keyword z-operator">.</span><span class="z-meta z-function z-call z-rust">kind</span></span>
+<span class="giallo-l"><span class="z-punctuation">        ));</span></span>
+<span class="giallo-l"><span class="z-punctuation">    }</span></span>
+<span class="giallo-l"><span class="z-punctuation">}</span></span></code></pre><h3 id="piece-rendering-system">Piece Rendering System</h3>
+<p>Same as the board, but hide the piece when its color is set to <code>Gray</code>.</p>
+<p>Load textures following the structure <code>theme/color/piece_type.png</code>:</p>
+<pre class="giallo z-code"><code data-lang="rust"><span class="giallo-l"><span class="z-keyword">pub fn</span><span class="z-entity z-name z-function"> show_pieces_system</span><span class="z-punctuation">(</span></span>
+<span class="giallo-l"><span class="z-storage z-modifier">    mut</span><span class="z-variable z-other z-rust"> query</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> Query</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-punctuation">(</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        &amp;</span><span class="z-entity z-name z-type">Pieces</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        &amp;</span><span class="z-entity z-name z-type">ChessColor</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        &amp;</span><span class="z-entity z-name z-type">Theme</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        &amp;</span><span class="z-entity z-name z-type">Position</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        &amp;</span><span class="z-storage z-modifier">mut</span><span class="z-entity z-name z-type"> Transform</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        &amp;</span><span class="z-storage z-modifier">mut</span><span class="z-entity z-name z-type"> Handle</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-entity z-name z-type">Image</span><span class="z-punctuation z-brackets z-angle z-rust">&gt;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        &amp;</span><span class="z-storage z-modifier">mut</span><span class="z-entity z-name z-type"> Visibility</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation">    )</span><span class="z-punctuation z-brackets z-angle z-rust">&gt;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">    asset_server</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> Res</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-entity z-name z-type">AssetServer</span><span class="z-punctuation z-brackets z-angle z-rust">&gt;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation">) {</span></span>
+<span class="giallo-l"><span class="z-keyword">    for</span><span class="z-punctuation"> (</span><span class="z-source">pieces</span><span class="z-punctuation">,</span><span class="z-source"> color</span><span class="z-punctuation">,</span><span class="z-source"> theme</span><span class="z-punctuation">,</span><span class="z-source"> position</span><span class="z-punctuation">,</span><span class="z-storage z-modifier"> mut</span><span class="z-source"> transform</span><span class="z-punctuation">,</span><span class="z-storage z-modifier"> mut</span><span class="z-source"> texture</span><span class="z-punctuation">,</span><span class="z-storage z-modifier"> mut</span><span class="z-source"> visibility</span><span class="z-punctuation">)</span><span class="z-keyword"> in</span><span class="z-keyword z-operator"> &amp;</span><span class="z-storage z-modifier">mut</span><span class="z-source"> query</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-keyword">        if</span><span class="z-source"> color</span><span class="z-keyword z-operator">.</span><span class="z-source">kind </span><span class="z-keyword z-operator">==</span><span class="z-entity z-name z-type"> ChessColorKind</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">Gray</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">            *</span><span class="z-source">visibility</span><span class="z-keyword z-operator"> =</span><span class="z-entity z-name z-type"> Visibility</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">Hidden</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-punctuation">        }</span><span class="z-keyword"> else</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-source">            transform</span><span class="z-keyword z-operator">.</span><span class="z-source">translation</span><span class="z-keyword z-operator">.</span><span class="z-source">x </span><span class="z-keyword z-operator">=</span><span class="z-source"> position</span><span class="z-keyword z-operator">.</span><span class="z-source">col </span><span class="z-keyword z-entity z-name z-type z-numeric z-rust">as f32</span><span class="z-keyword z-operator"> *</span><span class="z-constant z-numeric"> 128</span><span class="z-punctuation">.</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-source">            transform</span><span class="z-keyword z-operator">.</span><span class="z-source">translation</span><span class="z-keyword z-operator">.</span><span class="z-source">y </span><span class="z-keyword z-operator">=</span><span class="z-source"> position</span><span class="z-keyword z-operator">.</span><span class="z-source">row </span><span class="z-keyword z-entity z-name z-type z-numeric z-rust">as f32</span><span class="z-keyword z-operator"> *</span><span class="z-constant z-numeric"> 128</span><span class="z-punctuation">.</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">            *</span><span class="z-source">texture</span><span class="z-keyword z-operator"> =</span><span class="z-source"> asset_server</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">load</span><span class="z-punctuation">(</span><span class="z-entity z-name z-function z-macro z-rust">format!</span><span class="z-punctuation">(</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string">                &quot;</span><span class="z-punctuation">{}</span><span class="z-string">/</span><span class="z-punctuation">{}</span><span class="z-string">/</span><span class="z-punctuation">{}</span><span class="z-string z-punctuation z-definition z-string">.png&quot;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">                theme</span><span class="z-keyword z-operator">.</span><span class="z-meta z-function z-call z-rust">asset_father_path</span><span class="z-punctuation">,</span><span class="z-variable z-other z-rust"> color</span><span class="z-keyword z-operator">.</span><span class="z-meta z-function z-call z-rust">kind</span><span class="z-punctuation">,</span><span class="z-variable z-other z-rust"> pieces</span><span class="z-keyword z-operator">.</span><span class="z-meta z-function z-call z-rust">kind</span></span>
+<span class="giallo-l"><span class="z-punctuation">            ));</span></span>
+<span class="giallo-l"><span class="z-punctuation">        }</span></span>
+<span class="giallo-l"><span class="z-punctuation">    }</span></span>
+<span class="giallo-l"><span class="z-punctuation">}</span></span></code></pre><h3 id="piece-selection-system">Piece Selection System</h3>
+<p>After capturing mouse click events, simply set the piece at the clicked position as selected, and all other pieces as not selected:</p>
+<pre class="giallo z-code"><code data-lang="rust"><span class="giallo-l"><span class="z-keyword">pub fn</span><span class="z-entity z-name z-function"> select_pieces_system</span><span class="z-punctuation">(</span></span>
+<span class="giallo-l"><span class="z-storage z-modifier">    mut</span><span class="z-variable z-other z-rust"> query</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> Query</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-punctuation">(</span><span class="z-keyword z-operator">&amp;</span><span class="z-storage z-modifier">mut</span><span class="z-entity z-name z-type"> Pieces</span><span class="z-punctuation">,</span><span class="z-keyword z-operator"> &amp;</span><span class="z-entity z-name z-type">Position</span><span class="z-punctuation">)</span><span class="z-punctuation z-brackets z-angle z-rust">&gt;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">    game_state</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> ResMut</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-entity z-name z-type">GameState</span><span class="z-punctuation z-brackets z-angle z-rust">&gt;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation">) {</span></span>
+<span class="giallo-l"><span class="z-keyword z-storage z-type z-rust">    if let</span><span class="z-entity z-name z-type"> Some</span><span class="z-punctuation">(</span><span class="z-source">selected_position</span><span class="z-punctuation">)</span><span class="z-keyword z-operator"> =</span><span class="z-source"> game_state</span><span class="z-keyword z-operator">.</span><span class="z-source">selected_position</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">clone</span><span class="z-punctuation">() {</span></span>
+<span class="giallo-l"><span class="z-keyword">        for</span><span class="z-punctuation"> (</span><span class="z-storage z-modifier">mut</span><span class="z-source"> pieces</span><span class="z-punctuation">,</span><span class="z-source"> position</span><span class="z-punctuation">)</span><span class="z-keyword"> in</span><span class="z-keyword z-operator"> &amp;</span><span class="z-storage z-modifier">mut</span><span class="z-source"> query</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-keyword">            if</span><span class="z-source"> selected_position</span><span class="z-keyword z-operator"> == *</span><span class="z-source">position</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-source">                pieces</span><span class="z-keyword z-operator">.</span><span class="z-source">selected </span><span class="z-keyword z-operator">=</span><span class="z-constant z-language"> true</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-punctuation">            }</span><span class="z-keyword"> else</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-source">                pieces</span><span class="z-keyword z-operator">.</span><span class="z-source">selected </span><span class="z-keyword z-operator">=</span><span class="z-constant z-language"> false</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-punctuation">            }</span></span>
+<span class="giallo-l"><span class="z-punctuation">        }</span></span>
+<span class="giallo-l"><span class="z-punctuation">    }</span></span>
+<span class="giallo-l"><span class="z-punctuation">}</span></span></code></pre><h3 id="piece-movement-system">Piece Movement System</h3>
+<p>Piece movement needs to consider the following:</p>
+<ol>
+<li>Before moving, confirm that the piece's color matches the current turn</li>
+<li>Before moving, confirm whether the target position has another piece. If there is a piece of the same color, the move is blocked; if there is a piece of a different color, capture that piece</li>
+<li>After completing the move, switch turns</li>
+</ol>
+<pre class="giallo z-code"><code data-lang="rust"><span class="giallo-l"><span class="z-keyword">pub fn</span><span class="z-entity z-name z-function"> move_pieces_system</span><span class="z-punctuation">(</span></span>
+<span class="giallo-l"><span class="z-storage z-modifier">    mut</span><span class="z-variable z-other z-rust"> query</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> Query</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-punctuation">(</span><span class="z-keyword z-operator">&amp;</span><span class="z-storage z-modifier">mut</span><span class="z-entity z-name z-type"> Pieces</span><span class="z-punctuation">,</span><span class="z-keyword z-operator"> &amp;</span><span class="z-storage z-modifier">mut</span><span class="z-entity z-name z-type"> Position</span><span class="z-punctuation">,</span><span class="z-keyword z-operator"> &amp;</span><span class="z-storage z-modifier">mut</span><span class="z-entity z-name z-type"> ChessColor</span><span class="z-punctuation">)</span><span class="z-punctuation z-brackets z-angle z-rust">&gt;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-storage z-modifier">    mut</span><span class="z-variable z-other z-rust"> game_state</span><span class="z-keyword z-operator">:</span><span class="z-entity z-name z-type"> ResMut</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-entity z-name z-type">GameState</span><span class="z-punctuation z-brackets z-angle z-rust">&gt;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation">) {</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    // Check if a move operation is needed</span></span>
+<span class="giallo-l"><span class="z-keyword z-storage z-type z-rust">    if let</span><span class="z-entity z-name z-type"> Some</span><span class="z-punctuation">(</span><span class="z-source">move_position</span><span class="z-punctuation">)</span><span class="z-keyword z-operator"> =</span><span class="z-source"> game_state</span><span class="z-keyword z-operator">.</span><span class="z-source">move_position</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">clone</span><span class="z-punctuation">() {</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">        // Get the color of the selected piece</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-rust z-storage z-modifier">        let mut</span><span class="z-source"> select_color</span><span class="z-keyword z-operator"> =</span><span class="z-entity z-name z-type"> None</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-keyword">        for</span><span class="z-punctuation"> (</span><span class="z-source">pieces</span><span class="z-punctuation">,</span><span class="z-source"> _position</span><span class="z-punctuation">,</span><span class="z-source"> color</span><span class="z-punctuation">)</span><span class="z-keyword"> in</span><span class="z-keyword z-operator"> &amp;</span><span class="z-storage z-modifier">mut</span><span class="z-source"> query</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-keyword">            if</span><span class="z-source"> pieces</span><span class="z-keyword z-operator">.</span><span class="z-source">selected </span><span class="z-punctuation">{</span></span>
+<span class="giallo-l"><span class="z-source">                select_color</span><span class="z-keyword z-operator"> =</span><span class="z-entity z-name z-type"> Some</span><span class="z-punctuation">(</span><span class="z-source">color</span><span class="z-keyword z-operator">.</span><span class="z-source">kind</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">clone</span><span class="z-punctuation">());</span></span>
+<span class="giallo-l"><span class="z-punctuation">            }</span></span>
+<span class="giallo-l"><span class="z-punctuation">        }</span></span>
+<span class="giallo-l"><span class="z-keyword z-storage z-type z-rust">        if let</span><span class="z-entity z-name z-type"> Some</span><span class="z-punctuation">(</span><span class="z-source">select_color</span><span class="z-punctuation">)</span><span class="z-keyword z-operator"> =</span><span class="z-source"> select_color</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-keyword">            for</span><span class="z-punctuation"> (</span><span class="z-source">_pieces</span><span class="z-punctuation">,</span><span class="z-source"> position</span><span class="z-punctuation">,</span><span class="z-storage z-modifier"> mut</span><span class="z-source"> color</span><span class="z-punctuation">)</span><span class="z-keyword"> in</span><span class="z-keyword z-operator"> &amp;</span><span class="z-storage z-modifier">mut</span><span class="z-source"> query</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-keyword">                if</span><span class="z-source"> position</span><span class="z-keyword z-operator">.</span><span class="z-source">row </span><span class="z-keyword z-operator">==</span><span class="z-source"> move_position</span><span class="z-keyword z-operator">.</span><span class="z-source">row </span><span class="z-keyword z-operator">&amp;&amp;</span><span class="z-source"> position</span><span class="z-keyword z-operator">.</span><span class="z-source">col </span><span class="z-keyword z-operator">==</span><span class="z-source"> move_position</span><span class="z-keyword z-operator">.</span><span class="z-source">col </span><span class="z-punctuation">{</span></span>
+<span class="giallo-l"><span class="z-keyword">                    if</span><span class="z-source"> color</span><span class="z-keyword z-operator">.</span><span class="z-source">kind </span><span class="z-keyword z-operator">==</span><span class="z-source"> select_color</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">                        // Target position has a piece of the same color, can&#39;t move</span></span>
+<span class="giallo-l"><span class="z-source">                        game_state</span><span class="z-keyword z-operator">.</span><span class="z-source">move_position </span><span class="z-keyword z-operator">=</span><span class="z-entity z-name z-type"> None</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-keyword">                        return</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-punctuation">                    }</span><span class="z-keyword"> else</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">                        // Target position has a piece of a different color, capture it</span></span>
+<span class="giallo-l"><span class="z-source">                        color</span><span class="z-keyword z-operator">.</span><span class="z-source">kind </span><span class="z-keyword z-operator">=</span><span class="z-entity z-name z-type"> ChessColorKind</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">Gray</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-punctuation">                    }</span></span>
+<span class="giallo-l"><span class="z-punctuation">                }</span></span>
+<span class="giallo-l"><span class="z-punctuation">            }</span></span>
+<span class="giallo-l"><span class="z-punctuation">        }</span></span>
+<span class="giallo-l"><span class="z-keyword">        for</span><span class="z-punctuation"> (</span><span class="z-storage z-modifier">mut</span><span class="z-source"> pieces</span><span class="z-punctuation">,</span><span class="z-storage z-modifier"> mut</span><span class="z-source"> position</span><span class="z-punctuation">,</span><span class="z-source"> color</span><span class="z-punctuation">)</span><span class="z-keyword"> in</span><span class="z-keyword z-operator"> &amp;</span><span class="z-storage z-modifier">mut</span><span class="z-source"> query</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">            // Move when the piece color matches the current turn</span></span>
+<span class="giallo-l"><span class="z-keyword">            if</span><span class="z-source"> pieces</span><span class="z-keyword z-operator">.</span><span class="z-source">selected </span><span class="z-keyword z-operator">&amp;&amp;</span><span class="z-source"> color</span><span class="z-keyword z-operator">.</span><span class="z-source">kind </span><span class="z-keyword z-operator">==</span><span class="z-source"> game_state</span><span class="z-keyword z-operator">.</span><span class="z-source">current_turn </span><span class="z-punctuation">{</span></span>
+<span class="giallo-l"><span class="z-source">                position</span><span class="z-keyword z-operator">.</span><span class="z-source">row </span><span class="z-keyword z-operator">=</span><span class="z-source"> move_position</span><span class="z-keyword z-operator">.</span><span class="z-source">row</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-source">                position</span><span class="z-keyword z-operator">.</span><span class="z-source">col </span><span class="z-keyword z-operator">=</span><span class="z-source"> move_position</span><span class="z-keyword z-operator">.</span><span class="z-source">col</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-source">                pieces</span><span class="z-keyword z-operator">.</span><span class="z-source">selected </span><span class="z-keyword z-operator">=</span><span class="z-constant z-language"> false</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">                // Switch turns after moving</span></span>
+<span class="giallo-l"><span class="z-keyword">                if</span><span class="z-source"> game_state</span><span class="z-keyword z-operator">.</span><span class="z-source">current_turn </span><span class="z-keyword z-operator">==</span><span class="z-entity z-name z-type"> ChessColorKind</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">White</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-source">                    game_state</span><span class="z-keyword z-operator">.</span><span class="z-source">current_turn </span><span class="z-keyword z-operator">=</span><span class="z-entity z-name z-type"> ChessColorKind</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">Black</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-punctuation">                }</span><span class="z-keyword"> else</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-keyword">                    if</span><span class="z-source"> game_state</span><span class="z-keyword z-operator">.</span><span class="z-source">current_turn </span><span class="z-keyword z-operator">==</span><span class="z-entity z-name z-type"> ChessColorKind</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">Black</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-source">                        game_state</span><span class="z-keyword z-operator">.</span><span class="z-source">current_turn </span><span class="z-keyword z-operator">=</span><span class="z-entity z-name z-type"> ChessColorKind</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">White</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-punctuation">                    }</span></span>
+<span class="giallo-l"><span class="z-punctuation">                }</span></span>
+<span class="giallo-l"><span class="z-punctuation">            }</span></span>
+<span class="giallo-l"><span class="z-punctuation">        }</span></span>
+<span class="giallo-l"><span class="z-source">        game_state</span><span class="z-keyword z-operator">.</span><span class="z-source">move_position </span><span class="z-keyword z-operator">=</span><span class="z-entity z-name z-type"> None</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-punctuation">    }</span></span>
+<span class="giallo-l"><span class="z-punctuation">}</span></span></code></pre><h3 id="complete-2">Complete</h3>
+<p>Final <code>system.rs</code>: <a rel="external" href="https://github.com/DeadPoetSpoon/chess/blob/v0.2.0/src/chess/system.rs">https://github.com/DeadPoetSpoon/chess/blob/v0.2.0/src/chess/system.rs</a></p>
+<h2 id="textures">Textures</h2>
+<h3 id="aseprite">Aseprite</h3>
+<p>Use <a rel="external" href="https://aseprite.org/">Aseprite</a> to create textures. Thanks to <a rel="external" href="https://lichess.org/">lichess.org</a></p>
+<h3 id="board-1">Board</h3>
+<p><img src="https://github.com/DeadPoetSpoon/chess/blob/v0.2.0/assets/default/black/board.png?raw=true" alt="Black Board" /></p>
+<h3 id="pieces-1">Pieces</h3>
+<p><img src="https://github.com/DeadPoetSpoon/chess/blob/v0.2.0/assets/default/white/knight.png?raw=true" alt="White Knight" /></p>
+<h3 id="render-result">Render Result</h3>
+<p><img src="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/one_assets.png" alt="one_assets" /></p>
+<h2 id="let-s-run-it">Let's Run It!</h2>
+<pre class="giallo z-code"><code data-lang="shellscript"><span class="giallo-l"><span class="z-entity z-name z-function">cargo</span><span class="z-string"> r</span></span></code></pre>
+<p><img src="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/one_finish.gif" alt="Game" /></p>
+<h1 id="next-steps">Next Steps</h1>
+<ul>
+<li>[   ] Complete a simple UI</li>
+<li>[   ] Restrict each piece's movement rules</li>
+<li>[   ] Add game win conditions</li>
+<li>[   ] Add some music and sound effects</li>
+<li>[   ] Participate in some open-source projects</li>
+<li>[   ] Learn basic GitHub project development conventions</li>
+</ul>
+
+    <section class="series-page-outro">
+                <p>Next: <a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-2/" aria_label="Chess TWO">Chess TWO</a></p>
+
+            </section>
+
+        </section>
+        
+        
+
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+        </article>
+</main>
+
+    <div id="button-container">
+        
+        
+            <div id="toc-floating-container">
+                <input type="checkbox" id="toc-toggle" class="toggle"/>
+                <label for="toc-toggle" class="overlay"></label>
+                <label for="toc-toggle" id="toc-button" class="button" title="Toggle Table of Contents">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M414.82-193.094q-18.044 0-30.497-12.32-12.453-12.319-12.453-30.036t12.453-30.086q12.453-12.37 30.497-12.37h392.767q17.237 0 29.927 12.487 12.69 12.486 12.69 30.203 0 17.716-12.69 29.919t-29.927 12.203H414.82Zm0-244.833q-18.044 0-30.497-12.487Q371.87-462.9 371.87-480.45t12.453-29.92q12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.511 12.69 12.512 12.69 29.845 0 17.716-12.69 30.086-12.69 12.37-29.927 12.37H414.82Zm0-245.167q-18.044 0-30.497-12.32t-12.453-30.037q0-17.716 12.453-30.086 12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.486 12.69 12.487 12.69 30.203 0 17.717-12.69 29.92-12.69 12.203-29.927 12.203H414.82ZM189.379-156.681q-32.652 0-55.878-22.829t-23.226-55.731q0-32.549 23.15-55.647 23.151-23.097 55.95-23.097 32.799 0 55.313 23.484 22.515 23.484 22.515 56.246 0 32.212-22.861 54.893-22.861 22.681-54.963 22.681Zm0-245.167q-32.652 0-55.878-23.134-23.226-23.135-23.226-55.623 0-32.487 23.467-55.517t56.12-23.03q32.102 0 54.721 23.288 22.62 23.288 22.62 55.775 0 32.488-22.861 55.364-22.861 22.877-54.963 22.877Zm-.82-244.833q-32.224 0-55.254-23.288-23.03-23.289-23.03-55.623 0-32.333 23.271-55.364 23.272-23.03 55.495-23.03 32.224 0 55.193 23.288 22.969 23.289 22.969 55.622 0 32.334-23.21 55.364-23.21 23.031-55.434 23.031Z"/></svg>
+                </label>
+                <div class="toc-content">
+                    
+
+<div class="toc-container">
+    
+
+    <ul>
+        
+            
+            
+                <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/#why-chess">Why Chess?</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/#this-article-is-based-on">This Article Is Based On</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/#creating-the-project">Creating the Project</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/#turning-the-game-into-a-plugin">Turning the Game into a Plugin</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/#thinking-about-the-most-basic-ecs-for-chess">Thinking About the Most Basic ECS for Chess</a>
+                    
+                        <ul>
+                            
+                                
+                                    <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/#entities">Entities</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/#components">Components</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/#systems">Systems</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/#resources">Resources</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/#assets">Assets</a>
+                                        
+                                    </li>
+                                
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/#let-s-implement-them">Let&#x27;s Implement Them</a>
+                    
+                        <ul>
+                            
+                                
+                                    <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/#creating-entities-and-components">Creating Entities and Components</a>
+                                        
+                                            <ul>
+                                                
+                                                    
+                                                        <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/#pieces-and-board">Pieces and Board</a>
+                                                            
+                                                        </li>
+                                                    
+                                                
+                                                    
+                                                        <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/#components-1">Components</a>
+                                                            
+                                                        </li>
+                                                    
+                                                
+                                            </ul>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/#creating-resources">Creating Resources</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/#creating-assets">Creating Assets</a>
+                                        
+                                            <ul>
+                                                
+                                                    
+                                                        <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/#handling-asset-loading-errors">Handling Asset Loading Errors</a>
+                                                            
+                                                        </li>
+                                                    
+                                                
+                                                    
+                                                        <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/#game-settings">Game Settings</a>
+                                                            
+                                                        </li>
+                                                    
+                                                
+                                                    
+                                                        <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/#piece-initial-positions-and-basic-information">Piece Initial Positions and Basic Information</a>
+                                                            
+                                                        </li>
+                                                    
+                                                
+                                                    
+                                                        <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/#complete-1">Complete</a>
+                                                            
+                                                        </li>
+                                                    
+                                                
+                                            </ul>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/#systems-1">Systems</a>
+                                        
+                                            <ul>
+                                                
+                                                    
+                                                        <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/#events">Events</a>
+                                                            
+                                                        </li>
+                                                    
+                                                
+                                                    
+                                                        <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/#startup-system">Startup System</a>
+                                                            
+                                                        </li>
+                                                    
+                                                
+                                                    
+                                                        <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/#piece-position-initialization-system">Piece Position Initialization System</a>
+                                                            
+                                                        </li>
+                                                    
+                                                
+                                                    
+                                                        <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/#board-rendering-system">Board Rendering System</a>
+                                                            
+                                                        </li>
+                                                    
+                                                
+                                                    
+                                                        <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/#piece-rendering-system">Piece Rendering System</a>
+                                                            
+                                                        </li>
+                                                    
+                                                
+                                                    
+                                                        <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/#piece-selection-system">Piece Selection System</a>
+                                                            
+                                                        </li>
+                                                    
+                                                
+                                                    
+                                                        <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/#piece-movement-system">Piece Movement System</a>
+                                                            
+                                                        </li>
+                                                    
+                                                
+                                                    
+                                                        <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/#complete-2">Complete</a>
+                                                            
+                                                        </li>
+                                                    
+                                                
+                                            </ul>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/#textures">Textures</a>
+                                        
+                                            <ul>
+                                                
+                                                    
+                                                        <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/#aseprite">Aseprite</a>
+                                                            
+                                                        </li>
+                                                    
+                                                
+                                                    
+                                                        <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/#board-1">Board</a>
+                                                            
+                                                        </li>
+                                                    
+                                                
+                                                    
+                                                        <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/#pieces-1">Pieces</a>
+                                                            
+                                                        </li>
+                                                    
+                                                
+                                                    
+                                                        <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/#render-result">Render Result</a>
+                                                            
+                                                        </li>
+                                                    
+                                                
+                                            </ul>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/#let-s-run-it">Let&#x27;s Run It!</a>
+                                        
+                                    </li>
+                                
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/chess/chess-1/#next-steps">Next Steps</a>
+                    
+                </li>
+            
+        
+    </ul>
+</div>
+
+
+                </div>
+            </div>
+        
+
+        
+        
+
+        
+        <a href="#" id="top-button" class="no-hover-padding" title="Go to the top of the page">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z"/></svg>
+        </a>
+    </div>
+
+
+<span id="copy-success" class="hidden">
+        Copied!
+    </span>
+    <span id="copy-init" class="hidden">
+        Copy code to clipboard
+    </span>
+    <script defer src="https://deadpoetspoon.github.io/a-poor-imitation/js/copyCodeToClipboard.min.js"></script>
+
+
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs">
+        </nav>
+
+        
+        <nav class="nav-navs">
+                <small>
+                    <ul>
+                        
+                        <li><a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;deadpoetspoon.github.io&#x2F;a-poor-imitation&#x2F;en&#x2F;about&#x2F;">
+                                about
+                            </a>
+                        </li>
+                    
+                        <li><a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;deadpoetspoon.github.io&#x2F;a-poor-imitation&#x2F;sitemap.xml">
+                                sitemap
+                            </a>
+                        </li>
+                    
+                    </ul>
+                </small>
+        
+        </nav>
+
+        <div class="credits">
+            <small>
+                
+    
+    
+    
+    
+        
+    
+        
+    
+
+    
+
+    
+    
+    
+
+    
+    
+    <p><p>~/API Docs © 2026 Dead Poet Spoon • Unless otherwise noted, the content in this website is available under the <a rel="external" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> license.</p>
+</p>
+
+                
+                Powered by
+                <a rel="" 
+
+ href="https://www.getzola.org">Zola</a>
+                &amp;
+                <a rel="" 
+
+ href="https://github.com/welpo/tabi">tabi</a>
+
+                •
+                    <a rel="" 
+
+ href="https:&#x2F;&#x2F;github.com&#x2F;DeadPoetSpoon&#x2F;a-poor-imitation">
+                        Site source
+                    </a></small>
+        </div>
+    </section>
+
+    </footer>
+
+
+    
+    
+</body>
+
+</html>

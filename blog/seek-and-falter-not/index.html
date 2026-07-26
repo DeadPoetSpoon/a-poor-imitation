@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zh" >
+
+<head>
+    <meta charset="UTF-8"><meta http-equiv="Content-Security-Policy"
+content="default-src 'self';font-src 'self' data:;img-src 'self' https://* data:;media-src 'self';style-src 'self';frame-src player.vimeo.com https://www.youtube-nocookie.com;connect-src 'self';script-src 'self' 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https://deadpoetspoon.github.io/a-poor-imitation">
+
+    
+    <title>
+~/API Docs • 追寻，不再犹豫</title>
+
+    
+    
+        <link rel="icon" type="image/png" href="https://deadpoetspoon.github.io/a-poor-imitation/images/logo.webp"/>
+    
+    
+
+    
+    
+
+    
+    
+    
+        
+            <link rel="stylesheet" href="https://deadpoetspoon.github.io/a-poor-imitation/custom_subset.css?h=0b9535a28bc3d5bf2321">
+        
+    
+
+    
+        <link rel="stylesheet" href="https://deadpoetspoon.github.io/a-poor-imitation/main.css?h=28b3fcbb58f2f22a8c44" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="description" content="To strive, to seek, to find, and not to yield." />
+        <meta property="og:description" content="To strive, to seek, to find, and not to yield." />
+
+    
+
+    <meta property="og:title" content="追寻，不再犹豫" />
+    <meta property="og:type" content="article" />
+
+    
+<meta property="og:locale:alternate" content="en_GB" />
+
+        <link rel="alternate" hreflang="en" href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/seek-and-falter-not/" /><meta property="og:locale:alternate" content="zh_CN" />
+
+        <link rel="alternate" hreflang="zh" href="https://deadpoetspoon.github.io/a-poor-imitation/blog/seek-and-falter-not/" />
+
+    <meta property="og:url" content="https:&#x2F;&#x2F;deadpoetspoon.github.io&#x2F;a-poor-imitation&#x2F;blog&#x2F;seek-and-falter-not&#x2F;" /><meta property="og:site_name" content="~&#x2F;API Docs">
+        <noscript><link rel="stylesheet" href="https://deadpoetspoon.github.io/a-poor-imitation/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://deadpoetspoon.github.io/a-poor-imitation/js/initializeTheme.min.js"></script>
+        <script defer src="https://deadpoetspoon.github.io/a-poor-imitation/js/themeSwitcher.min.js"></script><script defer src="https://deadpoetspoon.github.io/a-poor-imitation/search_index.zh.js?h=fcd8a46a84d3aa1d42cf"></script>
+        <script defer src="https://deadpoetspoon.github.io/a-poor-imitation/js/searchElasticlunr.min.js?h=3626c0ef99daa745b31e"></script>
+
+        <script defer src="https://deadpoetspoon.github.io/a-poor-imitation/js/lunr/lunrStemmerSupport.min.js"></script>
+            <script defer src="https://deadpoetspoon.github.io/a-poor-imitation/js/lunr/lunr.zh.min.js"></script>
+    
+</head>
+
+
+<body>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a class="home-title" href="https://deadpoetspoon.github.io/a-poor-imitation/">~&#x2F;API Docs</a>
+        </div>
+            <div class="nav-navs">
+                <ul>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://deadpoetspoon.github.io/a-poor-imitation/blog/">博客
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://deadpoetspoon.github.io/a-poor-imitation/archive/">归档
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://deadpoetspoon.github.io/a-poor-imitation/tags/">标签
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://deadpoetspoon.github.io/a-poor-imitation/projects/">项目
+                                </a>
+                            </li>
+                        <li class="menu-icons-container">
+                        <ul class="menu-icons-group">
+                            <li class="js menu-icon">
+                                <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon" title="点击或按 $SHORTCUT 开启搜索" aria-label="点击或按 $SHORTCUT 开启搜索">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                        <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                                    </svg>
+                                </div>
+                            </li>
+
+                            
+                            
+                            <li class="language-switcher">
+    <details class="dropdown">
+        <summary role="button" aria-haspopup="true" title="语言选择" aria-label="语言选择">
+            <div class="language-switcher-icon"></div>
+        </summary>
+        <div class="dropdown-content" role="menu">简体中文<a role="menuitem" lang="en" aria-label="English" href="https:&#x2F;&#x2F;deadpoetspoon.github.io&#x2F;a-poor-imitation/en/blog/seek-and-falter-not/">English</a></div>
+    </details>
+</li>
+
+
+                            <li class="theme-switcher-wrapper js"><div
+        title="切换到暗&#x2F;亮模式"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="切换到暗模式"
+        aria-pressed="false">
+    </div><div
+        title="将模式重置为网站默认值"
+        class="theme-resetter arrow"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="将模式重置为网站默认值">
+    </div>
+
+</li>
+</ul>
+                    </li>
+                </ul>
+            </div>
+        
+    </nav>
+</header>
+
+    <div class="content">
+
+        
+        
+
+
+
+
+
+<main>
+    <article class="h-entry">
+        <h1 class="p-name article-title">
+            追寻，不再犹豫
+        </h1>
+        <a class="u-url u-uid" href="https://deadpoetspoon.github.io/a-poor-imitation/blog/seek-and-falter-not/"></a>
+
+        <ul class="meta"><span class="hidden p-author h-card">
+<a rel="author" href="https:&#x2F;&#x2F;deadpoetspoon.github.io&#x2F;a-poor-imitation" class="u-url " title="Dead Poet Spoon">Dead Poet Spoon</a>
+</span>
+<li><time class="dt-published" datetime="2026-07-26">2026 七月 26</time></li><li title="1648 字"><span class='separator' aria-hidden='true'>•</span>9 分钟阅读</li><li class="tag"><span class='separator' aria-hidden='true'>•</span>标签:&nbsp;</li><li class="tag"><a class="p-category" href="https://deadpoetspoon.github.io/a-poor-imitation/tags/xian-tan/">闲谈</a></li></ul><ul class="meta last-updated"><li><time class="dt-updated" datetime="2026-07-26">更新于 2026 七月 26</time></li><li><span class='separator' aria-hidden='true'>•</span><a class="external" href="https://github.com/DeadPoetSpoon/a-poor-imitation/commits/gh-pages/content/blog&#x2F;seek-and-falter-not&#x2F;index.md" 
+
+ rel="">修改纪录</a></li>
+        </ul>
+            <p class="p-summary" hidden>To strive, to seek, to find, and not to yield.</p><section class="e-content body"><h1 id="shi-qu-de-zhe-liang-nian"><a class="header-anchor no-hover-padding" href="#shi-qu-de-zhe-liang-nian" aria-label="Anchor link for: shi-qu-de-zhe-liang-nian"><span class="link-icon" aria-hidden="true"></span></a>
+失去的这两年</h1>
+<p>距离API项目启动已经快3年了，距离上一次更新也有2年，这两年我的生活变化了太多，工作变动、生活混沌...</p>
+<p>24年贷款买完房，原本以为一切向好，满足了最大的物质欲望，我需要开始满足精神欲望，于是认为API项目也可以逐步进入正轨，但原本稳定的工作出现变动，名为“大环境不好”的巨浪冲垮本就不坚固的堤坝，工资开始迟发，那几个月看着银行卡几千块钱的余额，半夜躺在床上怀疑自己是否做下正确的选择，我投入到工作中，当最基本的生活无法满足时，人是无法思考和创造的。</p>
+<p>25年降薪、工作危机、领导变动，几个月的基本工资让我体会“入不敷出”的危机，那天躺在出差出租屋的床板上我注视映着窗外车流灯光的天花板，第一次害怕睡觉，因为第二天又得面对一切。随着冲击来临的还有一片“悻悻向荣”所掩盖的“规则”，你必须接受“被剥削和剥削”才能拥有进入游戏的“门票”，你的一切欲望将是被利用的工具，而你必须亲手将这把“鞭子”送到执鞭人的手中，一次次抽下时你还需要大声地喊出“努力！奋斗！”，毫无怨言。这是一种异化，金钱和权力的异化。</p>
+<p>26年稍稍稳定，回顾这几年，我领会到一种巨大的“消耗”，两年来生活也浑浑噩噩，体重从67KG飙升至80KG，我一度失去了对工作和生活的热情，陷入一种矛盾拧巴的状态，一面不愿只做那干活的公驴但是又不愿购买“门票”（进入游戏的亦或退出游戏的），一面想要沉静于生活但是又不愿放弃曾经的付出，明明“接受规则”就是最简单的道路，却总是在质问自己为什么不继续走下去，强迫自己去改变，同时否认自己拥有改变的能力。</p>
+<blockquote>
+<p>“你在欺负你自己啊。”——<em>《我们由奇迹构成》</em>(<em>最近意外看的一部日剧</em>)</p>
+</blockquote>
+<h1 id="zui-hou-yi-gen-dao-cao"><a class="header-anchor no-hover-padding" href="#zui-hou-yi-gen-dao-cao" aria-label="Anchor link for: zui-hou-yi-gen-dao-cao"><span class="link-icon" aria-hidden="true"></span></a>
+最后一根稻草</h1>
+<p>那天一阵疲惫袭来，忍不住向父母吐槽了一句“心累”，我几乎不会这样，因为最后的结局都很让人难堪，因此之上所有一切：个人经济不好、工作变动内耗等等我都不愿提及，提出只会让我更累，或许同他说得一样，我并不善于沟通吧。</p>
+<blockquote>
+<p>"听你妈妈说你现在感觉心很累，所以想跟你聊聊，谈谈心[呲牙]"</p>
+</blockquote>
+<blockquote>
+<p>说实话，一个人同样的工作做了很多年以后会有厌烦了的感觉，例如同事之间的尔虞我诈，被领导的欺骗，工作的繁重居如此类种种</p>
+</blockquote>
+<blockquote>
+<p>关键是要能调节好自己的心态，把握好与同事、领导的交流沟通方法，我记得曾经跟你说过:不与领导争功，不与同事争宠，不与下属争利。</p>
+</blockquote>
+<blockquote>
+<p>年轻人都有个性，但不宜太过表露出来，只要让别人知道就行。尤其在领导面前要注意，哪怕有不同的意见，也不要当着同事的面直接提出来，即使想说也要委婉的讲，或者与其单独沟通，在领导面前谦恭和服从不是丑事</p>
+</blockquote>
+<blockquote>
+<p>我建议你在抖音精选里找一找《读者》精选集，下载下来，认真的看一看，对你的为人处世和思想建设会很有帮助的</p>
+</blockquote>
+<blockquote>
+<p>还有姻缘不是在家里等来的，要靠你自己与领导同事交流沟通才会到来的，懂吗？</p>
+</blockquote>
+<blockquote>
+<p>要做一个谦逊、善良，但也会交流沟通的人。</p>
+</blockquote>
+<p>父亲努力地开导我，我很感激他，也很感激他帮我实现了买房的欲望，只是我在初高中已经看了无数遍《读者》、如今的环境婚姻并不一定能让生活更好、谦虚善良的人绝无可能顺利地向上爬。</p>
+<p>我再一次深刻意识到，很多事情是自己内心的冲突，而内心的冲突只能靠自己解决，我明白我不能再这样下去了！</p>
+<blockquote>
+<p>我总是无法和别人友好相处。但我已经和最想好好相处的人处好关系了。这样就够了。那人就是我自己。——<em>《我们由奇迹构成》</em></p>
+</blockquote>
+<h1 id="wu-gui-huan-shi-tu-zi"><a class="header-anchor no-hover-padding" href="#wu-gui-huan-shi-tu-zi" aria-label="Anchor link for: wu-gui-huan-shi-tu-zi"><span class="link-icon" aria-hidden="true"></span></a>
+乌龟还是兔子</h1>
+<blockquote>
+<p>“为什么乌龟不叫醒兔子？”——<em>《我们由奇迹构成》</em></p>
+</blockquote>
+<p>这一段日子书籍一如既往地一直陪伴着我，看完《包法利夫人》喜欢上福楼拜那些精致的比喻，遂了解了他纯粹的一生。在他倾注一生的文字面前，隔着翻译的透镜，也足以使我感到羞愧：即使有他那样的物质条件，我也不一定有那样的决心和毅力将自己的一生投入到自己所爱之物之上，或者说我没有那样的能力。“社会”的压力会强迫人们从乌龟变为兔子。</p>
+<p>于是我再一次回顾大学毕业时我对自己人生的期望：</p>
+<blockquote>
+<p>本我：低欲、安稳、平静地生活</p>
+</blockquote>
+<blockquote>
+<p>自我：工作8小时、睡觉8小时、剩余8小时给书籍、影视、游戏</p>
+</blockquote>
+<blockquote>
+<p>超我：服务于公共事业</p>
+</blockquote>
+<p>这三点我都完成地不好，我的生活并没有达到稳定的状态、工作时间远超8小时、睡眠严重不足、剩余的时间很多用于内耗和无意义地消磨、服务公共事业的理想也没有被好好保护异化成对“成功”的追求。</p>
+<p>我需要自信一些，我应当成为“乌龟”！或者说我需要自己成为“乌龟”！</p>
+<h1 id="zai-ci-qi-cheng"><a class="header-anchor no-hover-padding" href="#zai-ci-qi-cheng" aria-label="Anchor link for: zai-ci-qi-cheng"><span class="link-icon" aria-hidden="true"></span></a>
+再次启程</h1>
+<blockquote>
+<p>专注于眼前的事情的时候，愿望就被实现了。——<em>《我们由奇迹构成》</em></p>
+</blockquote>
+<p>我想到几乎是十年前写的一句短句：</p>
+<blockquote>
+<p>我会死在这，但明天我会回来</p>
+</blockquote>
+<p>我相信我有再次启程的勇气！</p>
+<blockquote>
+<p>弃我去者，昨日之日不可留；乱我心者，今日之日多烦忧。——李白</p>
+</blockquote>
+<p><strong>追寻，不再犹豫</strong></p>
+<blockquote>
+<p>To strive, to seek, to find, and not to yield. ——<em>《Ulysses》</em></p>
+</blockquote>
+<p>不如就从列举自己的100个优点开始吧！</p>
+
+        </section>
+        
+        
+
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+        </article>
+</main>
+
+    <div id="button-container">
+        
+        
+            <div id="toc-floating-container">
+                <input type="checkbox" id="toc-toggle" class="toggle"/>
+                <label for="toc-toggle" class="overlay"></label>
+                <label for="toc-toggle" id="toc-button" class="button" title="切换目录">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M414.82-193.094q-18.044 0-30.497-12.32-12.453-12.319-12.453-30.036t12.453-30.086q12.453-12.37 30.497-12.37h392.767q17.237 0 29.927 12.487 12.69 12.486 12.69 30.203 0 17.716-12.69 29.919t-29.927 12.203H414.82Zm0-244.833q-18.044 0-30.497-12.487Q371.87-462.9 371.87-480.45t12.453-29.92q12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.511 12.69 12.512 12.69 29.845 0 17.716-12.69 30.086-12.69 12.37-29.927 12.37H414.82Zm0-245.167q-18.044 0-30.497-12.32t-12.453-30.037q0-17.716 12.453-30.086 12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.486 12.69 12.487 12.69 30.203 0 17.717-12.69 29.92-12.69 12.203-29.927 12.203H414.82ZM189.379-156.681q-32.652 0-55.878-22.829t-23.226-55.731q0-32.549 23.15-55.647 23.151-23.097 55.95-23.097 32.799 0 55.313 23.484 22.515 23.484 22.515 56.246 0 32.212-22.861 54.893-22.861 22.681-54.963 22.681Zm0-245.167q-32.652 0-55.878-23.134-23.226-23.135-23.226-55.623 0-32.487 23.467-55.517t56.12-23.03q32.102 0 54.721 23.288 22.62 23.288 22.62 55.775 0 32.488-22.861 55.364-22.861 22.877-54.963 22.877Zm-.82-244.833q-32.224 0-55.254-23.288-23.03-23.289-23.03-55.623 0-32.333 23.271-55.364 23.272-23.03 55.495-23.03 32.224 0 55.193 23.288 22.969 23.289 22.969 55.622 0 32.334-23.21 55.364-23.21 23.031-55.434 23.031Z"/></svg>
+                </label>
+                <div class="toc-content">
+                    
+
+<div class="toc-container">
+    
+
+    <ul>
+        
+            
+            
+                <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/blog/seek-and-falter-not/#shi-qu-de-zhe-liang-nian">失去的这两年</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/blog/seek-and-falter-not/#zui-hou-yi-gen-dao-cao">最后一根稻草</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/blog/seek-and-falter-not/#wu-gui-huan-shi-tu-zi">乌龟还是兔子</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/blog/seek-and-falter-not/#zai-ci-qi-cheng">再次启程</a>
+                    
+                </li>
+            
+        
+    </ul>
+</div>
+
+
+                </div>
+            </div>
+        
+
+        
+        
+
+        
+        <a href="#" id="top-button" class="no-hover-padding" title="返回页面顶部">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z"/></svg>
+        </a>
+    </div>
+
+
+<span id="copy-success" class="hidden">
+        已复制!
+    </span>
+    <span id="copy-init" class="hidden">
+        复制代码到剪贴板
+    </span>
+    <script defer src="https://deadpoetspoon.github.io/a-poor-imitation/js/copyCodeToClipboard.min.js"></script>
+
+
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs">
+        </nav>
+
+        
+        <nav class="nav-navs">
+                <small>
+                    <ul>
+                        
+                        <li><a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;deadpoetspoon.github.io&#x2F;a-poor-imitation&#x2F;about&#x2F;">
+                                关于
+                            </a>
+                        </li>
+                    
+                        <li><a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;deadpoetspoon.github.io&#x2F;a-poor-imitation&#x2F;sitemap.xml">
+                                站点地图
+                            </a>
+                        </li>
+                    
+                    </ul>
+                </small>
+        
+        </nav>
+
+        <div class="credits">
+            <small>
+                
+    
+    
+    
+    
+        
+    
+        
+    
+
+    
+
+    
+    
+    
+
+    
+    
+    <p><p>~/API Docs © 2026 Dead Poet Spoon • Unless otherwise noted, the content in this website is available under the <a rel="external" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> license.</p>
+</p>
+
+                
+                网站基于
+                <a rel="" 
+
+ href="https://www.getzola.org">Zola</a>
+                和
+                <a rel="" 
+
+ href="https://github.com/welpo/tabi">tabi</a>
+
+                •
+                    <a rel="" 
+
+ href="https:&#x2F;&#x2F;github.com&#x2F;DeadPoetSpoon&#x2F;a-poor-imitation">
+                        查看原始码
+                    </a></small>
+        </div>
+    </section>
+
+    <div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+    <h1 id="modalTitle" class="visually-hidden">搜索</h1>
+    <div id="modal-content">
+        <div id="searchBar">
+            <div class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+            </div>
+            <input id="searchInput" role="combobox" autocomplete="off" spellcheck="false" aria-expanded="false" aria-controls="results-container" placeholder="搜索…"/>
+            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="清除搜索">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="results-container">
+            <div id="results-info"><span id="zero_results"> 没有找到结果</span>
+                <span id="one_results"> $NUMBER 个结果</span>
+                <span id="many_results"> $NUMBER 个结果</span><span id="two_results"> $NUMBER 个结果</span>
+                <span id="few_results"> $NUMBER 个结果</span>
+            </div>
+            <div id="results" role="listbox"></div>
+        </div>
+    </div>
+</div>
+</footer>
+
+
+    
+    
+</body>
+
+</html>
