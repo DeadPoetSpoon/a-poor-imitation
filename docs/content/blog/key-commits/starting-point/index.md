@@ -3,9 +3,10 @@ title = "一切的开始"
 date = 2023-11-06
 updated = 2024-08-07
 description = "这个项目的起因、目的、原则"
+weight = 1
 
 [taxonomies]
-tags = ["闲谈"]
+tags = ["闲谈","提交"]
 +++
 
 ## 起因

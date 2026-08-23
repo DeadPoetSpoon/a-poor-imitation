@@ -58,4 +58,4 @@ footer_menu = [
     { url = "about", name = "about", trailing_slash = true },
     { url = "sitemap.xml", name = "sitemap", trailing_slash = false },
 ]
-copyright = "~/API Docs © $CURRENT_YEAR Dead Poet Spoon $SEPARATOR Unless otherwise noted, the content in this website is available under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license."
+copyright = "~/API Docs © $CURRENT_YEAR Dead Poet Spoon"

@@ -3,7 +3,8 @@ title = "Starting Point"
 date = 2023-11-06
 updated = 2024-08-07
 description = "The origin, purpose, and principles of this project"
-taxonomies = { tags = ["musings"] }
+weight = 1
+taxonomies = { tags = ["musings","commit"] }
 +++
 
 > **🤖 AI Translation Notice**: This post has been translated from Chinese to English by an AI.

@@ -3,9 +3,10 @@ title = "Seek, and Falter Not"
 date = 2026-07-26
 updated = 2026-07-26
 description = "To strive, to seek, to find, and not to yield."
+weight = 2
 
 [taxonomies]
-tags = ["musings"]
+tags = ["musings","commit"]
 +++
 
 > **🤖 AI Translation Notice**: This post has been translated from Chinese to English by an AI.

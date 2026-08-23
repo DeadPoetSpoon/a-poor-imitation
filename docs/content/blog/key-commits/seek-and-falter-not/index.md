@@ -3,9 +3,10 @@ title = "追寻，不再犹豫"
 date = 2026-07-26
 updated = 2026-07-26
 description = "To strive, to seek, to find, and not to yield."
+weight = 2
 
 [taxonomies]
-tags = ["闲谈"]
+tags = ["闲谈","提交"]
 +++
 
 # 失去的这两年
