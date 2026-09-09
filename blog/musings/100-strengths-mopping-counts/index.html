@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh" >
+
+<head>
+    <meta charset="UTF-8"><meta http-equiv="Content-Security-Policy"
+content="default-src 'self';font-src 'self' data:;img-src 'self' https://* data:;media-src 'self';style-src 'self';frame-src player.vimeo.com https://www.youtube-nocookie.com;connect-src 'self';script-src 'self' 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https://deadpoetspoon.github.io/a-poor-imitation">
+
+    
+    <title>
+~/API Docs • 百项优点，拖地也算</title>
+
+    
+    
+        <link rel="icon" type="image/png" href="https://deadpoetspoon.github.io/a-poor-imitation/images/logo.webp"/>
+    
+    
+
+    
+    
+
+    
+    
+    
+        
+            <link rel="stylesheet" href="https://deadpoetspoon.github.io/a-poor-imitation/custom_subset.css?h=0b9535a28bc3d5bf2321">
+        
+    
+
+    
+        <link rel="stylesheet" href="https://deadpoetspoon.github.io/a-poor-imitation/main.css?h=be7f63312b6c5c196cba" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="description" content="什么都算！" />
+        <meta property="og:description" content="什么都算！" />
+
+    
+
+    <meta property="og:title" content="百项优点，拖地也算" />
+    <meta property="og:type" content="article" />
+
+    
+<meta property="og:locale:alternate" content="zh_CN" />
+
+        <link rel="alternate" hreflang="zh" href="https://deadpoetspoon.github.io/a-poor-imitation/blog/musings/100-strengths-mopping-counts/" />
+
+    <meta property="og:url" content="https:&#x2F;&#x2F;deadpoetspoon.github.io&#x2F;a-poor-imitation&#x2F;blog&#x2F;musings&#x2F;100-strengths-mopping-counts&#x2F;" /><meta property="og:site_name" content="~&#x2F;API Docs">
+        <noscript><link rel="stylesheet" href="https://deadpoetspoon.github.io/a-poor-imitation/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://deadpoetspoon.github.io/a-poor-imitation/js/initializeTheme.min.js"></script>
+        <script defer src="https://deadpoetspoon.github.io/a-poor-imitation/js/themeSwitcher.min.js"></script><script defer src="https://deadpoetspoon.github.io/a-poor-imitation/search_index.zh.js?h=b399ba2ebf491913f4a6"></script>
+        <script defer src="https://deadpoetspoon.github.io/a-poor-imitation/js/searchElasticlunr.min.js?h=28faa8abcfc2ce7469eb"></script>
+
+        <script defer src="https://deadpoetspoon.github.io/a-poor-imitation/js/lunr/lunrStemmerSupport.min.js"></script><script defer src="https://deadpoetspoon.github.io/a-poor-imitation/js/lunr/lunr.zh.min.js"></script>
+    
+</head>
+
+
+<body>
+    <a href="#main-content" id="skip-link">Skip to content</a>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a class="home-title" href="https://deadpoetspoon.github.io/a-poor-imitation/">~&#x2F;API Docs</a>
+        </div>
+            <div class="nav-navs">
+                <ul>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://deadpoetspoon.github.io/a-poor-imitation/blog/">博客
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://deadpoetspoon.github.io/a-poor-imitation/archive/">归档
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://deadpoetspoon.github.io/a-poor-imitation/tags/">标签
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://deadpoetspoon.github.io/a-poor-imitation/projects/">项目
+                                </a>
+                            </li>
+                        <li class="menu-icons-container">
+                        <ul class="menu-icons-group">
+                            <li class="js menu-icon">
+                                <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon" title="点击或按 $SHORTCUT 开启搜索" aria-label="点击或按 $SHORTCUT 开启搜索">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                        <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                                    </svg>
+                                </div>
+                            </li>
+
+                            
+                            
+                            <li class="language-switcher">
+    <details class="dropdown">
+        <summary role="button" aria-haspopup="true" title="语言选择" aria-label="语言选择"><div class="language-switcher-icon"></div></summary>
+        <div class="dropdown-content" role="menu">简体中文<a role="menuitem" lang="en" aria-label="English" href="https:&#x2F;&#x2F;deadpoetspoon.github.io&#x2F;a-poor-imitation/en/blog/musings/100-strengths-mopping-counts/">English</a></div>
+    </details>
+</li>
+
+
+                            <li class="theme-switcher-wrapper js"><div
+        title="切换到暗&#x2F;亮模式"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="切换到暗模式"
+        aria-pressed="false">
+    </div><div
+        title="将模式重置为网站默认值"
+        class="theme-resetter arrow"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="将模式重置为网站默认值">
+    </div>
+
+</li>
+</ul>
+                    </li>
+                </ul>
+            </div>
+        
+    </nav>
+</header>
+
+    <div class="content" id="main-content">
+
+        
+        
+
+
+
+
+
+<main>
+    <article class="h-entry">
+        <h1 class="p-name article-title">
+            百项优点，拖地也算
+        </h1>
+        <a class="u-url u-uid" href="https://deadpoetspoon.github.io/a-poor-imitation/blog/musings/100-strengths-mopping-counts/"></a>
+
+        <ul class="meta"><span class="hidden p-author h-card">
+<a rel="author" href="https:&#x2F;&#x2F;deadpoetspoon.github.io&#x2F;a-poor-imitation" class="u-url " title="Dead Poet Spoon">Dead Poet Spoon</a>
+</span>
+<li><time class="dt-published" datetime="2026-08-23">2026 八月 23</time></li><li title="927 字"><span class='separator' aria-hidden='true'>•</span>5 分钟阅读</li><li class="tag"><span class='separator' aria-hidden='true'>•</span>标签:&nbsp;</li><li class="tag"><a class="p-category" href="https://deadpoetspoon.github.io/a-poor-imitation/tags/xian-tan/">闲谈</a></li></ul><ul class="meta last-updated"><li><time class="dt-updated" datetime="2026-09-09">更新于 2026 九月 9</time></li><li><span class='separator' aria-hidden='true'>•</span><a class="external" href="https://github.com/DeadPoetSpoon/a-poor-imitation/commits/gh-pages/content/blog&#x2F;musings&#x2F;100-strengths-mopping-counts&#x2F;index.md" 
+
+ rel="">修改纪录</a></li>
+        </ul>
+            <p class="p-summary" hidden>什么都算！</p><section class="e-content body">
+    <section class="series-page-intro">
+                <p>本文是 <a href="https://deadpoetspoon.github.io/a-poor-imitation/blog/musings/" aria-label="闲谈">闲谈</a> 系列的一部分。</p>
+
+            </section>
+<h1 id="qian-yan">前言</h1>
+<p>一周的休假期间我整理了与笔友的信件之后去体验了诸多我曾经没有体验的项目：四重奏、脱口秀、异宠体验馆、互动剧...最终发现这些实在不是我的兴趣，并且自己一直做着自己喜欢的事情：书籍、电影、游戏，休假期间整理信件、看电影、通关《毁灭战士：黑暗时代》是我最开心的时刻，或许人们总是能够找到自己舒适的生活，这次的休假像是某种：“体验之后没遗憾了吧，之后的生活要关注自己热爱之事哦！”的告诫。无论如何开始吧，开始未尽的这些事情吧！</p>
+<h1 id="shen-me-du-suan-shu-de-100ge-you-dian">什么都算数的100个优点</h1>
+<ol>
+<li>坚持读书</li>
+<li>坚持写信，与笔友认真相处5年</li>
+<li>坚持记录</li>
+<li>对值得的人保持真诚</li>
+<li>愿意尝试自己不了解的事物</li>
+<li>思考明确自己生活、工作的方向</li>
+<li>懂得反思自己的一切</li>
+<li>真正热爱书籍</li>
+<li>真正热爱电影</li>
+<li>真正热爱游戏</li>
+<li>选择后努力坚持自己的生活方式</li>
+<li>愿意为自己所爱的花费时间、金钱</li>
+<li>能够用程序提高生活、工作质量</li>
+<li>有行动力</li>
+<li>保持善良</li>
+<li>不势利眼</li>
+<li>谦逊</li>
+<li>维护自己的利益、即使显得莽撞</li>
+<li>尽量每天勤洗澡</li>
+<li>贴身衣服穿一次就尽量洗衣服</li>
+<li>能够自己做饭</li>
+<li>可以把卫生间打扫得很干净</li>
+<li>可以用吃完的火龙果、柠檬、荔枝种子种出绿植</li>
+<li>渐渐放下追求完美</li>
+<li>可以自己一个人吃烧烤</li>
+<li>会拍照</li>
+<li>喜欢、欣赏菊花，喜欢菊花的不争媚</li>
+<li>低调</li>
+<li>生活节俭、不贪物质享受</li>
+<li>相信开源、贡献开源、发扬开源</li>
+<li>在实现自己的想法上比较坚持</li>
+<li>每天骑车20分钟车程上下班</li>
+<li>学会游泳</li>
+<li>会基础羽毛球</li>
+<li>对初见面的人保持善意</li>
+<li>理解能力强</li>
+<li>不挑食</li>
+<li>懂得感恩</li>
+<li>开的起玩笑</li>
+<li>能够理性看待别人的局限</li>
+<li>能够理性看待自己的局限，不逼迫自己</li>
+<li>很少冲动用事</li>
+<li>做事情有计划性</li>
+<li>抗压能力强</li>
+<li>心态好，保持微笑</li>
+<li>生活简单不乱玩</li>
+<li>和游戏好友保持近十年的友谊</li>
+<li>更期望长期主义</li>
+<li>能够诚实地面对自己的内心</li>
+<li>不做坑人的事情</li>
+<li>亲近自然，每年尽量都去植物园</li>
+<li>尽量避免熬夜</li>
+<li>不搞极端</li>
+<li>学习电影、拉片</li>
+<li>没有优越感，人人平等</li>
+<li>洗完衣服会挂起来整理好</li>
+<li>每天刷牙</li>
+<li>每天刮胡子</li>
+<li>每天夹头发整理自己仪容仪表</li>
+<li>有耐心</li>
+<li>不抽烟</li>
+<li>不喝酒</li>
+<li>能够坚持控制饮食、运动</li>
+<li>懂得礼尚往来</li>
+<li>积极准备B计划</li>
+<li>对对我好的人一样好</li>
+<li>不沉迷游戏</li>
+<li>尽量理解他人的意思</li>
+<li>尽量不预设结论</li>
+<li>虽然悲观，但积极生活</li>
+<li>会给亲人准备专属礼物</li>
+<li>睡得沉</li>
+<li>会犒劳自己</li>
+<li>张弛有度</li>
+<li>做事严谨</li>
+<li>逐渐大方地与人相处</li>
+<li>因为人工型荨麻疹，所以手臂上可以画画</li>
+<li>购买汉王N10看书，写信</li>
+<li>开启API项目，并渐渐实施</li>
+<li>接受程度高，宽容大部分存在</li>
+<li></li>
+</ol>
+
+    <section class="series-page-outro">
+                <p>上一篇：<a href="https://deadpoetspoon.github.io/a-poor-imitation/blog/musings/doom-outer-wilds-opus-magnum/" aria-label="毁灭战士·星际拓荒·巨著">毁灭战士·星际拓荒·巨著</a> | 下一篇：<a href="https://deadpoetspoon.github.io/a-poor-imitation/blog/musings/movie-game/" aria-label="电影与游戏">电影与游戏</a></p>
+
+            </section>
+
+        </section>
+        
+        
+
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+        </article>
+</main>
+
+    <div id="button-container">
+        
+        
+            <div id="toc-floating-container">
+                <input type="checkbox" id="toc-toggle" class="toggle"/>
+                <label for="toc-toggle" id="toc-button" class="button" title="切换目录">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M414.82-193.094q-18.044 0-30.497-12.32-12.453-12.319-12.453-30.036t12.453-30.086q12.453-12.37 30.497-12.37h392.767q17.237 0 29.927 12.487 12.69 12.486 12.69 30.203 0 17.716-12.69 29.919t-29.927 12.203H414.82Zm0-244.833q-18.044 0-30.497-12.487Q371.87-462.9 371.87-480.45t12.453-29.92q12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.511 12.69 12.512 12.69 29.845 0 17.716-12.69 30.086-12.69 12.37-29.927 12.37H414.82Zm0-245.167q-18.044 0-30.497-12.32t-12.453-30.037q0-17.716 12.453-30.086 12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.486 12.69 12.487 12.69 30.203 0 17.717-12.69 29.92-12.69 12.203-29.927 12.203H414.82ZM189.379-156.681q-32.652 0-55.878-22.829t-23.226-55.731q0-32.549 23.15-55.647 23.151-23.097 55.95-23.097 32.799 0 55.313 23.484 22.515 23.484 22.515 56.246 0 32.212-22.861 54.893-22.861 22.681-54.963 22.681Zm0-245.167q-32.652 0-55.878-23.134-23.226-23.135-23.226-55.623 0-32.487 23.467-55.517t56.12-23.03q32.102 0 54.721 23.288 22.62 23.288 22.62 55.775 0 32.488-22.861 55.364-22.861 22.877-54.963 22.877Zm-.82-244.833q-32.224 0-55.254-23.288-23.03-23.289-23.03-55.623 0-32.333 23.271-55.364 23.272-23.03 55.495-23.03 32.224 0 55.193 23.288 22.969 23.289 22.969 55.622 0 32.334-23.21 55.364-23.21 23.031-55.434 23.031Z"/></svg>
+                </label>
+                <div class="toc-content">
+                    
+
+<div class="toc-container">
+    
+
+    <ul>
+        
+            
+            
+                <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/blog/musings/100-strengths-mopping-counts/#qian-yan">前言</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/blog/musings/100-strengths-mopping-counts/#shen-me-du-suan-shu-de-100ge-you-dian">什么都算数的100个优点</a>
+                    
+                </li>
+            
+        
+    </ul>
+</div>
+
+
+                </div>
+            </div>
+        
+
+        
+        
+
+        
+        <a href="#" id="top-button" class="no-hover-padding" title="返回页面顶部">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z"/></svg>
+        </a>
+    </div>
+
+
+<span id="copy-success" class="hidden">
+        已复制!
+    </span>
+    <span id="copy-init" class="hidden">
+        复制代码到剪贴板
+    </span>
+    <script defer src="https://deadpoetspoon.github.io/a-poor-imitation/js/copyCodeToClipboard.min.js"></script>
+
+
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs">
+        </nav>
+
+        
+        <nav class="nav-navs">
+                <small>
+                    <ul>
+                        
+                        <li><a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;deadpoetspoon.github.io&#x2F;a-poor-imitation&#x2F;about&#x2F;">
+                                关于
+                            </a>
+                        </li>
+                    
+                        <li><a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;deadpoetspoon.github.io&#x2F;a-poor-imitation&#x2F;sitemap.xml">
+                                站点地图
+                            </a>
+                        </li>
+                    
+                    </ul>
+                </small>
+        
+        </nav>
+
+        <div class="credits">
+            <small>
+                
+    
+    
+    
+    
+        
+    
+        
+    
+
+    
+
+    
+    
+    
+
+    
+    
+    <p><p>~/API Docs © 2026 Dead Poet Spoon</p>
+</p>
+
+                
+                网站基于
+                <a rel="" 
+
+ href="https://www.getzola.org">Zola</a>
+                和
+                <a rel="" 
+
+ href="https://github.com/welpo/tabi">tabi</a>
+
+                •
+                    <a rel="" 
+
+ href="https:&#x2F;&#x2F;github.com&#x2F;DeadPoetSpoon&#x2F;a-poor-imitation">
+                        查看原始码
+                    </a></small>
+        </div>
+    </section>
+
+    <div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+    <h1 id="modalTitle" class="visually-hidden">搜索</h1>
+    <div id="modal-content">
+        <div id="searchBar">
+            <div class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+            </div>
+            <input id="searchInput" role="combobox" autocomplete="off" spellcheck="false" aria-expanded="false" aria-controls="results-container" placeholder="搜索…"/>
+            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="清除搜索">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="results-container">
+            <div id="results-info"><span id="zero_results"> 没有找到结果</span>
+                <span id="one_results"> $NUMBER 个结果</span>
+                <span id="many_results"> $NUMBER 个结果</span><span id="two_results"> $NUMBER 个结果</span>
+                <span id="few_results"> $NUMBER 个结果</span>
+            </div>
+            <div id="results" role="listbox"></div>
+        </div>
+    </div>
+</div>
+</footer>
+
+
+    
+    
+</body>
+
+</html>

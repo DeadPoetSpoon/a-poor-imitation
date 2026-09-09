@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh" >
+
+<head>
+    <meta charset="UTF-8"><meta http-equiv="Content-Security-Policy"
+content="default-src 'self';font-src 'self' data:;img-src 'self' https://* data:;media-src 'self';style-src 'self';frame-src player.vimeo.com https://www.youtube-nocookie.com;connect-src 'self';script-src 'self' 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https://deadpoetspoon.github.io/a-poor-imitation">
+
+    
+    <title>
+~/API Docs • 毁灭战士·星际拓荒·巨著</title>
+
+    
+    
+        <link rel="icon" type="image/png" href="https://deadpoetspoon.github.io/a-poor-imitation/images/logo.webp"/>
+    
+    
+
+    
+    
+
+    
+    
+    
+        
+            <link rel="stylesheet" href="https://deadpoetspoon.github.io/a-poor-imitation/custom_subset.css?h=0b9535a28bc3d5bf2321">
+        
+    
+
+    
+        <link rel="stylesheet" href="https://deadpoetspoon.github.io/a-poor-imitation/main.css?h=be7f63312b6c5c196cba" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="description" content="身体和脑子" />
+        <meta property="og:description" content="身体和脑子" />
+
+    
+
+    <meta property="og:title" content="毁灭战士·星际拓荒·巨著" />
+    <meta property="og:type" content="article" />
+
+    
+<meta property="og:locale:alternate" content="zh_CN" />
+
+        <link rel="alternate" hreflang="zh" href="https://deadpoetspoon.github.io/a-poor-imitation/blog/musings/doom-outer-wilds-opus-magnum/" /><meta property="og:locale:alternate" content="en_GB" />
+
+        <link rel="alternate" hreflang="en" href="https://deadpoetspoon.github.io/a-poor-imitation/en/blog/musings/doom-outer-wilds-opus-magnum/" />
+
+    <meta property="og:url" content="https:&#x2F;&#x2F;deadpoetspoon.github.io&#x2F;a-poor-imitation&#x2F;blog&#x2F;musings&#x2F;doom-outer-wilds-opus-magnum&#x2F;" /><meta property="og:site_name" content="~&#x2F;API Docs">
+        <noscript><link rel="stylesheet" href="https://deadpoetspoon.github.io/a-poor-imitation/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://deadpoetspoon.github.io/a-poor-imitation/js/initializeTheme.min.js"></script>
+        <script defer src="https://deadpoetspoon.github.io/a-poor-imitation/js/themeSwitcher.min.js"></script><script defer src="https://deadpoetspoon.github.io/a-poor-imitation/search_index.zh.js?h=b399ba2ebf491913f4a6"></script>
+        <script defer src="https://deadpoetspoon.github.io/a-poor-imitation/js/searchElasticlunr.min.js?h=28faa8abcfc2ce7469eb"></script>
+
+        <script defer src="https://deadpoetspoon.github.io/a-poor-imitation/js/lunr/lunrStemmerSupport.min.js"></script><script defer src="https://deadpoetspoon.github.io/a-poor-imitation/js/lunr/lunr.zh.min.js"></script>
+    
+</head>
+
+
+<body>
+    <a href="#main-content" id="skip-link">Skip to content</a>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a class="home-title" href="https://deadpoetspoon.github.io/a-poor-imitation/">~&#x2F;API Docs</a>
+        </div>
+            <div class="nav-navs">
+                <ul>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://deadpoetspoon.github.io/a-poor-imitation/blog/">博客
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://deadpoetspoon.github.io/a-poor-imitation/archive/">归档
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://deadpoetspoon.github.io/a-poor-imitation/tags/">标签
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://deadpoetspoon.github.io/a-poor-imitation/projects/">项目
+                                </a>
+                            </li>
+                        <li class="menu-icons-container">
+                        <ul class="menu-icons-group">
+                            <li class="js menu-icon">
+                                <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon" title="点击或按 $SHORTCUT 开启搜索" aria-label="点击或按 $SHORTCUT 开启搜索">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                        <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                                    </svg>
+                                </div>
+                            </li>
+
+                            
+                            
+                            <li class="language-switcher">
+    <details class="dropdown">
+        <summary role="button" aria-haspopup="true" title="语言选择" aria-label="语言选择"><div class="language-switcher-icon"></div></summary>
+        <div class="dropdown-content" role="menu">简体中文<a role="menuitem" lang="en" aria-label="English" href="https:&#x2F;&#x2F;deadpoetspoon.github.io&#x2F;a-poor-imitation/en/blog/musings/doom-outer-wilds-opus-magnum/">English</a></div>
+    </details>
+</li>
+
+
+                            <li class="theme-switcher-wrapper js"><div
+        title="切换到暗&#x2F;亮模式"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="切换到暗模式"
+        aria-pressed="false">
+    </div><div
+        title="将模式重置为网站默认值"
+        class="theme-resetter arrow"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="将模式重置为网站默认值">
+    </div>
+
+</li>
+</ul>
+                    </li>
+                </ul>
+            </div>
+        
+    </nav>
+</header>
+
+    <div class="content" id="main-content">
+
+        
+        
+
+
+
+
+
+<main>
+    <article class="h-entry">
+        <h1 class="p-name article-title">
+            毁灭战士·星际拓荒·巨著
+        </h1>
+        <a class="u-url u-uid" href="https://deadpoetspoon.github.io/a-poor-imitation/blog/musings/doom-outer-wilds-opus-magnum/"></a>
+
+        <ul class="meta"><span class="hidden p-author h-card">
+<a rel="author" href="https:&#x2F;&#x2F;deadpoetspoon.github.io&#x2F;a-poor-imitation" class="u-url " title="Dead Poet Spoon">Dead Poet Spoon</a>
+</span>
+<li><time class="dt-published" datetime="2026-09-09">2026 九月 9</time></li><li title="899 字"><span class='separator' aria-hidden='true'>•</span>5 分钟阅读</li><li class="tag"><span class='separator' aria-hidden='true'>•</span>标签:&nbsp;</li><li class="tag"><a class="p-category" href="https://deadpoetspoon.github.io/a-poor-imitation/tags/xian-tan/">闲谈</a></li></ul><ul class="meta last-updated"><li><time class="dt-updated" datetime="2026-09-09">更新于 2026 九月 9</time></li><li><span class='separator' aria-hidden='true'>•</span><a class="external" href="https://github.com/DeadPoetSpoon/a-poor-imitation/commits/gh-pages/content/blog&#x2F;musings&#x2F;doom-outer-wilds-opus-magnum&#x2F;index.md" 
+
+ rel="">修改纪录</a></li>
+        </ul>
+            <p class="p-summary" hidden>身体和脑子</p><section class="e-content body">
+    <section class="series-page-intro">
+                <p>本文是 <a href="https://deadpoetspoon.github.io/a-poor-imitation/blog/musings/" aria-label="闲谈">闲谈</a> 系列的一部分。</p>
+
+            </section>
+<h1 id="hui-mie-zhan-shi-xing-ji-tuo-huang-ju-zhu">毁灭战士·星际拓荒·巨著</h1>
+<p>将这三者并列是想讨论游戏中:身体和脑子参与程度的比例。抽象引申一点是感受和输出的比例，“身体”感受代表着将你自已全然交给游戏,沉进它的节奏,“脑子”输出代表着去理解游戏的逻辑,参与游戏,验证自己的想法,这样的区别也代表着游戏的“愉悦”感来自哪里:是完成了一场站斗还是解决了一个迷题,是体验了一段故事还是攻克了最终B0SS</p>
+<h1 id="hui-mie-zhan-shi">毁灭战士</h1>
+<p>毁灭战士当是“战斗爽”的标干,初玩毁灭战士时,极致的处决动画给我留下了深刻的印记,最终形态的老式霰弹枪撕碎眼前的恶魔,哐哐几下,处决越看越呆的精英,后来毁灭战士黑暗纪元弹反的加入让战斗爽更是上了一个等级，再加上拳拳到肉的机甲拳击,引用一位网友的评论“直接抚平你的大脑褶皱“你别问我剧情,我只知道音乐响起,我要撕碎眼前一切让我不爽的东西!但这却很符合毁灭战士的人设,而这种畅快的游玩体验最直接地表达了游戏最本初的目的:“愉悦”。</p>
+<h1 id="xing-ji-tuo-huang">星际拓荒</h1>
+<p>星际拓荒我很喜欢,我认为它一定程度平衡了身体和脑子的参与,漫漫太空实时演算的各异星球每一个星球都是全新的体验,而当你在星际穿梭渐渐将各处细微的回忆拼凑,曾经那些鲜活的生命和如今正在鲜活的生命在完成某种宏大的事情:无止境的探索,再一次出发的勇气,既使对着攻略跳过所有迷团（这几乎不会发生）,你也将获得一段美丽的故事。它的解迷部份也足够优秀,那些“尤里卡时刻”至今我都想要重新再体会一次,你在一个星球无意得知的信息很可能是另一个星球的关键线索,这种断裂的非连贯知识会层层堆叠直到某个时刻突然爆发,那种愉悦是属于脑子的，世界大爆炸又如何?我到过。</p>
+<h1 id="ju-zhu">巨著</h1>
+<p>巨著是我玩过十分纯粹的迷题游戏,足够简单清晰的机制,鼠标点点点就能完成,你的身子几乎没有反馈,没有什么故事情节只有一道道愈来俞复杂的迷题等着你去破解,这样的体会让我联想到小时在诺基亚手机游玩数独的乐趣,巨著有一项让我很满意的地方,它的解是多样的,你可以追求效率,可以追求成本，可以追求美观，甚至你可以用机械臂填满屏慕,仅仅是因为你想这么做，即使这样你也可以通关,这种“宽松”给了脑子巨大的发挥机会,给“愉悦“感腾出了空间。</p>
+<h1 id="jie-yu">结语</h1>
+<p>我选不出我最喜爱的两者比例,不过在我工作一天后我最喜欢毁灭战士的畅快,在我放小长假时我享受星际拓荒浪漫的探索,在我放长假时我更愿意动动脑子摆弄巨著里的机械臂。游戏总能在各种时刻给我快乐陪伴,这便也是游戏的一大魅力吧!</p>
+
+    <section class="series-page-outro">
+                <p>欢迎！下一篇：<a href="https://deadpoetspoon.github.io/a-poor-imitation/blog/musings/100-strengths-mopping-counts/" aria-label="百项优点，拖地也算">百项优点，拖地也算</a></p>
+
+            </section>
+
+        </section>
+        
+        
+
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+        </article>
+</main>
+
+    <div id="button-container">
+        
+        
+            <div id="toc-floating-container">
+                <input type="checkbox" id="toc-toggle" class="toggle"/>
+                <label for="toc-toggle" id="toc-button" class="button" title="切换目录">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M414.82-193.094q-18.044 0-30.497-12.32-12.453-12.319-12.453-30.036t12.453-30.086q12.453-12.37 30.497-12.37h392.767q17.237 0 29.927 12.487 12.69 12.486 12.69 30.203 0 17.716-12.69 29.919t-29.927 12.203H414.82Zm0-244.833q-18.044 0-30.497-12.487Q371.87-462.9 371.87-480.45t12.453-29.92q12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.511 12.69 12.512 12.69 29.845 0 17.716-12.69 30.086-12.69 12.37-29.927 12.37H414.82Zm0-245.167q-18.044 0-30.497-12.32t-12.453-30.037q0-17.716 12.453-30.086 12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.486 12.69 12.487 12.69 30.203 0 17.717-12.69 29.92-12.69 12.203-29.927 12.203H414.82ZM189.379-156.681q-32.652 0-55.878-22.829t-23.226-55.731q0-32.549 23.15-55.647 23.151-23.097 55.95-23.097 32.799 0 55.313 23.484 22.515 23.484 22.515 56.246 0 32.212-22.861 54.893-22.861 22.681-54.963 22.681Zm0-245.167q-32.652 0-55.878-23.134-23.226-23.135-23.226-55.623 0-32.487 23.467-55.517t56.12-23.03q32.102 0 54.721 23.288 22.62 23.288 22.62 55.775 0 32.488-22.861 55.364-22.861 22.877-54.963 22.877Zm-.82-244.833q-32.224 0-55.254-23.288-23.03-23.289-23.03-55.623 0-32.333 23.271-55.364 23.272-23.03 55.495-23.03 32.224 0 55.193 23.288 22.969 23.289 22.969 55.622 0 32.334-23.21 55.364-23.21 23.031-55.434 23.031Z"/></svg>
+                </label>
+                <div class="toc-content">
+                    
+
+<div class="toc-container">
+    
+
+    <ul>
+        
+            
+            
+                <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/blog/musings/doom-outer-wilds-opus-magnum/#hui-mie-zhan-shi-xing-ji-tuo-huang-ju-zhu">毁灭战士·星际拓荒·巨著</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/blog/musings/doom-outer-wilds-opus-magnum/#hui-mie-zhan-shi">毁灭战士</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/blog/musings/doom-outer-wilds-opus-magnum/#xing-ji-tuo-huang">星际拓荒</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/blog/musings/doom-outer-wilds-opus-magnum/#ju-zhu">巨著</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://deadpoetspoon.github.io/a-poor-imitation/blog/musings/doom-outer-wilds-opus-magnum/#jie-yu">结语</a>
+                    
+                </li>
+            
+        
+    </ul>
+</div>
+
+
+                </div>
+            </div>
+        
+
+        
+        
+
+        
+        <a href="#" id="top-button" class="no-hover-padding" title="返回页面顶部">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z"/></svg>
+        </a>
+    </div>
+
+
+<span id="copy-success" class="hidden">
+        已复制!
+    </span>
+    <span id="copy-init" class="hidden">
+        复制代码到剪贴板
+    </span>
+    <script defer src="https://deadpoetspoon.github.io/a-poor-imitation/js/copyCodeToClipboard.min.js"></script>
+
+
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs">
+        </nav>
+
+        
+        <nav class="nav-navs">
+                <small>
+                    <ul>
+                        
+                        <li><a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;deadpoetspoon.github.io&#x2F;a-poor-imitation&#x2F;about&#x2F;">
+                                关于
+                            </a>
+                        </li>
+                    
+                        <li><a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;deadpoetspoon.github.io&#x2F;a-poor-imitation&#x2F;sitemap.xml">
+                                站点地图
+                            </a>
+                        </li>
+                    
+                    </ul>
+                </small>
+        
+        </nav>
+
+        <div class="credits">
+            <small>
+                
+    
+    
+    
+    
+        
+    
+        
+    
+
+    
+
+    
+    
+    
+
+    
+    
+    <p><p>~/API Docs © 2026 Dead Poet Spoon</p>
+</p>
+
+                
+                网站基于
+                <a rel="" 
+
+ href="https://www.getzola.org">Zola</a>
+                和
+                <a rel="" 
+
+ href="https://github.com/welpo/tabi">tabi</a>
+
+                •
+                    <a rel="" 
+
+ href="https:&#x2F;&#x2F;github.com&#x2F;DeadPoetSpoon&#x2F;a-poor-imitation">
+                        查看原始码
+                    </a></small>
+        </div>
+    </section>
+
+    <div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+    <h1 id="modalTitle" class="visually-hidden">搜索</h1>
+    <div id="modal-content">
+        <div id="searchBar">
+            <div class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+            </div>
+            <input id="searchInput" role="combobox" autocomplete="off" spellcheck="false" aria-expanded="false" aria-controls="results-container" placeholder="搜索…"/>
+            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="清除搜索">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="results-container">
+            <div id="results-info"><span id="zero_results"> 没有找到结果</span>
+                <span id="one_results"> $NUMBER 个结果</span>
+                <span id="many_results"> $NUMBER 个结果</span><span id="two_results"> $NUMBER 个结果</span>
+                <span id="few_results"> $NUMBER 个结果</span>
+            </div>
+            <div id="results" role="listbox"></div>
+        </div>
+    </div>
+</div>
+</footer>
+
+
+    
+    
+</body>
+
+</html>
