@@ -79,4 +79,4 @@ I believe I have the courage to set out again!
 
 > To strive, to seek, to find, and not to yield. — Ulysses
 
-Why not start by listing 100 of my own strengths?
+Why not start by listing [100 of my own strengths]((@/blog/musings/100-strengths-mopping-counts/index.en.md))?

@@ -79,4 +79,4 @@ tags = ["闲谈","提交"]
 
 > To strive, to seek, to find, and not to yield. ——*《Ulysses》*
 
-不如就从列举自己的100个优点开始吧！
+不如就从列举自己的[100个优点](@/blog/musings/100-strengths-mopping-counts/index.md)开始吧！
