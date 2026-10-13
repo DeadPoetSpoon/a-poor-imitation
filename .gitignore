@@ -5,3 +5,7 @@ docs/public
 # Added by cargo
 
 /target
+/touchpad/dist
+/touchpad/connection.json
+/touchpad/connection.json.*
+/touchpad/certs

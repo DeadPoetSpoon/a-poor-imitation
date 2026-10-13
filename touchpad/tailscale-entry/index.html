@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Open Touchpad</title>
+    <script>
+      const host = location.hostname;
+      if (/^[a-z0-9.-]+\.ts\.net$/i.test(host)) {
+        location.replace(`https://${host}/`);
+      } else {
+        location.replace("https://nest.bunny-hamlet.ts.net/");
+      }
+    </script>
+  </head>
+  <body>
+    <p><a href="https://nest.bunny-hamlet.ts.net/">Open Touchpad over HTTPS</a></p>
+  </body>
+</html>

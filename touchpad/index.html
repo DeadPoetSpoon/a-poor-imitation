@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#07101a">
+    <title>Touchpad · World monitor</title>
+    <link data-trunk rel="rust" data-bin="touchpad" data-wasm-opt="z">
+    <link data-trunk rel="copy-file" href="connection.json">
+    <style>
+      html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: #07101a; }
+      #world-canvas { display: block; width: 100%; height: 100%; touch-action: none; }
+      #loading { position: absolute; inset: 0; display: grid; place-items: center; color: #dcebf7; font: 16px system-ui; pointer-events: none; }
+    </style>
+  </head>
+  <body>
+    <canvas id="world-canvas" aria-label="Live world map and monitoring dashboard"></canvas>
+    <div id="loading" role="status">Loading Touchpad…</div>
+    <noscript>Touchpad requires JavaScript and WebAssembly.</noscript>
+    <script>
+      window.addEventListener("TrunkApplicationStarted", () => document.getElementById("loading").remove());
+    </script>
+  </body>
+</html>

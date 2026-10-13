@@ -1,0 +1,13 @@
+[package]
+name = "base"
+version = "0.1.0"
+edition = "2024"
+
+[features]
+dev = []
+rls = []
+
+[dependencies]
+bevy = { workspace = true, features = ["serialize", "bevy_log"] }
+bevy_replicon = { workspace = true }
+serde = { workspace = true }

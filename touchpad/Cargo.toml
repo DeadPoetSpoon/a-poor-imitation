@@ -1,0 +1,23 @@
+[package]
+name = "touchpad"
+version = "0.1.0"
+edition = "2024"
+
+[features]
+dev = ["base/dev"]
+rls = ["base/rls"]
+
+[dependencies]
+base = { path = "../base" }
+bevy = { workspace = true }
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+bevy = { workspace = true, features = ["2d", "ui"] }
+bevy_replicon = { workspace = true, features = ["client"] }
+bevy_replicon_renet2 = { workspace = true, features = ["client", "wt_client_transport"] }
+js-sys = "0.3"
+serde_json = "1"
+wasm-bindgen = "0.2"
+wasm-bindgen-futures = "0.4"
+web-sys = { version = "0.3", features = ["Crypto", "Window", "Request", "RequestInit", "RequestCache", "Response"] }
+getrandom = { version = "0.2", features = ["js"] }

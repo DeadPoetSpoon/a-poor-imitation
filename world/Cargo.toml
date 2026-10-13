@@ -1,0 +1,17 @@
+[package]
+name = "world"
+version = "0.1.0"
+edition = "2024"
+
+[features]
+dev = ["base/dev", "bevy/dev"]
+rls = ["base/rls"]
+
+[dependencies]
+base = { path = "../base" }
+bevy = { workspace = true, features = ["bevy_log", "bevy_state"] }
+bevy_replicon = { workspace = true, features = ["server"] }
+bevy_replicon_renet2 = { workspace = true, features = ["server", "native_transport", "wt_server_transport"] }
+serde_json = "1"
+tempfile = "3"
+tokio = { version = "1", features = ["rt-multi-thread"] }
