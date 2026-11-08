@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+Allow: /
+Sitemap: https://deadpoetspoon.github.io/a-poor-imitation/sitemap.xml
