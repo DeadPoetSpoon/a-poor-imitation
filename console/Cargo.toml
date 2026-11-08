@@ -1,0 +1,17 @@
+[package]
+name = "console"
+version = "0.1.0"
+edition = "2024"
+
+[features]
+dev = ["base/dev"]
+rls = ["base/rls"]
+
+[dependencies]
+base = { path = "../base" }
+bevy = { workspace = true, features = ["std", "multi_threaded", "bevy_state", "debug"] }
+bevy_replicon = { workspace = true, features = ["client"] }
+bevy_replicon_renet2 = { workspace = true, features = ["client", "native_transport"] }
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.61.2", features = ["Win32_Foundation", "Win32_System_Console"] }

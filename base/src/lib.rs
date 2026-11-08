@@ -6,16 +6,24 @@
 //!
 //! 本 crate 只定义"是什么"（数据与协议），不包含任何游戏逻辑或渲染逻辑。
 
+pub mod connection;
+pub mod general;
+pub mod organism;
+
+pub use organism::Human;
+
 use bevy::{
     log::{DEFAULT_FILTER, Level, LogPlugin},
     prelude::*,
 };
 use bevy_replicon::prelude::*;
+use general::{Bounded, GeneralKind, GeneralName};
+use organism::behavioral_brain::{Breathing, Destination, Movement, SpeedIntent};
 use serde::{Deserialize, Serialize};
 
 /// 协议版本号。客户端与服务端不一致时 netcode 会拒绝连接。
 /// 修改网络类型（增删组件/消息）后应当变更它。
-pub const PROTOCOL_ID: u64 = 1;
+pub const PROTOCOL_ID: u64 = 3;
 
 /// 服务端监听端口（仅本机教学示例用）。
 pub const PORT: u16 = 5000;
@@ -58,34 +66,35 @@ pub struct BasePlugin;
 impl Plugin for BasePlugin {
     fn build(&self, app: &mut App) {
         app // 注册顺序两侧必须一致！
-            .replicate::<Person>() // 复制规则：实体上的 Person 组件
+            .replicate::<GeneralName>()
+            .replicate::<GeneralKind>()
+            .replicate::<Breathing>()
+            .replicate::<Movement>()
             .replicate::<PersonPosition>() // 复制规则：实体上的 PersonPosition 组件
             .replicate::<HumanId>()
             .replicate::<HumanStatus>()
             .replicate::<WorldOverview>()
-            .add_client_event::<MoveDirection>(Channel::Ordered); // 客户端 -> 服务端消息
+            .add_client_event::<MoveDirection>(Channel::Ordered)
+            .register_type::<GeneralName>()
+            .register_type::<GeneralKind>()
+            .register_type::<Bounded<u8>>()
+            .register_type::<Breathing>()
+            .register_type::<Destination>()
+            .register_type::<SpeedIntent>()
+            .register_type::<Movement>()
+            .register_type::<PersonPosition>()
+            .register_type::<HumanId>()
+            .register_type::<HumanStatus>()
+            .register_type::<WorldOverview>();
     }
-}
-
-/// "人"实体：低频、几乎不变的数据放在这里。
-///
-/// - `Serialize + Deserialize`：复制时通过 postcard 序列化。
-/// - `require(PersonPosition)`：通过 Bevy 的 required components，
-///   生成 `Person` 时自动补上位置组件。
-/// - `require(Replicated)`：自动打上 replicon 的复制标记，
-///   该实体（的已注册组件）会自动同步给客户端。
-#[derive(Component, Serialize, Deserialize, Debug, Default)]
-#[require(PersonPosition, Replicated)]
-pub struct Person {
-    /// 名字：只在生成时写入，之后基本不变。
-    pub name: String,
 }
 
 /// "人"的位置：高频变化的数据单独拆成一个组件。
 ///
 /// 拆分的原因：replicon 按"组件"为单位做增量复制，
 /// 位置每帧都变、名字几乎不变。拆开后同步的数据量更小。
-#[derive(Component, Deref, DerefMut, Serialize, Deserialize, Debug, Default)]
+#[derive(Component, Deref, DerefMut, Serialize, Deserialize, Debug, Default, Reflect)]
+#[reflect(Component)]
 pub struct PersonPosition(pub Vec2);
 
 /// 客户端 -> 服务端的移动输入。
@@ -96,20 +105,28 @@ pub struct PersonPosition(pub Vec2);
 #[derive(Event, Serialize, Deserialize, Debug, Deref)]
 pub struct MoveDirection(pub Vec2);
 
-#[derive(Component, Serialize, Deserialize, Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Component, Serialize, Deserialize, Debug, Clone, Copy, PartialEq, Eq, Reflect)]
+#[reflect(Component)]
 pub struct HumanId(pub u64);
 
-#[derive(Component, Serialize, Deserialize, Debug, Default, Clone, Copy, PartialEq, Eq)]
+#[derive(
+    Component, Serialize, Deserialize, Debug, Default, Clone, Copy, PartialEq, Eq, Reflect,
+)]
+#[reflect(Component)]
 pub struct HumanStatus {
     pub moving: bool,
     pub owner: Option<u64>,
 }
 
-#[derive(Component, Serialize, Deserialize, Debug, Default, Clone, Copy, PartialEq, Eq)]
+#[derive(
+    Component, Serialize, Deserialize, Debug, Default, Clone, Copy, PartialEq, Eq, Reflect,
+)]
+#[reflect(Component)]
 pub struct WorldOverview {
     pub total_connections: u32,
     pub player_connections: u32,
     pub dashboard_connections: u32,
+    pub console_connections: u32,
 }
 
 #[derive(Serialize, Deserialize, Debug, Clone)]

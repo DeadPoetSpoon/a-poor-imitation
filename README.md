@@ -14,6 +14,21 @@
 | `world` | 服务端 | 无窗口 headless | 创建实体、分配归属、接收输入到缓冲、**唯一**有权修改位置、把变化同步出去 |
 | `observer` | 客户端 | 带窗口 | 连接服务端、镜像实体、每帧上报键盘输入、用 Gizmos 画出实体 |
 | `touchpad` | 监控面板 | 浏览器 WASM | WebTransport 连接、地图与监控数据、鼠标与触摸导航 |
+| `console` | 字符控制台 | 终端 REPL | 手动连接 world，通过 `peek` 检查 Human 的同步组件；不领取人物 |
+
+当前人物模型使用 `base::organism::Human` Bundle，包含 `GeneralName(usize)`、
+`GeneralKind(usize)`、`Breathing` 和 `Movement`。网络逐个复制这些组件；
+`PersonPosition`、`HumanId`、`HumanStatus` 和 `Replicated` 在生成时额外添加。
+示例人物的名字编号为 1、2、3，种类编号为 0；呼吸参数暂以 0 初始化，范围为
+`0..=u8::MAX`，移动组件的目标和速度意图均为空，WASD 仍使用原有输入缓冲控制位置。
+协议版本已更新为 3，world、observer、touchpad 和 console 需要一起重新构建。
+下文涉及旧 `Person { name: String }` 的教学片段和日志展示的是原先模型。
+
+运行 `cargo run -p console` 后输入 `connect`，使用默认用户 `spoon` 连接
+`127.0.0.1:5000`，再输入 `peek 1` 检查人物全部同步组件。
+也支持 `connect alice@192.168.1.10:5000`；命令及默认省略规则见
+[console/README.md](console/README.md)。所有客户端均向 world 传递用户名，
+observer 使用 `--username` 参数，touchpad 使用 URL 的 `username` 参数，默认均为 `spoon`。
 
 ## 版本栈（重要）
 
@@ -268,6 +283,11 @@ fn integrate_movement(time: Res<Time<Fixed>>, people: Query<(&mut PersonPosition
 ---
 
 ## observer：客户端进程
+
+窗口左上角显示诊断面板：平滑 FPS、帧耗时（ms）、连接状态与服务器地址、
+往返延迟 RTT（ms）、丢包率、发送/接收流量（KiB/s）、客户端 ID、在线连接数
+（玩家 / 监控面板）、同步人物数，以及当前控制的人物和坐标。面板每 250ms 刷新，
+未连接时网络和世界数据以 `--` 显示；WASD 控制移动。
 
 ### 插件组装
 

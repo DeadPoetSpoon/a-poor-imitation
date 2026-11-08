@@ -1,9 +1,15 @@
 # Touchpad
 
 A read-only Bevy/WASM dashboard for `world`. It displays the coordinate map,
-humans, positions, movement, owners, and total/player/dashboard connection counts.
-UDP spectators count as players; WebTransport connections count as dashboards.
+humans, positions, movement, owners, and total/player/dashboard/console connection counts.
+Observer connections count as players; console connections count separately;
+WebTransport connections count as dashboards.
 Dashboards never claim a human or send movement input.
+
+Connections identify their username to world (default `spoon`). Override it with
+the URL query, for example `https://localhost:8080/?username=alice`.
+Usernames identify sessions and do not provide password authentication.
+Protocol version 3 requires rebuilding world and all clients together.
 
 ## Local development
 

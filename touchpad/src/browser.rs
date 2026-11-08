@@ -4,7 +4,11 @@ use std::{
     time::Duration,
 };
 
-use base::{BasePlugin, PROTOCOL_ID, TouchpadConnection, WorldOverview, log_plugin};
+use base::{
+    BasePlugin, PROTOCOL_ID, TouchpadConnection, WorldOverview,
+    connection::{ClientIdentity, ClientKind, DEFAULT_USERNAME},
+    log_plugin,
+};
 use bevy::prelude::*;
 use bevy_replicon::prelude::*;
 use bevy_replicon_renet2::{
@@ -113,6 +117,13 @@ fn make_connection(
         }],
     ));
     let window = web_sys::window().ok_or("No browser window is available")?;
+    let query =
+        web_sys::UrlSearchParams::new_with_str(&window.location().search().map_err(js_error)?)
+            .map_err(js_error)?;
+    let username = query
+        .get("username")
+        .unwrap_or_else(|| DEFAULT_USERNAME.into());
+    let identity = ClientIdentity::new(&username, ClientKind::Touchpad)?;
     let mut random = [0; 8];
     window
         .crypto()
@@ -124,7 +135,7 @@ fn make_connection(
         protocol_id: PROTOCOL_ID,
         socket_id: config.socket_index,
         server_addr: address,
-        user_data: None,
+        user_data: Some(identity.encode()),
     };
     let transport = NetcodeClientTransport::new(
         Duration::from_secs_f64(js_sys::Date::now() / 1000.0),

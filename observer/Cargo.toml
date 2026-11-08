@@ -9,6 +9,6 @@ rls = ["base/rls"]
 
 [dependencies]
 base = { path = "../base" }
-bevy = { workspace = true, features = ["2d"] }
+bevy = { workspace = true, features = ["2d", "ui"] }
 bevy_replicon = { workspace = true, features = ["client"] }
 bevy_replicon_renet2 = { workspace = true, features = ["client", "native_transport"] }

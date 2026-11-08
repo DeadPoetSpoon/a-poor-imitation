@@ -1,8 +1,8 @@
 //! `world` 是服务端（headless 权威模拟进程）：
 //!
 //! 1. `MinimalPlugins` 启动一个无窗口的 Bevy 应用（手动补上 `LogPlugin` 和 `StatesPlugin`）。
-//! 2. 启动时创建 `Person` 实体并标记复制（`Replicated` 由 required component 自动添加）。
-//! 3. 客户端连上时**分配**一个空闲 Person 给它（`Owner`），断开时释放。
+//! 2. 启动时用 `Human` Bundle 创建实体，并显式标记复制（`Replicated`）。
+//! 3. 客户端连上时**分配**一个空闲 Human 给它（`Owner`），断开时释放。
 //! 4. 接收 observer 发来的 `MoveDirection`，只写入该客户端所有实体的 `MoveIntent`（输入缓冲）。
 //! 5. `FixedUpdate` 里统一按固定时间步积分位置，再由 bevy_replicon 自动同步。
 //!
@@ -16,8 +16,12 @@ use std::{
 };
 
 use base::{
-    BasePlugin, HumanId, HumanStatus, MoveDirection, PORT, PROTOCOL_ID, Person, PersonPosition,
-    TouchpadConnection, WorldOverview, log_plugin,
+    BasePlugin, Human, HumanId, HumanStatus, MoveDirection, PORT, PROTOCOL_ID, PersonPosition,
+    TouchpadConnection, WorldOverview,
+    connection::{ClientIdentity, ClientKind},
+    general::{Bounded, GeneralKind, GeneralName},
+    log_plugin,
+    organism::behavioral_brain::{Breathing, Movement},
 };
 use bevy::{prelude::*, state::app::StatesPlugin};
 use bevy_replicon::prelude::*;
@@ -31,7 +35,7 @@ use bevy_replicon_renet2::{
     renet2::{ConnectionConfig, RenetServer},
 };
 
-/// 归属组件：这个 Person 由哪个客户端控制。
+/// 归属组件：这个 Human 由哪个客户端控制。
 ///
 /// 刻意**不**放在 base、也**不**注册 `replicate`：
 /// - replicon 0.41 的 `ClientId` 不可序列化，无法走网络；
@@ -117,12 +121,6 @@ impl ServerOptions {
 #[derive(Resource)]
 struct NetworkRuntime {
     _runtime: tokio::runtime::Runtime,
-}
-
-#[derive(Component, Clone, Copy, PartialEq, Eq)]
-enum ConnectionRole {
-    Player,
-    Dashboard,
 }
 
 fn main() {
@@ -237,39 +235,43 @@ fn start_server(
     Ok(())
 }
 
-/// 生成 3 个 Person 实体（此时无人认领）。
+/// 生成 3 个 Human 实体（此时无人认领）。
 ///
-/// 只写 `Person` + `PersonPosition`，`Replicated` 由 `#[require(...)]` 自动补上。
+/// Human Bundle 保持原定义，位置、监控数据和复制标记在生成时额外添加。
 fn spawn_people(mut commands: Commands) {
-    const STARTS: [(&str, Vec2); 3] = [
-        ("Alice", Vec2::new(-120.0, 0.0)),
-        ("Bob", Vec2::new(0.0, 0.0)),
-        ("Carol", Vec2::new(120.0, 0.0)),
-    ];
+    const STARTS: [Vec2; 3] = [Vec2::new(-120.0, 0.0), Vec2::ZERO, Vec2::new(120.0, 0.0)];
 
-    for (index, (name, position)) in STARTS.into_iter().enumerate() {
+    for (index, position) in STARTS.into_iter().enumerate() {
+        let name = index + 1;
         commands.spawn((
-            Person { name: name.into() },
+            Human {
+                name: GeneralName(name),
+                kind: GeneralKind(0),
+                breathing: Breathing::new(Bounded::new(0, 0, u8::MAX), Bounded::new(0, 0, u8::MAX)),
+                movement: Movement::default(),
+            },
             PersonPosition(position),
             HumanId(index as u64 + 1),
             HumanStatus::default(),
+            Replicated,
         ));
-        info!("spawned person `{name}` at {position:?}");
+        info!("spawned human `{name}` at {position:?}");
     }
     commands.spawn((WorldOverview::default(), Replicated));
 }
 
 /// 客户端接入：replicon 把每个已连接客户端表示为一个实体（`ConnectedClient`），
-/// 我们把一个**无主**的 Person 分配给它（`Owner` + 清零的 `MoveIntent`）。
+/// 我们把一个**无主**的 Human 分配给它（`Owner` + 清零的 `MoveIntent`）。
 ///
 /// `ClientId::Client(entity)` 里的 entity 就是这个客户端实体——
 /// 之后 `FromClient` 消息里的 `trigger.client_id` 也是同一个值，可以直接比较。
 fn client_connected(
     trigger: On<Add, ConnectedClient>,
     mut commands: Commands,
-    free_people: Query<(Entity, &Person), Without<Owner>>,
+    free_people: Query<(Entity, &GeneralName), (With<HumanId>, Without<Owner>)>,
     clients: Query<&NetworkId>,
     transport: Res<NetcodeServerTransport>,
+    mut server: ResMut<RenetServer>,
 ) {
     let client_id = ClientId::Client(trigger.entity);
     info!("client `{client_id}` connected");
@@ -280,59 +282,88 @@ fn client_connected(
     let Some((socket_index, _)) = transport.client_addr(network_id.get()) else {
         return;
     };
-    let role = if socket_index == 0 {
-        ConnectionRole::Player
-    } else {
-        ConnectionRole::Dashboard
+    let identity = transport
+        .user_data(network_id.get())
+        .ok_or_else(|| "Missing connection identity".to_string())
+        .and_then(|data| ClientIdentity::decode(&data));
+    let identity = match identity {
+        Ok(identity)
+            if matches!(
+                (socket_index, identity.kind()),
+                (0, ClientKind::Observer | ClientKind::Console) | (1, ClientKind::Touchpad)
+            ) =>
+        {
+            identity
+        }
+        result => {
+            warn!("rejecting client `{client_id}`: invalid identity or transport: {result:?}");
+            server.disconnect(network_id.get());
+            return;
+        }
     };
-    commands.entity(trigger.entity).insert(role);
-    if role == ConnectionRole::Dashboard {
-        info!("dashboard `{client_id}` connected without claiming a human");
+    info!(
+        "user `{}` connected as {:?}: {client_id}",
+        identity.username(),
+        identity.kind()
+    );
+    let kind = identity.kind();
+    commands.entity(trigger.entity).insert(identity);
+    if kind != ClientKind::Observer {
         return;
     }
 
-    if let Some((entity, person)) = free_people.iter().next() {
+    if let Some((entity, name)) = free_people.iter().next() {
         commands
             .entity(entity)
             .insert((Owner(client_id), MoveIntent::default()));
-        info!("assigned `{}` to `{client_id}`", person.name);
+        info!("assigned `{}` to `{client_id}`", name.0);
     } else {
-        // Person 只有 3 个，第 4 个客户端只能旁观（真实项目应按需生成）。
         warn!("no free person for `{client_id}`, it can only observe");
     }
 }
 
-/// 客户端断开：释放它占用的 Person（摘掉 `Owner` 和 `MoveIntent`），
+/// 客户端断开：释放它占用的 Human（摘掉 `Owner` 和 `MoveIntent`），
 /// 下一个连入的客户端可以复用。
 fn client_disconnected(
     trigger: On<Remove, ConnectedClient>,
     mut commands: Commands,
-    people: Query<(Entity, &Owner, &Person)>,
+    people: Query<(Entity, &Owner, &GeneralName), With<HumanId>>,
+    clients: Query<&ClientIdentity>,
 ) {
     let client_id = ClientId::Client(trigger.entity);
     info!("client `{client_id}` disconnected");
+    if let Ok(identity) = clients.get(trigger.entity) {
+        info!(
+            "user `{}` disconnected ({:?})",
+            identity.username(),
+            identity.kind()
+        );
+    }
 
-    if let Some((entity, _, person)) = people.iter().find(|(_, owner, _)| owner.0 == client_id) {
+    if let Some((entity, _, name)) = people.iter().find(|(_, owner, _)| owner.0 == client_id) {
         commands.entity(entity).remove::<(Owner, MoveIntent)>();
-        info!("released `{}` from `{client_id}`", person.name);
+        info!("released `{}` from `{client_id}`", name.0);
     }
 }
 
 /// 收到客户端输入：只刷新发送者自己实体的 `MoveIntent`，不做任何位移。
 ///
 /// 这就是"归属"落地的地方——`trigger.client_id` 和 `Owner` 对得上才生效，
-/// 其他客户端的 Person 完全不受影响（想作弊替别人移动？门都没有）。
+/// 其他客户端的 Human 完全不受影响（想作弊替别人移动？门都没有）。
 ///
 /// 客户端每帧都会上报（含零向量），所以这里用 debug 级别防刷屏。
 fn buffer_input(
     trigger: On<FromClient<MoveDirection>>,
     mut people: Query<(&Owner, &mut MoveIntent)>,
-    clients: Query<&ConnectionRole>,
+    clients: Query<&ClientIdentity>,
 ) {
     let ClientId::Client(client) = trigger.client_id else {
         return;
     };
-    if clients.get(client) != Ok(&ConnectionRole::Player) {
+    if !clients
+        .get(client)
+        .is_ok_and(|identity| identity.kind() == ClientKind::Observer)
+    {
         return;
     }
     debug!(
@@ -375,17 +406,18 @@ fn integrate_movement(
 }
 
 fn update_overview(
-    clients: Query<(&NetworkId, &ConnectionRole), With<ConnectedClient>>,
+    clients: Query<&ClientIdentity, With<ConnectedClient>>,
     mut overview: Query<&mut WorldOverview>,
     mut people: Query<(Option<&Owner>, &mut HumanStatus)>,
     network_ids: Query<&NetworkId>,
 ) {
     let mut current = WorldOverview::default();
-    for (_, role) in &clients {
+    for identity in &clients {
         current.total_connections += 1;
-        match role {
-            ConnectionRole::Player => current.player_connections += 1,
-            ConnectionRole::Dashboard => current.dashboard_connections += 1,
+        match identity.kind() {
+            ClientKind::Observer => current.player_connections += 1,
+            ClientKind::Touchpad => current.dashboard_connections += 1,
+            ClientKind::Console => current.console_connections += 1,
         }
     }
     for mut overview in &mut overview {

@@ -1,18 +1,26 @@
 //! `observer` 是客户端（带窗口的观察进程）：
 //!
-//! 1. `DefaultPlugins`（仅启用 bevy 的 `2d` feature）提供窗口、渲染、输入和日志。
-//! 2. 连接 world 后，replicon 自动镜像服务端的 `Person` / `PersonPosition` 组件。
+//! 1. `DefaultPlugins`（启用 bevy 的 `2d` / `ui` feature）提供窗口、渲染、输入、UI 和日志。
+//! 2. 连接 world 后，replicon 自动镜像 Human Bundle 的组件及 `PersonPosition`。
 //! 3. 每帧读取 WASD 按键 -> `client_trigger(MoveDirection)` 发给服务端。
-//! 4. 用 Gizmos 把每个 Person 画成彩色方块（纯表现层，不给实体加渲染组件）。
+//! 4. 用 Gizmos 把每个 Human 画成彩色方块（纯表现层，不给实体加渲染组件）。
+//! 5. 左上角诊断面板显示帧率、网络状态和当前角色信息。
 //!
 //! 运行：`cargo run -p observer`（先启动 world）
+
+mod hud;
 
 use std::{
     net::{IpAddr, Ipv4Addr, SocketAddr, UdpSocket},
     time::SystemTime,
 };
 
-use base::{BasePlugin, MoveDirection, PORT, PROTOCOL_ID, Person, PersonPosition, log_plugin};
+use base::{
+    BasePlugin, HumanId, MoveDirection, PORT, PROTOCOL_ID, PersonPosition,
+    connection::{ClientIdentity, ClientKind, DEFAULT_USERNAME},
+    general::GeneralName,
+    log_plugin,
+};
 use bevy::{
     color::palettes::css,
     prelude::*,
@@ -31,8 +39,27 @@ const COLORS: [Srgba; 3] = [css::GREEN, css::RED, css::BLUE];
 /// 方块大小（逻辑像素）。
 const SIZE: f32 = 50.0;
 
-fn main() {
+#[derive(Resource)]
+struct ObserverIdentity(ClientIdentity);
+
+fn main() -> Result<()> {
+    let mut username = DEFAULT_USERNAME.to_string();
+    let mut arguments = std::env::args().skip(1);
+    while let Some(argument) = arguments.next() {
+        match argument.as_str() {
+            "--username" => {
+                username = arguments.next().ok_or("Missing value for --username")?;
+            }
+            "--help" | "-h" => {
+                println!("observer [--username NAME] (default: {DEFAULT_USERNAME})");
+                return Ok(());
+            }
+            _ => return Err(format!("Unknown argument: {argument}").into()),
+        }
+    }
+    let identity = ClientIdentity::new(&username, ClientKind::Observer)?;
     App::new()
+        .insert_resource(ObserverIdentity(identity))
         .add_plugins((
             // DefaultPlugins 已含 LogPlugin，用 .set() 把日志配置换成 base 提供的版本
             // （窗口 + 渲染 + 输入 + LogPlugin + StatesPlugin 都在 DefaultPlugins 内）。
@@ -40,6 +67,7 @@ fn main() {
             RepliconPlugins,
             RepliconRenetPlugins,
             BasePlugin,
+            hud::HudPlugin,
         ))
         // 失焦时也保持满帧率，方便观察网络同步。
         .insert_resource(WinitSettings {
@@ -52,21 +80,26 @@ fn main() {
         .add_systems(OnEnter(ClientState::Connected), || {
             info!("connected to server")
         })
-        .add_observer(person_arrived)
-        .add_observer(person_removed)
+        .add_observer(human_arrived)
+        .add_observer(human_removed)
         .add_systems(
             Update,
             (send_input, draw_people, log_positions).run_if(in_state(ClientState::Connected)),
         )
         .run();
+    Ok(())
 }
 
 /// 启动 renet2/netcode 客户端并连接服务端（127.0.0.1:5000）。
 ///
 /// 与服务端同理：必须在 `BasePlugin` 注册完通道之后读取 `RepliconChannels`。
-fn connect_server(mut commands: Commands, channels: Res<RepliconChannels>) -> Result<()> {
+fn connect_server(
+    mut commands: Commands,
+    channels: Res<RepliconChannels>,
+    identity: Res<ObserverIdentity>,
+) -> Result<()> {
     let ip = Ipv4Addr::LOCALHOST;
-    info!("connecting to {ip}:{PORT}");
+    info!("connecting as {} to {ip}:{PORT}", identity.0.username());
 
     // 第二个参数 false：UDP 是不可靠底层通道（WebSocket/内存通道才传 true）。
     let client = RenetClient::new(
@@ -83,7 +116,7 @@ fn connect_server(mut commands: Commands, channels: Res<RepliconChannels>) -> Re
         protocol_id: PROTOCOL_ID,
         socket_id: 0,
         server_addr,
-        user_data: None,
+        user_data: Some(identity.0.encode()),
     };
     let transport =
         NetcodeClientTransport::new(current_time, authentication, NativeSocket::new(socket)?)?;
@@ -97,22 +130,22 @@ fn spawn_camera(mut commands: Commands) {
     commands.spawn(Camera2d);
 }
 
-/// 复制到达：服务端生成 Person 时，客户端世界自动出现镜像实体。
+/// 复制到达：服务端生成 Human 时，客户端世界自动出现镜像实体。
 ///
 /// 注意 `trigger.entity` 是**本地**实体 ID——服务端和客户端的实体 ID 不同，
 /// replicon 内部通过 `ServerEntityMap` 维护映射。
-fn person_arrived(trigger: On<Add, Person>, people: Query<&Person>) {
-    if let Ok(person) = people.get(trigger.entity) {
+fn human_arrived(trigger: On<Add, HumanId>, people: Query<&GeneralName>) {
+    if let Ok(name) = people.get(trigger.entity) {
         info!(
-            "person `{}` arrived as local entity {}",
-            person.name, trigger.entity
+            "human `{}` arrived as local entity {}",
+            name.0, trigger.entity
         );
     }
 }
 
 /// 服务端删除（或断开清理）实体时，镜像实体也会被移除。
-fn person_removed(trigger: On<Remove, Person>) {
-    info!("person entity {} removed", trigger.entity);
+fn human_removed(trigger: On<Remove, HumanId>) {
+    info!("human entity {} removed", trigger.entity);
 }
 
 /// 读取键盘输入并发送给服务端。
@@ -155,8 +188,10 @@ fn draw_people(mut gizmos: Gizmos, people: Query<&PersonPosition>) {
 
 /// 每帧打印同步到的位置（debug 级别，默认不显示；
 /// 想观察同步效果可设置环境变量 `RUST_LOG=debug` 再运行）。
-fn log_positions(people: Query<(&Person, &PersonPosition), Changed<PersonPosition>>) {
-    for (person, position) in &people {
-        debug!("`{}` is now at {:?}", person.name, position.0);
+fn log_positions(
+    people: Query<(&GeneralName, &PersonPosition), (With<HumanId>, Changed<PersonPosition>)>,
+) {
+    for (name, position) in &people {
+        debug!("`{}` is now at {:?}", name.0, position.0);
     }
 }

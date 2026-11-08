@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-use base::{HumanId, HumanStatus, Person, PersonPosition, WorldOverview};
+use base::{HumanId, HumanStatus, PersonPosition, WorldOverview, general::GeneralName};
 use bevy::{
     input::mouse::{MouseScrollUnit, MouseWheel},
     prelude::*,
@@ -409,7 +409,7 @@ fn handle_buttons(
 
 fn capture_world(
     state: Res<State<ClientState>>,
-    people: Query<(&HumanId, &Person, &PersonPosition, &HumanStatus)>,
+    people: Query<(&HumanId, &GeneralName, &PersonPosition, &HumanStatus)>,
     overview: Query<&WorldOverview>,
     mut dashboard: ResMut<Dashboard>,
 ) {
@@ -418,9 +418,9 @@ fn capture_world(
     }
     dashboard.humans = people
         .iter()
-        .map(|(id, person, position, status)| HumanView {
+        .map(|(id, name, position, status)| HumanView {
             id: id.0,
-            name: person.name.clone(),
+            name: name.0.to_string(),
             position: position.0,
             status: *status,
         })
@@ -770,11 +770,12 @@ fn update_text(
                 dashboard.message.clone()
             }
             DashboardText::Counts => format!(
-                "{} humans   /   {} clients   /   {} players   /   {} dashboards{}",
+                "{} humans   /   {} clients   /   {} players   /   {} dashboards   /   {} consoles{}",
                 dashboard.humans.len(),
                 dashboard.overview.total_connections,
                 dashboard.overview.player_connections,
                 dashboard.overview.dashboard_connections,
+                dashboard.overview.console_connections,
                 if matches!(dashboard.phase, Phase::Disconnected | Phase::Failed)
                     && !dashboard.humans.is_empty()
                 {
